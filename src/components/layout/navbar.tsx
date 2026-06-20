@@ -7,9 +7,10 @@ import { Drawer } from "vaul"
 
 const navLinks = [
   { label: "About me", href: "#about" },
-  { label: "Portfolio", href: "#work" },
-  { label: "Services", href: "#services" },
-  { label: "Blog", href: "#blog" },
+  { label: "What i do", href: "#services" },
+  { label: "Portfolio", href: "#projects" },
+  { label: "How i work", href: "#how-i-work" },
+  { label: "Client words", href: "#testimonials" },
 ]
 
 export function Navbar() {
