@@ -32,16 +32,14 @@ Full tokens: @src/styles/tokens.css
 - NEVER use Inter, Roboto, DM Sans, Fraunces, Outfit, or system fonts
 
 ### Color Palette
---color-bg:          #F5F4F0
---color-hero-bg:     #A6AB9D
---color-bg-alt:      #F4F5F7
---color-surface:     #ECEEF2
---color-text:        #0D0F12
---color-text-muted:  #5A6070
---color-accent:      #1A2E4A
---color-accent-mid:  #2E4D7A
---color-accent-soft: #E8EDF4
---color-border:      #DDE1E9
+Full token values: @src/styles/tokens.css (authoritative — never use hardcoded hex values, always reference CSS variables by name)
+
+Key variable names to know:
+- Background: `var(--color-bg)`, `var(--color-bg-dark)` (dark sections)
+- Text: `var(--color-text)`, `var(--color-text-muted)`, `var(--color-text-inverse)`
+- Accent: `var(--color-accent)`, `var(--color-accent-mid)`, `var(--color-accent-soft)`
+- Surface: `var(--color-surface)`, `var(--color-surface-raised)`
+- Border: `var(--color-border)`, `var(--color-border-dark)`
 
 ### Motion Rules (NON-NEGOTIABLE)
 - Hero entrance: fade + translateY, 600ms ease-out, use MotionFade
@@ -78,7 +76,7 @@ Full tokens: @src/styles/tokens.css
   - Left: stats stacked vertically ("+37 / Projects completed", "100% / Satisfaction Guaranteed"), then "Freelancer" + "Designer & Developer" professional info below
   - Right: "Start your project ↗" CTA button with frosted glass style (backdrop-filter blur)
 
-## ## Site Structure (single-page)
+## Site Structure (single-page)
 
 1. Hero: editorial first impression, large profile image on the right, minimal identity statement, key stats and subtle CTA.
 2. About Me: large rounded card directly connected to the hero image, with no visual gap between the profile image and the card’s top border. Two-column layout with intro text, learn more button and visual skill indicators.
@@ -115,3 +113,24 @@ Full tokens: @src/styles/tokens.css
 - No hardcoded hex colors outside tokens.css
 - Nothing that looks like a Webflow or Squarespace template
 - NEVER use Inter, Roboto, DM Sans, Fraunces, Outfit, or system fonts
+
+## Deployment & Infrastructure
+
+- **GitHub**: https://github.com/romulorasec/romuloquintanilha.com (branch: `main`)
+- **CI**: `.github/workflows/ci.yml` — runs TypeScript check, ESLint, and production build on every push/PR; must stay green
+- **Vercel**: not yet connected — pending domain setup at `romuloquintanilha.com`
+- **Environment variables**: template in `.env.example`; real values go in `.env.local` (gitignored) or Vercel dashboard
+
+### Key production files (do not delete)
+- `public/robots.txt` — crawler rules
+- `src/app/sitemap.ts` — dynamic sitemap served at `/sitemap.xml`
+- `src/app/icon.svg` — RQ monogram favicon (Next.js picks it up automatically)
+- `.env.example` — documents all required env vars; safe to commit, must stay up to date
+
+### Git hygiene rules
+- Never commit `.env.local`, `.claude/settings.local.json`, or `.playwright-mcp/`
+- Never commit screenshot PNGs or working documents to the repo root
+- `public/images/` contains production photo assets — do not delete or overwrite
+
+### Known issues
+- `postcss <8.5.10` vulnerability inside `node_modules/next/node_modules/postcss` — unfixable without breaking Next.js; tracked upstream, low risk (build-time only)

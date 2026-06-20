@@ -28,9 +28,14 @@ Este projeto foi criado com o script premium anime para websites.
 - `src/components/shared/smooth-scroll-provider.tsx`
 - `src/components/animations/gsap-reveal.tsx`
 - `src/components/animations/motion-fade.tsx`
+- `src/components/shared/site-button.tsx`
 - `src/config/site.ts`
 - `src/styles/tokens.css`
-- `.env.local`
+- `.env.example` — template de variáveis de ambiente (commitar); copiar para `.env.local` com os valores reais
+- `public/robots.txt`
+- `src/app/sitemap.ts`
+- `src/app/icon.svg`
+- `.github/workflows/ci.yml`
 
 ## Idiomas configurados
 
@@ -45,3 +50,4 @@ Para ativar o smooth scroll globalmente, importe o provider no layout:
 
 ```tsx
 import { SmoothScrollProvider } from "@/components/shared/smooth-scroll-provider"
+```
