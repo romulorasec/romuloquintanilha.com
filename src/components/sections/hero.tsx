@@ -230,7 +230,7 @@ export function Hero() {
       {/* ===== PORTRAIT — unified for phones + portrait tablets ===== */}
       <div
         className="relative hero-portrait"
-        style={{ height: "100svh", overflow: "hidden" }}
+        style={{ height: "100dvh", overflow: "hidden" }}
       >
         {/* Full-bleed cover image — art-directed via <picture> */}
         <picture>
