@@ -44,3 +44,8 @@ next-env.d.ts
 # local tool configs (machine-specific, never commit)
 .playwright-mcp/
 .claude/settings.local.json
+
+# graphify - machine-specific internals
+graphify-out/.graphify_python
+graphify-out/.graphify_root
+graphify-out/cache/
