@@ -66,10 +66,10 @@ export function About() {
                   marginTop: "clamp(24px, 3vw, 40px)",
                 }}
               >
-                I&apos;m a conversion-focused web designer based in California,
-                building websites that earn trust from the first scroll. I work
-                with restaurants, clinics, and local shops to create purposeful
-                digital presence that brings in real customers.
+                I don't design websites to impress. I design them to sell.
+                A website isn't a digital business card, it's a salesperson
+                who never clocks out, never stops closing, and works every
+                hour your doors are shut. I build the version that earns its keep.
               </p>
             </MotionFade>
           </div>
