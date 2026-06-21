@@ -99,8 +99,7 @@ export function Hero() {
           pointerEvents: "auto",
         }}
       >
-        <a
-          href="#problem"
+        <span
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -125,7 +124,7 @@ export function Hero() {
           >
             ↓
           </motion.span>
-        </a>
+        </span>
       </motion.div>
 
       {/* Photo — absolute right column, art-directed via <picture> */}
