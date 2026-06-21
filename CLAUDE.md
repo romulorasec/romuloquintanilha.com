@@ -63,7 +63,7 @@ Key variable names to know:
   font-size clamp(50px, 12vw, 200px), line-height 0.9, color var(--color-text); block offset -80px translateY
 - Below greeting: "— It's Rômulo, a conversion-focused web designer" in
   Plus Jakarta Sans Regular 400, color var(--color-text-muted), max-width 320px
-- Bottom left: "Scroll down ↓" link to #problem, Plus Jakarta Sans SemiBold 600, font-size 16px,
+- Bottom left: "Scroll down ↓" label (sem âncora, `<span>`), Plus Jakarta Sans SemiBold 600, font-size 16px,
   color var(--color-text), positioned absolute at bottom 48px left 168px
 - Navbar: logo left, links center, "Start your project ↗" right with arrow icon
 - Year "2026" vertical text in decorative left strip, color var(--color-text-muted)
@@ -85,7 +85,7 @@ Key variable names to know:
 5. Portfolio / Selected Work: selected projects with image, category, short strategic context and one-line outcome. Use a refined black background and alternating layouts.
 6. How I Work: interactive sequential process section with 5 steps: Discovery, Strategy, Design, Build and Launch. Include a short philosophy line inside this section so it explains not only the process, but also the thinking behind the process.
 7. Client Words: short and specific testimonials that reinforce trust, clarity, professionalism and client experience.
-8. Final CTA: strong closing headline with one clear action button inviting the visitor to start a conversation.
+8. Final CTA: *(pendente — não implementada)* Headline de fechamento forte com um botão claro convidando o visitante a iniciar uma conversa. Quando implementada, deve receber `id="contact"` para resolver os hrefs existentes em navbar, hero e how-i-work.
 9. Footer: minimal contact area with name, role, location, email, phone and social links.
 
 
