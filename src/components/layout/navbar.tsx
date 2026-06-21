@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import { ArrowUpRight, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Drawer } from "vaul"
+import { SiteButton } from "@/components/shared/site-button"
 
 const navLinks = [
   { label: "About me", href: "#about" },
@@ -80,30 +81,6 @@ export function Navbar() {
 
       {/* Right: CTA + mobile hamburger */}
       <div className="flex items-center" style={{ gap: "1.5rem" }}>
-        {/* Desktop CTA */}
-        <a
-          href="#contact"
-          className="nav-landscape-iflex"
-          style={{
-            alignItems: "center",
-            gap: "3px",
-            fontFamily: "var(--font-sans)",
-            fontWeight: 600,
-            fontSize: "16px",
-            color: "var(--color-text)",
-            textDecoration: "none",
-            borderBottom: "1px solid var(--color-text)",
-            paddingBottom: "2px",
-            letterSpacing: "0.01em",
-            transition: "opacity var(--transition-fast)",
-          }}
-          onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.55")}
-          onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
-        >
-          Start your project
-          <ArrowUpRight size={14} strokeWidth={1.75} />
-        </a>
-
         {/* Mobile hamburger */}
         <button
           className="nav-portrait"
@@ -184,27 +161,9 @@ export function Navbar() {
               ))}
             </nav>
 
-            <a
-              href="#contact"
-              onClick={() => setOpen(false)}
-              style={{
-                marginTop: "40px",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "4px",
-                fontFamily: "var(--font-sans)",
-                fontWeight: 600,
-                fontSize: "16px",
-                color: "var(--color-accent)",
-                textDecoration: "none",
-                borderBottom: "1px solid var(--color-accent)",
-                paddingBottom: "2px",
-                alignSelf: "flex-start",
-              }}
-            >
-              Start your project
-              <ArrowUpRight size={15} strokeWidth={1.75} />
-            </a>
+            <div style={{ marginTop: "40px" }} onClick={() => setOpen(false)}>
+              <SiteButton variant="primary" href="#contact">Start your project</SiteButton>
+            </div>
           </Drawer.Content>
         </Drawer.Portal>
       </Drawer.Root>

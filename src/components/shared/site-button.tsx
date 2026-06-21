@@ -1,9 +1,9 @@
 "use client"
 
-import { ArrowRight } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 
 interface SiteButtonProps {
-  variant: "primary" | "secondary"
+  variant: "primary" | "primary-inverse" | "primary-icon" | "secondary"
   children: React.ReactNode
   href?: string
   onClick?: () => void
@@ -24,15 +24,15 @@ export function SiteButton({
   const inner = (
     <>
       {children}
-      {variant === "secondary" ? (
+      {variant === "secondary" || variant === "primary-icon" ? (
         <span className="button-icon">
           <span className="button-arrow">
-            <ArrowRight />
+            <ChevronRight />
           </span>
         </span>
       ) : (
         <span className="button-arrow">
-          <ArrowRight />
+          <ChevronRight />
         </span>
       )}
     </>

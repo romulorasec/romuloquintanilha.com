@@ -9,8 +9,8 @@ const ease = [0.22, 1, 0.36, 1] as const
 const skills = [
   { label: "UI&UX Design", position: 87, delay: 0.28 },
   { label: "Website Design", position: 96, delay: 0.38 },
-  { label: "App Design", position: 60, delay: 0.48 },
-  { label: "Graphic Design", position: 65, delay: 0.58 },
+  { label: "App Design", position: 82, delay: 0.48 },
+  { label: "Graphic Design", position: 78, delay: 0.58 },
 ]
 
 export function About() {

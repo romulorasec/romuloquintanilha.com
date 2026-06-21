@@ -87,13 +87,41 @@
   --button-primary-hover-border: var(--color-text);
   --button-primary-hover-icon-text: var(--color-text);
 
+  /* Button Primary Inverse (light bg, dark text/arrow) */
+  --button-primary-inverse-bg: var(--color-bg);
+  --button-primary-inverse-text: var(--color-text);
+  --button-primary-inverse-border: var(--color-text);
+  --button-primary-inverse-icon-text: var(--color-text);
+
+  --button-primary-inverse-hover-bg: var(--color-text);
+  --button-primary-inverse-hover-text: var(--color-bg);
+  --button-primary-inverse-hover-border: var(--color-text);
+  --button-primary-inverse-hover-icon-text: var(--color-bg);
+
+  /* Button Primary Icon (primary + circle) */
+  --button-primary-icon-bg: var(--color-text);
+  --button-primary-icon-text-default: var(--color-bg);
+  --button-primary-icon-border-default: var(--color-bg);
+
+  --button-primary-icon-circle-bg: transparent;
+  --button-primary-icon-circle-border: var(--color-bg);
+  --button-primary-icon-circle-text: var(--color-bg);
+
+  --button-primary-icon-hover-bg: var(--color-bg);
+  --button-primary-icon-hover-text: var(--color-text);
+  --button-primary-icon-hover-border: var(--color-text);
+
+  --button-primary-icon-hover-circle-bg: transparent;
+  --button-primary-icon-hover-circle-border: var(--color-text);
+  --button-primary-icon-hover-circle-text: var(--color-text);
+
   /* Button Secondary */
-  --button-secondary-bg: var(--color-bg);
+  --button-secondary-bg: transparent;
   --button-secondary-text: var(--color-text);
   --button-secondary-border: var(--color-text);
 
-  --button-secondary-icon-bg: var(--color-text);
-  --button-secondary-icon-text: var(--color-bg);
+  --button-secondary-icon-bg: transparent;
+  --button-secondary-icon-text: var(--color-text);
   --button-secondary-icon-border: var(--color-text);
 
   --button-secondary-hover-bg: var(--color-text);

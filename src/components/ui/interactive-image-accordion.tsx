@@ -381,17 +381,14 @@ interface InteractiveImageAccordionProps {
 
 export function InteractiveImageAccordion({ steps }: InteractiveImageAccordionProps) {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [isMobile, setIsMobile] = useState(() =>
-    typeof window !== "undefined"
-      ? window.matchMedia("(max-width: 899px)").matches
-      : false
-  )
+  const [isMobile, setIsMobile] = useState(false)
   const [containerWidth, setContainerWidth] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
   const isReduced = useReducedMotion() ?? false
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 899px)")
+    setIsMobile(mq.matches)
     const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
     mq.addEventListener("change", handler)
     return () => mq.removeEventListener("change", handler)

@@ -3,6 +3,7 @@
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { MotionFade } from "@/components/animations/motion-fade"
+import { SiteButton } from "@/components/shared/site-button"
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -11,6 +12,7 @@ export function Hero() {
     offset: ["start start", "end start"],
   })
   const parallaxY = useTransform(scrollYProgress, [0, 1], [0, 80])
+  const seeHowOpacity = useTransform(scrollYProgress, [0, 0.18], [1, 0])
 
   return (
     <section
@@ -84,9 +86,8 @@ export function Hero() {
         </span>
       </div>
 
-      {/* Scroll down — absolute, aligned with "2026" at bottom */}
-      <a
-        href="#problem"
+      {/* See how — fades out as user scrolls */}
+      <motion.div
         className="hero-landscape-iflex"
         style={{
           position: "absolute",
@@ -94,21 +95,38 @@ export function Hero() {
           left: "168px",
           zIndex: 3,
           alignItems: "center",
-          gap: "3px",
-          fontFamily: "var(--font-sans)",
-          fontWeight: 600,
-          fontSize: "16px",
-          color: "var(--color-text)",
-          textDecoration: "none",
-          letterSpacing: "0.01em",
-          transition: "opacity var(--transition-fast)",
-          cursor: "pointer",
+          opacity: seeHowOpacity,
+          pointerEvents: "auto",
         }}
-        onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.55")}
-        onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
       >
-        Scroll down ↓
-      </a>
+        <a
+          href="#problem"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "3px",
+            fontFamily: "var(--font-sans)",
+            fontWeight: 400,
+            fontSize: "18px",
+            color: "var(--color-text)",
+            textDecoration: "none",
+            letterSpacing: "0.01em",
+            transition: "opacity var(--transition-fast)",
+            cursor: "pointer",
+          }}
+          onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.55")}
+          onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
+        >
+          See how{" "}
+          <motion.span
+            animate={{ y: [0, 4, 0] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+            style={{ display: "inline-block" }}
+          >
+            ↓
+          </motion.span>
+        </a>
+      </motion.div>
 
       {/* Photo — absolute right column, art-directed via <picture> */}
       <motion.div
@@ -146,105 +164,65 @@ export function Hero() {
         className="hero-text-col hero-landscape-flex flex-col"
         style={{ minHeight: "100dvh", paddingLeft: "clamp(110px, 13vw, 200px)", paddingRight: "48px" }}
       >
-        {/* Stats */}
-        <div className="hero-stats-row" style={{ paddingTop: "180px", display: "flex", gap: "48px" }}>
-          <MotionFade delay={0.08}>
-            <div>
-              <div
-                style={{
-                  fontFamily: "var(--font-sans)",
-                  fontWeight: 300,
-                  fontSize: "clamp(32px, 5vw, 56px)",
-                  color: "var(--color-text)",
-                  lineHeight: 1,
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                +37
-              </div>
-              <div
-                style={{
-                  fontFamily: "var(--font-sans)",
-                  fontWeight: 400,
-                  fontSize: "clamp(12px, 1.5vw, 16px)",
-                  whiteSpace: "nowrap",
-                  color: "var(--color-text-muted)",
-                  marginTop: "6px",
-                  letterSpacing: "0.02em",
-                }}
-              >
-                Projects completed
-              </div>
-            </div>
-          </MotionFade>
-
-          <MotionFade delay={0.16}>
-            <div>
-              <div
-                style={{
-                  fontFamily: "var(--font-sans)",
-                  fontWeight: 300,
-                  fontSize: "clamp(32px, 5vw, 56px)",
-                  color: "var(--color-text)",
-                  lineHeight: 1,
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                100%
-              </div>
-              <div
-                style={{
-                  fontFamily: "var(--font-sans)",
-                  fontWeight: 400,
-                  fontSize: "clamp(12px, 1.5vw, 16px)",
-                  whiteSpace: "nowrap",
-                  color: "var(--color-text-muted)",
-                  marginTop: "6px",
-                  letterSpacing: "0.02em",
-                }}
-              >
-                Satisfaction Guaranteed
-              </div>
-            </div>
-          </MotionFade>
-        </div>
-
-        {/* Hello + subtitle + scroll down — vertically centered */}
+        {/* Headline + tagline + CTA — vertically centered */}
         <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <div className="hero-hello-block" style={{ transform: "translateY(-80px)" }}>
-            <MotionFade delay={0.28}>
+          <div className="hero-hello-block" style={{ transform: "translateY(-40px)" }}>
+            <MotionFade delay={0.18}>
               <h1
                 className="hero-headline"
                 style={{
                   fontFamily: "var(--font-sans)",
                   fontWeight: 300,
-                  fontSize: "clamp(50px, 12vw, 200px)",
+                  fontSize: "clamp(50px, 10vw, 160px)",
                   color: "var(--color-text)",
                   lineHeight: 0.9,
                   letterSpacing: "-0.02em",
                   margin: 0,
                 }}
               >
-                Hello
+                Growth
               </h1>
             </MotionFade>
 
-            <MotionFade delay={0.42}>
+            <MotionFade delay={0.28}>
+              <p
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontWeight: 300,
+                  fontSize: "clamp(32px, 5vw, 56px)",
+                  color: "var(--color-text)",
+                  lineHeight: 1,
+                  letterSpacing: "-0.01em",
+                  margin: 0,
+                  marginTop: "24px",
+                }}
+              >
+                not just looks.
+              </p>
+            </MotionFade>
+
+            <MotionFade delay={0.38}>
               <p
                 style={{
                   fontFamily: "var(--font-sans)",
                   fontWeight: 400,
+                  fontStyle: "italic",
                   fontSize: "clamp(13px, 1vw, 16px)",
                   color: "var(--color-text-muted)",
                   lineHeight: 1.65,
                   marginTop: "20px",
-                  maxWidth: "320px",
+                  maxWidth: "340px",
                 }}
               >
-                — It&apos;s Rômulo, a conversion-focused web designer
+                I design with one question in mind: does it convert?
               </p>
             </MotionFade>
 
+            <MotionFade delay={0.48}>
+              <div style={{ marginTop: "32px" }}>
+                <SiteButton variant="primary" href="#contact">Start your project</SiteButton>
+              </div>
+            </MotionFade>
           </div>
         </div>
       </div>
@@ -283,19 +261,19 @@ export function Hero() {
           />
         </picture>
 
-        {/* Bottom gradient — expands to cover stats + descriptor + CTA */}
+        {/* Bottom gradient — cinematic, starts early for atmosphere */}
         <div
           aria-hidden="true"
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(to bottom, transparent 45%, color-mix(in srgb, var(--color-bg-dark) 72%, transparent) 62%, color-mix(in srgb, var(--color-bg-dark) 88%, transparent) 100%)",
+            background: "linear-gradient(to bottom, transparent 15%, color-mix(in srgb, var(--color-bg-dark) 28%, transparent) 40%, color-mix(in srgb, var(--color-bg-dark) 78%, transparent) 65%, color-mix(in srgb, var(--color-bg-dark) 96%, transparent) 100%)",
             pointerEvents: "none",
             zIndex: 1,
           }}
         />
 
-        {/* Bottom overlay — left: stats + descriptor, right: CTA */}
+        {/* Bottom overlay — headline + tagline + CTA */}
         <div
           style={{
             position: "absolute",
@@ -304,14 +282,13 @@ export function Hero() {
             right: 0,
             zIndex: 2,
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "flex-end",
-            gap: "clamp(12px, 2vw, 20px)",
-            padding: "0 clamp(24px, 5vw, 56px)",
-            paddingBottom: "max(40px, calc(env(safe-area-inset-bottom) + 32px))",
+            paddingLeft: "clamp(40px, 8vw, 64px)",
+            paddingRight: "clamp(40px, 8vw, 64px)",
+            paddingBottom: "max(clamp(36px, 7svh, 52px), calc(env(safe-area-inset-bottom) + 24px))",
           }}
         >
-          {/* Left: stats + descriptor */}
+          {/* Left: headline + tagline + CTA */}
           <div
             style={{
               display: "flex",
@@ -319,32 +296,61 @@ export function Hero() {
               gap: 0,
               flex: "1 1 auto",
               minWidth: 0,
+              zIndex: 3,
+              position: "relative",
             }}
           >
-            {/* Stats — stacked vertically */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 2vw, 24px)" }}>
-              <div>
-                <div className="portrait-stats-number">+37</div>
-                <div className="portrait-stats-label">Projects completed</div>
+            {/* Headline block */}
+            <div>
+              <div
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontWeight: 600,
+                  fontSize: "clamp(50px, 14vw, 72px)",
+                  lineHeight: 0.88,
+                  letterSpacing: "-0.02em",
+                  color: "var(--color-text-inverse)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Growth
               </div>
-              <div>
-                <div className="portrait-stats-number">100%</div>
-                <div className="portrait-stats-label">Satisfaction Guaranteed</div>
+              <div
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontWeight: 400,
+                  fontSize: "clamp(24px, 6.5vw, 36px)",
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.01em",
+                  color: "var(--color-text-inverse)",
+                  marginTop: "8px",
+                  whiteSpace: "normal",
+                }}
+              >
+                not just looks.
               </div>
             </div>
 
-            {/* Professional info */}
-            <div className="portrait-professional-info" style={{ marginTop: "clamp(64px, 12vw, 112px)" }}>
-              <span className="portrait-professional-info-line">Freelancer</span>
-              <span className="portrait-professional-info-line">Designer &amp; Developer</span>
-            </div>
-          </div>
+            {/* Tagline — single paragraph */}
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontWeight: 400,
+                fontStyle: "italic",
+                fontSize: "clamp(11px, 3vw, 13px)",
+                lineHeight: 1.25,
+                color: "var(--color-text-inverse)",
+                margin: 0,
+                marginTop: "clamp(20px, 4.5vw, 28px)",
+                whiteSpace: "normal",
+              }}
+            >
+              I design with one question in mind:<br />does it convert?
+            </p>
 
-          {/* Right: CTA */}
-          <div style={{ display: "flex", alignItems: "flex-end", flexShrink: 0 }}>
-            <a href="#contact" className="portrait-cta-button">
-              Start your project ↗
-            </a>
+            <div style={{ marginTop: "clamp(40px, 8vw, 56px)" }}>
+              <SiteButton variant="primary-inverse" href="#contact">Start your project</SiteButton>
+            </div>
           </div>
         </div>
       </div>
