@@ -1017,7 +1017,7 @@
       "label": "labelStyle",
       "file_type": "code",
       "source_file": "src/components/forms/contact-form.tsx",
-      "source_location": "L34",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "forms_contact_form_labelstyle",
       "community": 67,
@@ -1027,7 +1027,7 @@
       "label": "errorStyle",
       "file_type": "code",
       "source_file": "src/components/forms/contact-form.tsx",
-      "source_location": "L45",
+      "source_location": "L47",
       "_origin": "ast",
       "id": "forms_contact_form_errorstyle",
       "community": 67,
@@ -1037,7 +1037,7 @@
       "label": "ContactForm()",
       "file_type": "code",
       "source_file": "src/components/forms/contact-form.tsx",
-      "source_location": "L52",
+      "source_location": "L54",
       "_origin": "ast",
       "id": "forms_contact_form_contactform",
       "community": 56,
@@ -1367,7 +1367,7 @@
       "label": "InfoModal()",
       "file_type": "code",
       "source_file": "src/components/shared/info-modal.tsx",
-      "source_location": "L15",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "shared_info_modal_infomodal",
       "community": 56,
@@ -1447,7 +1447,7 @@
       "label": "StartProjectModal()",
       "file_type": "code",
       "source_file": "src/components/shared/start-project-modal.tsx",
-      "source_location": "L11",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "shared_start_project_modal_startprojectmodal",
       "community": 56,
@@ -14535,5 +14535,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9be50b90387ad554917856dc39e0540b55a18775"
+  "built_at_commit": "b676302d6d687c16ec8e58169a585f83ae99e381"
 }

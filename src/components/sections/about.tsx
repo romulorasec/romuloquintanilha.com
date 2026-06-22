@@ -402,7 +402,7 @@ export function About() {
           {/* Single button — CSS grid-area places it below paragraph on desktop, after skills on mobile */}
           <div className="about-btn">
             <InfoModal
-              trigger={<SiteButton variant="secondary">Learn More</SiteButton>}
+              trigger={<SiteButton variant="primary">Learn More</SiteButton>}
               title="Design gets you noticed. Architecture gets you paid."
             >
               <AboutModalCopy />
