@@ -10,15 +10,21 @@ interface InfoModalProps {
   trigger: React.ReactNode
   title: string
   children: React.ReactNode
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
 }
 
-export function InfoModal({ trigger, title, children }: InfoModalProps) {
-  const [open, setOpen] = React.useState(false)
+export function InfoModal({ trigger, title, children, open: controlledOpen, onOpenChange: controlledOnOpenChange }: InfoModalProps) {
+  const [internalOpen, setInternalOpen] = React.useState(false)
   const lenis = useLenis()
 
-  const handleOpenChange = (isOpen: boolean) => {
-    setOpen(isOpen)
-    if (isOpen) {
+  const isControlled = controlledOpen !== undefined
+  const isOpen = isControlled ? controlledOpen : internalOpen
+  const setIsOpen = isControlled ? (controlledOnOpenChange ?? (() => {})) : setInternalOpen
+
+  const handleOpenChange = (nextOpen: boolean) => {
+    setIsOpen(nextOpen)
+    if (nextOpen) {
       lenis?.stop()
     } else {
       lenis?.start()
@@ -26,7 +32,7 @@ export function InfoModal({ trigger, title, children }: InfoModalProps) {
   }
 
   return (
-    <Dialog open={open} onOpenChange={handleOpenChange}>
+    <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogPortal>
         <DialogPrimitive.Overlay
