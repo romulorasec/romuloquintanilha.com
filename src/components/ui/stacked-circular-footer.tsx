@@ -1,8 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 import { MotionFade } from "@/components/animations/motion-fade"
+import { StartProjectModal } from "@/components/shared/start-project-modal"
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -63,6 +65,7 @@ function StackedCircularFooter({
   ],
   copyright = `© 2026 ${name}. All rights reserved.`,
 }: StackedCircularFooterProps) {
+  const [contactModalOpen, setContactModalOpen] = useState(false)
   const nameParts = name.split(" ")
   const firstName = nameParts[0]
   const lastName = nameParts.slice(1).join(" ")
@@ -326,25 +329,49 @@ function StackedCircularFooter({
               </p>
             </div>
             <nav className="footer-nav">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  style={{
-                    fontSize: "13px",
-                    fontWeight: 400,
-                    color: "var(--color-text-inverse-muted)",
-                    textDecoration: "none",
-                    transition: "color 150ms ease",
-                    letterSpacing: "0.01em",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text-inverse)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-inverse-muted)")}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isContact = link.label === "Contact"
+                const sharedStyle: React.CSSProperties = {
+                  fontSize: "13px",
+                  fontWeight: 400,
+                  color: "var(--color-text-inverse-muted)",
+                  textDecoration: "none",
+                  transition: "color 150ms ease",
+                  letterSpacing: "0.01em",
+                  cursor: "pointer",
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  fontFamily: "inherit",
+                }
+                return isContact ? (
+                  <button
+                    key={link.href}
+                    onClick={() => setContactModalOpen(true)}
+                    style={sharedStyle}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text-inverse)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-inverse-muted)")}
+                  >
+                    {link.label}
+                  </button>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    style={sharedStyle}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text-inverse)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-inverse-muted)")}
+                  >
+                    {link.label}
+                  </a>
+                )
+              })}
             </nav>
+            <StartProjectModal
+              open={contactModalOpen}
+              onOpenChange={setContactModalOpen}
+              sourcePage="footer"
+            />
           </div>
         </MotionFade>
       </div>
