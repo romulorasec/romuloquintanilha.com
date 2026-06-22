@@ -1,5 +1,6 @@
 "use client"
 
+import React, { useState } from "react"
 import { InfoModal } from "@/components/shared/info-modal"
 import { ContactForm } from "@/components/forms/contact-form"
 
@@ -10,10 +11,45 @@ interface StartProjectModalProps {
   onOpenChange?: (open: boolean) => void
 }
 
-export function StartProjectModal({ trigger, sourcePage, open, onOpenChange }: StartProjectModalProps) {
+export function StartProjectModal({
+  trigger,
+  sourcePage,
+  open: externalOpen,
+  onOpenChange: externalOnOpenChange,
+}: StartProjectModalProps) {
+  const [internalOpen, setInternalOpen] = useState(false)
+  const isExternallyControlled = externalOpen !== undefined
+
+  const open = isExternallyControlled ? externalOpen : internalOpen
+
+  const handleOpenChange = (value: boolean) => {
+    if (!isExternallyControlled) setInternalOpen(value)
+    externalOnOpenChange?.(value)
+  }
+
+  // Uncontrolled mode: InfoModal is always controlled here, so inject
+  // the open handler directly into the trigger via cloneElement.
+  const triggerElement =
+    !isExternallyControlled && trigger && React.isValidElement(trigger)
+      ? React.cloneElement(
+          trigger as React.ReactElement<{ onClick?: () => void }>,
+          { onClick: () => handleOpenChange(true) }
+        )
+      : null
+
   return (
-    <InfoModal trigger={trigger} title="Start your project" open={open} onOpenChange={onOpenChange}>
-      <ContactForm sourcePage={sourcePage} />
-    </InfoModal>
+    <>
+      {triggerElement}
+      <InfoModal
+        title="Start your project"
+        open={open}
+        onOpenChange={handleOpenChange}
+      >
+        <ContactForm
+          sourcePage={sourcePage}
+          onSuccess={() => handleOpenChange(false)}
+        />
+      </InfoModal>
+    </>
   )
 }
