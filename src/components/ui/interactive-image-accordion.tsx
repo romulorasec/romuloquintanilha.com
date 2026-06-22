@@ -388,10 +388,10 @@ export function InteractiveImageAccordion({ steps }: InteractiveImageAccordionPr
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 899px)")
-    setIsMobile(mq.matches)
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
-    mq.addEventListener("change", handler)
-    return () => mq.removeEventListener("change", handler)
+    const handler = (e: MediaQueryListEvent | MediaQueryList) => setIsMobile(e.matches)
+    handler(mq)
+    mq.addEventListener("change", handler as EventListener)
+    return () => mq.removeEventListener("change", handler as EventListener)
   }, [])
 
   useEffect(() => {

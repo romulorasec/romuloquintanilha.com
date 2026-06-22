@@ -284,8 +284,8 @@ export function About() {
                   marginTop: "clamp(24px, 3vw, 40px)",
                 }}
               >
-                I don't design websites to impress. I design them to sell.
-                A website isn't a digital business card, it's a salesperson
+                I don&apos;t design websites to impress. I design them to sell.
+                A website isn&apos;t a digital business card, it&apos;s a salesperson
                 who never clocks out, never stops closing, and works every
                 hour your doors are shut. I build the version that earns its keep.
               </p>
