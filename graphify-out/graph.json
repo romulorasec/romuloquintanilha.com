@@ -847,7 +847,7 @@
       "label": "plusJakarta",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "app_layout_plusjakarta",
       "community": 32,
@@ -857,7 +857,7 @@
       "label": "metadata",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "app_layout_metadata",
       "community": 32,
@@ -867,7 +867,7 @@
       "label": "RootLayout()",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L16",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "app_layout_rootlayout",
       "community": 32,
@@ -1367,7 +1367,7 @@
       "label": "InfoModal()",
       "file_type": "code",
       "source_file": "src/components/shared/info-modal.tsx",
-      "source_location": "L15",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "shared_info_modal_infomodal",
       "community": 56,
@@ -1447,7 +1447,7 @@
       "label": "StartProjectModal()",
       "file_type": "code",
       "source_file": "src/components/shared/start-project-modal.tsx",
-      "source_location": "L11",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "shared_start_project_modal_startprojectmodal",
       "community": 56,
@@ -14535,5 +14535,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3fec7db007e384c7768c0bed240cb77531f972b1"
+  "built_at_commit": "10bff3fa946a1c1cdf7843452511ab2fdae085dd"
 }

@@ -65,13 +65,13 @@
     "semantic_hash": "f7165e039285de7fb4f03c0bb24e8ec3"
   },
   "src/components/layout/navbar.tsx": {
-    "mtime": 1782117081.8820405,
-    "ast_hash": "8d0a1576570098f8cebeb9128201b5a6",
+    "mtime": 1782153806.3960118,
+    "ast_hash": "8f47a102476f39369b9aa9c8d71ef56b",
     "semantic_hash": ""
   },
   "src/components/sections/about.tsx": {
-    "mtime": 1782111096.1155014,
-    "ast_hash": "3a5f74aa14adaa7fa0338589ab50d4e7",
+    "mtime": 1782153314.2312796,
+    "ast_hash": "172940f9a77bfc97b2b0883bb9405c80",
     "semantic_hash": ""
   },
   "src/components/sections/footer.tsx": {
@@ -185,9 +185,9 @@
     "semantic_hash": "2b0e9e810580f227dd255d9b78a83835"
   },
   "src/components/ui/interactive-image-accordion.tsx": {
-    "mtime": 1782017284.179435,
-    "ast_hash": "96a42676f24110d6a5e048062163d296",
-    "semantic_hash": "96a42676f24110d6a5e048062163d296"
+    "mtime": 1782153314.2320313,
+    "ast_hash": "29203f26fcfb53e145e10665dd862cea",
+    "semantic_hash": ""
   },
   "src/components/ui/label.tsx": {
     "mtime": 1780187281.824342,
@@ -265,9 +265,9 @@
     "semantic_hash": "485d47f9e6f866e564685e6584e1e747"
   },
   "src/components/ui/testimonial-slider-1.tsx": {
-    "mtime": 1781984757.9767833,
-    "ast_hash": "d4702af89a5ba4895afb03deb90a5df6",
-    "semantic_hash": "d4702af89a5ba4895afb03deb90a5df6"
+    "mtime": 1782153314.2326744,
+    "ast_hash": "726d7dce96e2027c1a3d85fcfe2e7b8e",
+    "semantic_hash": ""
   },
   "src/components/ui/textarea.tsx": {
     "mtime": 1780187282.9468958,
@@ -435,8 +435,8 @@
     "semantic_hash": "4499b3f563b60d8d485e970d2e08ea99"
   },
   "src/components/shared/info-modal.tsx": {
-    "mtime": 1782117463.8256164,
-    "ast_hash": "f9a851205a5ae65a5abb37fd894708d3",
+    "mtime": 1782153806.3967836,
+    "ast_hash": "6177526b3aebd5e6970bf214a290f3d5",
     "semantic_hash": ""
   },
   "src/lib/validations/contact.ts": {
@@ -450,13 +450,13 @@
     "semantic_hash": ""
   },
   "src/components/forms/contact-form.tsx": {
-    "mtime": 1782116592.1838763,
-    "ast_hash": "9e66aea5768664dbcfa07083336393f2",
+    "mtime": 1782153314.2304087,
+    "ast_hash": "4be51ed3c6b30c6dbb6864a475b7a5d8",
     "semantic_hash": ""
   },
   "src/components/shared/start-project-modal.tsx": {
-    "mtime": 1782116592.1868303,
-    "ast_hash": "9f239139f53b5c4490063b6fdcb22c73",
+    "mtime": 1782153806.397571,
+    "ast_hash": "b732978002c9acd452b32b991c5b2329",
     "semantic_hash": ""
   }
 }

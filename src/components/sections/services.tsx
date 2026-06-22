@@ -105,7 +105,7 @@ export function Services() {
           </div>
 
           <div className="services-btn">
-            <SiteButton variant="secondary" href="#contact">
+            <SiteButton variant="primary" href="#contact">
               Learn More
             </SiteButton>
           </div>

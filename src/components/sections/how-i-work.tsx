@@ -114,7 +114,7 @@ export function HowIWork() {
           <MotionFade delay={0.35} y={10}>
             <StartProjectModal
               sourcePage="how-i-work"
-              trigger={<SiteButton variant="secondary">Start your project</SiteButton>}
+              trigger={<SiteButton variant="primary">Start your project</SiteButton>}
             />
           </MotionFade>
         </div>
