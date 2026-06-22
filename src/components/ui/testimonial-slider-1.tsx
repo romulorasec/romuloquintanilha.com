@@ -117,6 +117,7 @@ export const TestimonialSlider = ({
                   }}
                   aria-label={`View review from ${review.name}`}
                 >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={review.thumbnailSrc}
                     alt={review.name}

@@ -169,7 +169,7 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
     <AnimatePresence mode="wait">
       <motion.form
         key="form"
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={(e) => { void handleSubmit(onSubmit)(e) }}
         noValidate
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
