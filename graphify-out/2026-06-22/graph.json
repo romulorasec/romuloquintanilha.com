@@ -1017,7 +1017,7 @@
       "label": "labelStyle",
       "file_type": "code",
       "source_file": "src/components/forms/contact-form.tsx",
-      "source_location": "L36",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "forms_contact_form_labelstyle",
       "community": 67,
@@ -1027,7 +1027,7 @@
       "label": "errorStyle",
       "file_type": "code",
       "source_file": "src/components/forms/contact-form.tsx",
-      "source_location": "L47",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "forms_contact_form_errorstyle",
       "community": 67,
@@ -1037,7 +1037,7 @@
       "label": "ContactForm()",
       "file_type": "code",
       "source_file": "src/components/forms/contact-form.tsx",
-      "source_location": "L54",
+      "source_location": "L52",
       "_origin": "ast",
       "id": "forms_contact_form_contactform",
       "community": 56,
@@ -14535,5 +14535,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3fec7db007e384c7768c0bed240cb77531f972b1"
+  "built_at_commit": "9be50b90387ad554917856dc39e0540b55a18775"
 }

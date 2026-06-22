@@ -197,7 +197,7 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
         </div>
 
         {/* Row: Name + Email */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3">
           <div>
             <label htmlFor="cf-name" style={labelStyle}>Name *</label>
             <input
@@ -225,7 +225,7 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
         </div>
 
         {/* Row: Phone + Project type */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3">
           <div>
             <label htmlFor="cf-phone" style={labelStyle}>Phone / WhatsApp</label>
             <input
