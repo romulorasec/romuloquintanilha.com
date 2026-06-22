@@ -164,10 +164,17 @@ export function Navbar() {
             </nav>
 
             <div style={{ marginTop: "40px" }} onClick={() => setOpen(false)}>
-              <StartProjectModal
-                sourcePage="navbar"
-                trigger={<SiteButton variant="primary">Start your project</SiteButton>}
-              />
+              {/* stopPropagation + delayed close: dialog needs to mount in its
+                  Portal before the drawer removes the trigger from the DOM */}
+              <div onClick={(e) => {
+                e.stopPropagation()
+                setTimeout(() => setOpen(false), 80)
+              }}>
+                <StartProjectModal
+                  sourcePage="navbar"
+                  trigger={<SiteButton variant="primary">Start your project</SiteButton>}
+                />
+              </div>
             </div>
           </Drawer.Content>
         </Drawer.Portal>

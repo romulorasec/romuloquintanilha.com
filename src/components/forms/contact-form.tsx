@@ -18,10 +18,12 @@ interface ContactFormProps {
 
 const fieldStyle: React.CSSProperties = {
   width: "100%",
-  padding: "10px 14px",
+  height: "44px",
+  padding: "0 14px",
   fontFamily: "var(--font-sans)",
   fontSize: "14px",
   fontWeight: 400,
+  lineHeight: "44px",
   color: "var(--color-text)",
   backgroundColor: "var(--color-surface-raised)",
   border: "1px solid var(--color-border)",
@@ -173,7 +175,7 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
-        style={{ display: "flex", flexDirection: "column", gap: "20px" }}
+        style={{ display: "flex", flexDirection: "column", gap: "clamp(10px, 1.5vh, 16px)", flex: 1, minHeight: 0 }}
       >
         {/* Honeypot — visually hidden, not interactable */}
         <div
@@ -195,9 +197,7 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
         </div>
 
         {/* Row: Name + Email */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}
-          className="contact-form-row"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label htmlFor="cf-name" style={labelStyle}>Name *</label>
             <input
@@ -225,9 +225,7 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
         </div>
 
         {/* Row: Phone + Project type */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}
-          className="contact-form-row"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label htmlFor="cf-phone" style={labelStyle}>Phone / WhatsApp</label>
             <input
@@ -280,19 +278,21 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
           {errors.budget && <p style={errorStyle}>{errors.budget.message}</p>}
         </div>
 
-        {/* Message */}
-        <div>
+        {/* Message — flex: 1 makes textarea grow to fill remaining modal height */}
+        <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column" }}>
           <label htmlFor="cf-message" style={labelStyle}>Tell me about your project *</label>
           <textarea
             id="cf-message"
-            rows={4}
             {...register("message")}
             style={{
               ...fieldStyle,
-              resize: "vertical",
-              minHeight: "100px",
-              maxHeight: "220px",
+              flex: 1,
+              height: "auto",
+              minHeight: "60px",
+              maxHeight: "none",
               lineHeight: 1.6,
+              padding: "10px 14px",
+              resize: "none",
             }}
             disabled={formState === "submitting"}
             placeholder="Describe your goals, timeline, and anything else that helps me understand your project…"
@@ -332,7 +332,6 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
             cursor: formState === "submitting" ? "not-allowed" : "pointer",
             opacity: formState === "submitting" ? 0.7 : 1,
             transition: "opacity 200ms ease",
-            alignSelf: "flex-start",
           }}
         >
           {formState === "submitting" ? (
