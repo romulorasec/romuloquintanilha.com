@@ -27,6 +27,13 @@ export function Navbar() {
   }, [])
 
   return (
+    <>
+    {/* Dialog rendered outside the Drawer tree — isolated from Vaul's DOM lifecycle */}
+    <StartProjectModal
+      sourcePage="navbar"
+      open={projectModalOpen}
+      onOpenChange={setProjectModalOpen}
+    />
     <header
       style={{
         position: "fixed",
@@ -164,25 +171,21 @@ export function Navbar() {
               ))}
             </nav>
 
-            <div
-              style={{ marginTop: "40px" }}
-              onClick={(e) => {
-                e.stopPropagation()
-                setOpen(false)
-                // Open modal after drawer exit animation completes (~300ms)
-                setTimeout(() => setProjectModalOpen(true), 320)
-              }}
-            >
-              <StartProjectModal
-                sourcePage="navbar"
-                open={projectModalOpen}
-                onOpenChange={setProjectModalOpen}
-                trigger={<SiteButton variant="primary">Start your project</SiteButton>}
-              />
+            <div style={{ marginTop: "40px" }}>
+              <SiteButton
+                variant="primary"
+                onClick={() => {
+                  setOpen(false)
+                  setTimeout(() => setProjectModalOpen(true), 320)
+                }}
+              >
+                Start your project
+              </SiteButton>
             </div>
           </Drawer.Content>
         </Drawer.Portal>
       </Drawer.Root>
     </header>
+    </>
   )
 }

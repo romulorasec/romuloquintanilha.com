@@ -7,7 +7,7 @@ import { useLenis } from "lenis/react"
 import { Dialog, DialogTrigger, DialogPortal } from "@/components/ui/dialog"
 
 interface InfoModalProps {
-  trigger: React.ReactNode
+  trigger?: React.ReactNode
   title: string
   children: React.ReactNode
   open?: boolean
@@ -33,7 +33,7 @@ export function InfoModal({ trigger, title, children, open: controlledOpen, onOp
 
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
-      {isControlled ? trigger : <DialogTrigger asChild>{trigger}</DialogTrigger>}
+      {!isControlled && trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
       <DialogPortal>
         <DialogPrimitive.Overlay
           className="fixed inset-0 z-[200] bg-black/60 backdrop-blur-md data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0 duration-200"

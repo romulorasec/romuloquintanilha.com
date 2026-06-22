@@ -4,7 +4,7 @@ import { InfoModal } from "@/components/shared/info-modal"
 import { ContactForm } from "@/components/forms/contact-form"
 
 interface StartProjectModalProps {
-  trigger: React.ReactNode
+  trigger?: React.ReactNode
   sourcePage?: string
   open?: boolean
   onOpenChange?: (open: boolean) => void
