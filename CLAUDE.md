@@ -10,6 +10,9 @@ Primary emotion: TRUST and COMPETENCE.
 See @package.json for all dependencies.
 See @SETUP-NOTES.md for installed libs and key file paths.
 
+## Reusable Components
+See @COMPONENTS.md — always check before creating any new UI component.
+
 - Framework: Next.js App Router
 - Language: TypeScript strict mode
 - Styling: Tailwind CSS + CSS custom properties via tokens.css
