@@ -58,7 +58,7 @@ export function InfoModal({ trigger, title, children }: InfoModalProps) {
               style={{
                 fontFamily: "var(--font-sans)",
                 fontWeight: 700,
-                fontSize: "clamp(16px, 3vw, 22px)",
+                fontSize: "clamp(20px, 3vw, 22px)",
                 color: "var(--color-text)",
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",

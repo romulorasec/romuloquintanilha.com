@@ -8,7 +8,7 @@ import { InfoModal } from "@/components/shared/info-modal"
 const bodyStyle: React.CSSProperties = {
   fontFamily: "var(--font-sans)",
   fontWeight: 400,
-  fontSize: "clamp(14px, 1.1vw, 16px)",
+  fontSize: "clamp(16px, 1.1vw, 17px)",
   color: "var(--color-text)",
   lineHeight: 1.8,
   margin: 0,
@@ -17,7 +17,7 @@ const bodyStyle: React.CSSProperties = {
 const strongStyle: React.CSSProperties = {
   fontFamily: "var(--font-sans)",
   fontWeight: 400,
-  fontSize: "clamp(14px, 1.1vw, 16px)",
+  fontSize: "clamp(16px, 1.1vw, 17px)",
   color: "var(--color-text)",
   lineHeight: 1.8,
   margin: 0,
@@ -167,7 +167,7 @@ function AboutModalCopy() {
               style={{
                 fontFamily: "var(--font-sans)",
                 fontWeight: 600,
-                fontSize: "clamp(18px, 2vw, 24px)",
+                fontSize: "clamp(20px, 2vw, 24px)",
                 color: "var(--color-text)",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.25,
