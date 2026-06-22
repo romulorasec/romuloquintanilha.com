@@ -30,10 +30,10 @@ export function InfoModal({ trigger, title, children }: InfoModalProps) {
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogPortal>
         <DialogPrimitive.Overlay
-          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0 duration-200"
+          className="fixed inset-0 z-[200] bg-black/60 backdrop-blur-md data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0 duration-200"
         />
         <DialogPrimitive.Content
-          className="fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 w-full max-w-[min(720px,calc(100vw-2rem))] max-h-[85svh] flex flex-col outline-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 duration-200"
+          className="fixed top-1/2 left-1/2 z-[201] -translate-x-1/2 -translate-y-1/2 w-full max-w-[min(720px,calc(100vw-2rem))] max-h-[85svh] flex flex-col outline-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 duration-200"
           style={{
             backgroundColor: "var(--color-bg)",
             border: "1px solid var(--color-border)",
@@ -97,13 +97,18 @@ export function InfoModal({ trigger, title, children }: InfoModalProps) {
             </DialogPrimitive.Close>
           </div>
 
-          {/* Scrollable body — data-lenis-prevent stops Lenis from calling preventDefault on wheel events here */}
+          {/* Scrollable body — flex:1 + minHeight:0 is required for overflow:auto
+              to work inside a flex column container */}
           <div
             data-lenis-prevent
             style={{
+              flex: 1,
+              minHeight: 0,
+              display: "flex",
+              flexDirection: "column",
               overflowY: "auto",
-              padding: "clamp(24px, 4vw, 40px)",
-              paddingTop: "clamp(20px, 3vw, 32px)",
+              WebkitOverflowScrolling: "touch",
+              padding: "clamp(20px, 3vw, 32px) clamp(24px, 4vw, 40px)",
             }}
           >
             {children}
