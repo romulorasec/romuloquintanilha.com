@@ -4,6 +4,7 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { MotionFade } from "@/components/animations/motion-fade"
 import { SiteButton } from "@/components/shared/site-button"
+import { StartProjectModal } from "@/components/shared/start-project-modal"
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -219,7 +220,10 @@ export function Hero() {
 
             <MotionFade delay={0.48}>
               <div style={{ marginTop: "32px" }}>
-                <SiteButton variant="primary" href="#contact">Start your project</SiteButton>
+                <StartProjectModal
+                  sourcePage="hero-desktop"
+                  trigger={<SiteButton variant="primary">Start your project</SiteButton>}
+                />
               </div>
             </MotionFade>
           </div>
@@ -348,7 +352,10 @@ export function Hero() {
             </p>
 
             <div style={{ marginTop: "clamp(40px, 8vw, 56px)" }}>
-              <SiteButton variant="primary-inverse" href="#contact">Start your project</SiteButton>
+              <StartProjectModal
+                sourcePage="hero-mobile"
+                trigger={<SiteButton variant="primary-inverse">Start your project</SiteButton>}
+              />
             </div>
           </div>
         </div>

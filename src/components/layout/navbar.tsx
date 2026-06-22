@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Drawer } from "vaul"
 import { SiteButton } from "@/components/shared/site-button"
+import { StartProjectModal } from "@/components/shared/start-project-modal"
 
 const navLinks = [
   { label: "About me", href: "#about" },
@@ -162,7 +163,10 @@ export function Navbar() {
             </nav>
 
             <div style={{ marginTop: "40px" }} onClick={() => setOpen(false)}>
-              <SiteButton variant="primary" href="#contact">Start your project</SiteButton>
+              <StartProjectModal
+                sourcePage="navbar"
+                trigger={<SiteButton variant="primary">Start your project</SiteButton>}
+              />
             </div>
           </Drawer.Content>
         </Drawer.Portal>

@@ -3,6 +3,7 @@
 import { MotionFade } from "@/components/animations/motion-fade"
 import { InteractiveImageAccordion, type AccordionStep } from "@/components/ui/interactive-image-accordion"
 import { SiteButton } from "@/components/shared/site-button"
+import { StartProjectModal } from "@/components/shared/start-project-modal"
 
 const HOW_I_WORK_STEPS: AccordionStep[] = [
   {
@@ -111,9 +112,10 @@ export function HowIWork() {
         {/* Button: last on mobile portrait, below description on desktop */}
         <div className="how-i-work-btn">
           <MotionFade delay={0.35} y={10}>
-            <SiteButton variant="secondary" href="#contact">
-              Start your project
-            </SiteButton>
+            <StartProjectModal
+              sourcePage="how-i-work"
+              trigger={<SiteButton variant="secondary">Start your project</SiteButton>}
+            />
           </MotionFade>
         </div>
       </div>
