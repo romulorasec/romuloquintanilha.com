@@ -4,10 +4,11 @@ import { useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile"
-import { motion, AnimatePresence } from "framer-motion"
-import { Loader2, CheckCircle } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion"
+import { Loader2 } from "lucide-react"
 import { toast } from "sonner"
 import { contactClientSchema, type ContactClientValues } from "@/lib/validations/contact"
+import { ContactSuccess } from "@/components/forms/contact-success"
 
 type FormState = "idle" | "submitting" | "success"
 
@@ -106,7 +107,6 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
 
       setFormState("success")
       reset()
-      onSuccess?.()
     } catch {
       toast.error("Network error. Please check your connection and try again.")
       setFormState("idle")
@@ -116,53 +116,7 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
   }
 
   if (formState === "success") {
-    return (
-      <motion.div
-        key="success"
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          gap: "20px",
-          padding: "clamp(32px, 6vw, 56px) 0",
-        }}
-      >
-        <CheckCircle
-          size={48}
-          strokeWidth={1.5}
-          style={{ color: "var(--color-text)" }}
-        />
-        <div>
-          <p
-            style={{
-              fontFamily: "var(--font-sans)",
-              fontWeight: 700,
-              fontSize: "clamp(18px, 2.5vw, 22px)",
-              color: "var(--color-text)",
-              marginBottom: "8px",
-            }}
-          >
-            Message received!
-          </p>
-          <p
-            style={{
-              fontFamily: "var(--font-sans)",
-              fontWeight: 400,
-              fontSize: "14px",
-              color: "var(--color-text-muted)",
-              maxWidth: "340px",
-              lineHeight: 1.6,
-            }}
-          >
-            I&apos;ll review your project details and get back to you within 1 business day.
-          </p>
-        </div>
-      </motion.div>
-    )
+    return <ContactSuccess onDismiss={onSuccess} />
   }
 
   return (
