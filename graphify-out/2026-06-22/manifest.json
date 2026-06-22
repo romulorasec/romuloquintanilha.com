@@ -65,7 +65,7 @@
     "semantic_hash": "f7165e039285de7fb4f03c0bb24e8ec3"
   },
   "src/components/layout/navbar.tsx": {
-    "mtime": 1782117982.645153,
+    "mtime": 1782117081.8820405,
     "ast_hash": "8d0a1576570098f8cebeb9128201b5a6",
     "semantic_hash": ""
   },
@@ -435,8 +435,8 @@
     "semantic_hash": "4499b3f563b60d8d485e970d2e08ea99"
   },
   "src/components/shared/info-modal.tsx": {
-    "mtime": 1782117982.6463845,
-    "ast_hash": "741765d7566de8e5d314fcb1b85d9a76",
+    "mtime": 1782117463.8256164,
+    "ast_hash": "f9a851205a5ae65a5abb37fd894708d3",
     "semantic_hash": ""
   },
   "src/lib/validations/contact.ts": {
@@ -450,8 +450,8 @@
     "semantic_hash": ""
   },
   "src/components/forms/contact-form.tsx": {
-    "mtime": 1782152175.4798977,
-    "ast_hash": "e80546ee337a162c4d687aff648ab67e",
+    "mtime": 1782116592.1838763,
+    "ast_hash": "9e66aea5768664dbcfa07083336393f2",
     "semantic_hash": ""
   },
   "src/components/shared/start-project-modal.tsx": {
