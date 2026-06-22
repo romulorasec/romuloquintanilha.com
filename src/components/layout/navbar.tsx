@@ -18,6 +18,7 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [projectModalOpen, setProjectModalOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80)
@@ -163,18 +164,21 @@ export function Navbar() {
               ))}
             </nav>
 
-            <div style={{ marginTop: "40px" }} onClick={() => setOpen(false)}>
-              {/* stopPropagation + delayed close: dialog needs to mount in its
-                  Portal before the drawer removes the trigger from the DOM */}
-              <div onClick={(e) => {
+            <div
+              style={{ marginTop: "40px" }}
+              onClick={(e) => {
                 e.stopPropagation()
-                setTimeout(() => setOpen(false), 80)
-              }}>
-                <StartProjectModal
-                  sourcePage="navbar"
-                  trigger={<SiteButton variant="primary">Start your project</SiteButton>}
-                />
-              </div>
+                setOpen(false)
+                // Open modal after drawer exit animation completes (~300ms)
+                setTimeout(() => setProjectModalOpen(true), 320)
+              }}
+            >
+              <StartProjectModal
+                sourcePage="navbar"
+                open={projectModalOpen}
+                onOpenChange={setProjectModalOpen}
+                trigger={<SiteButton variant="primary">Start your project</SiteButton>}
+              />
             </div>
           </Drawer.Content>
         </Drawer.Portal>
