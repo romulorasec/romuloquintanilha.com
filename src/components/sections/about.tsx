@@ -3,6 +3,224 @@
 import { motion, useReducedMotion } from "framer-motion"
 import { MotionFade } from "@/components/animations/motion-fade"
 import { SiteButton } from "@/components/shared/site-button"
+import { InfoModal } from "@/components/shared/info-modal"
+
+const bodyStyle: React.CSSProperties = {
+  fontFamily: "var(--font-sans)",
+  fontWeight: 400,
+  fontSize: "clamp(14px, 1.1vw, 16px)",
+  color: "var(--color-text)",
+  lineHeight: 1.8,
+  margin: 0,
+}
+
+const strongStyle: React.CSSProperties = {
+  fontFamily: "var(--font-sans)",
+  fontWeight: 400,
+  fontSize: "clamp(14px, 1.1vw, 16px)",
+  color: "var(--color-text)",
+  lineHeight: 1.8,
+  margin: 0,
+}
+
+// Between conceptual blocks
+const blockGap = "clamp(28px, 3.5vw, 44px)"
+// Between related sentences within a block
+const lineGap = "clamp(6px, 0.8vw, 10px)"
+
+function Block({ children }: { children: React.ReactNode }) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: lineGap }}>
+      {children}
+    </div>
+  )
+}
+
+function AboutModalCopy() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: blockGap }}>
+
+      {/* 1 — Opening hook: two-sentence diagnosis */}
+      <Block>
+        <p style={bodyStyle}>Most websites do not fail because they look bad.</p>
+        <p style={bodyStyle}>
+          They fail because they make people think too hard, trust too slowly, and leave too easily.
+        </p>
+      </Block>
+
+      {/* 2 — The display window metaphor */}
+      <p style={bodyStyle}>
+        A lot of websites are built like display windows. They show the business, look polished,
+        and wait for someone to care. But waiting is expensive. Every visitor who lands, hesitates,
+        and disappears is a silent lost opportunity.
+      </p>
+
+      {/* 3 — The distinction + bridge to the invisible logic */}
+      <Block>
+        <p style={bodyStyle}>Good design can make a business look professional.</p>
+        <p style={strongStyle}>Strategic architecture makes that business feel safe to choose.</p>
+        <p style={bodyStyle}>
+          That is the part most people never see, but it is the part that decides whether a visitor
+          stays, trusts, clicks, books, buys, or leaves for someone else.
+        </p>
+        <p style={bodyStyle}>It is the logic underneath the surface.</p>
+      </Block>
+
+      {/* 4 — What lives under the surface */}
+      <div
+        style={{
+          borderLeft: "2px solid var(--color-border)",
+          paddingLeft: "clamp(16px, 2vw, 24px)",
+          display: "flex",
+          flexDirection: "column",
+          gap: lineGap,
+        }}
+      >
+        {[
+          "Where the eye lands first.",
+          "What the first ten seconds prove.",
+          "Where doubt gets removed.",
+          "Where trust is built.",
+          "Where the next step becomes obvious.",
+          "Where the page stops acting like a brochure and starts behaving like a closer.",
+        ].map((line) => (
+          <p key={line} style={{ ...strongStyle, fontWeight: 500 }}>{line}</p>
+        ))}
+      </div>
+
+      {/* 5 — What the market sells + quoted requests */}
+      <Block>
+        <p style={bodyStyle}>
+          The market sells the surface because the surface is easy to ask for.
+        </p>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "4px",
+            padding: "clamp(12px, 2vw, 20px)",
+            marginTop: "4px",
+            backgroundColor: "var(--color-surface)",
+            borderRadius: "8px",
+          }}
+        >
+          {['"Make it modern."', '"Make it clean."', '"Make it look like that competitor."'].map((line) => (
+            <p key={line} style={{ ...bodyStyle, fontStyle: "italic", color: "var(--color-text)", margin: 0 }}>{line}</p>
+          ))}
+        </div>
+        <p style={bodyStyle}>Those requests make sense, but they are not the real job.</p>
+      </Block>
+
+      {/* 6 — The real job + what a page that works looks like */}
+      <Block>
+        <p style={strongStyle}>
+          The real job is to take the most visited piece of your business and turn it into one of
+          your strongest points of sale.
+        </p>
+        <div style={{ display: "flex", flexDirection: "column", gap: lineGap, marginTop: "4px" }}>
+          {[
+            "A page that works when you are busy.",
+            "A page that works when your team is offline.",
+            "A page that works before someone ever talks to you.",
+            "A page that does not just look credible, but helps people feel confident enough to act.",
+          ].map((line) => (
+            <p key={line} style={{ ...strongStyle, fontWeight: 500 }}>{line}</p>
+          ))}
+        </div>
+      </Block>
+
+      {/* 7 — Where it actually starts + harder questions */}
+      <Block>
+        <p style={bodyStyle}>That does not start with colors, fonts, or layout.</p>
+        <p style={strongStyle}>It starts with harder questions.</p>
+        <div
+          style={{
+            borderLeft: "2px solid var(--color-border)",
+            paddingLeft: "clamp(16px, 2vw, 24px)",
+            display: "flex",
+            flexDirection: "column",
+            gap: lineGap,
+            marginTop: "4px",
+          }}
+        >
+          {[
+            "Who is landing here?",
+            "What are they afraid of?",
+            "What are they comparing you against?",
+            "What do they need to believe before they move forward?",
+            "Where does friction help the decision, and where is it quietly costing you the deal?",
+          ].map((line) => (
+            <p key={line} style={bodyStyle}>{line}</p>
+          ))}
+        </div>
+      </Block>
+
+      {/* 8 — Pivot: the numbers + the approach */}
+      <Block>
+        <p style={bodyStyle}>Those questions do not show up on a moodboard.</p>
+        <p style={bodyStyle}>They show up later, in the numbers.</p>
+        <p style={{ ...strongStyle, marginTop: "4px" }}>I build websites with that order in mind:</p>
+        <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "4px" }}>
+          {["Strategy first.", "Architecture second.", "Design on top."].map((line) => (
+            <p
+              key={line}
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontWeight: 600,
+                fontSize: "clamp(18px, 2vw, 24px)",
+                color: "var(--color-text)",
+                letterSpacing: "-0.02em",
+                lineHeight: 1.25,
+                margin: 0,
+              }}
+            >
+              {line}
+            </p>
+          ))}
+        </div>
+      </Block>
+
+      {/* 9 — Resolution: beauty is not the finish line */}
+      <Block>
+        <p style={bodyStyle}>Not the other way around.</p>
+        <p style={bodyStyle}>The website still has to look beautiful. That part is non-negotiable.</p>
+        <p style={bodyStyle}>I just do not believe beauty is the finish line.</p>
+      </Block>
+
+      {/* 10 — The money on the table */}
+      <p style={bodyStyle}>
+        Because a beautiful website that does not build trust, remove doubt, or move people toward
+        action is still leaving money on the table.
+      </p>
+
+      {/* 11 — The closer: punchy, isolated */}
+      <Block>
+        <p style={bodyStyle}>
+          So if you have ever paid for a website that looked great when it launched, but then just
+          sat there doing nothing, you already know what was missing.
+        </p>
+        <p style={bodyStyle}>It was not more decoration.</p>
+        <p
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontWeight: 600,
+            fontSize: "clamp(18px, 2vw, 24px)",
+            color: "var(--color-text)",
+            letterSpacing: "-0.02em",
+            lineHeight: 1.2,
+            margin: 0,
+          }}
+        >
+          It was architecture.
+        </p>
+        <p style={{ ...bodyStyle, paddingBottom: "8px" }}>
+          The invisible structure that turns attention into trust, and trust into action.
+        </p>
+      </Block>
+
+    </div>
+  )
+}
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -183,9 +401,12 @@ export function About() {
 
           {/* Single button — CSS grid-area places it below paragraph on desktop, after skills on mobile */}
           <div className="about-btn">
-            <SiteButton variant="secondary" href="#contact">
-              Learn More
-            </SiteButton>
+            <InfoModal
+              trigger={<SiteButton variant="secondary">Learn More</SiteButton>}
+              title="Design gets you noticed. Architecture gets you paid."
+            >
+              <AboutModalCopy />
+            </InfoModal>
           </div>
         </div>
       </motion.div>
