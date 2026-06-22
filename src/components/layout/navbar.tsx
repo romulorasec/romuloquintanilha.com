@@ -127,6 +127,7 @@ export function Navbar() {
               flexDirection: "column",
             }}
           >
+            <Drawer.Title className="sr-only">Navigation menu</Drawer.Title>
             <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "32px" }}>
               <button
                 onClick={() => setOpen(false)}
