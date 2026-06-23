@@ -5,6 +5,7 @@ import { Code2, Award, TrendingUp, Share2 } from "lucide-react"
 import { MotionFade } from "@/components/animations/motion-fade"
 import { SiteButton } from "@/components/shared/site-button"
 import { InfoModal } from "@/components/shared/info-modal"
+import { StartProjectModal } from "@/components/shared/start-project-modal"
 import type { LucideIcon } from "lucide-react"
 
 interface Service {
@@ -187,7 +188,7 @@ const SERVICES: Service[] = [
             margin: 0,
           }}
         >
-          You Post. Almost No One Sees It. That&rsquo;s Not a Flaw. That&rsquo;s the Design.
+          You post. Almost no one sees it. That&rsquo;s not a flaw. That&rsquo;s the design.
         </h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 1.8vw, 20px)" }}>
           {[
@@ -274,9 +275,14 @@ export function Services() {
           </div>
 
           <div className="services-btn">
-            <SiteButton variant="primary" href="#contact">
-              Learn More
-            </SiteButton>
+            <StartProjectModal
+              sourcePage="services"
+              trigger={
+                <SiteButton variant="primary">
+                  Start your project
+                </SiteButton>
+              }
+            />
           </div>
         </div>
 
@@ -358,7 +364,12 @@ function ServiceCard({ service }: { service: Service }) {
       {/* Learn More */}
       <div style={{ marginTop: "clamp(20px, 2.5vw, 32px)" }}>
         <InfoModal
-          title={title}
+          title={
+            <span style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <Icon size={20} strokeWidth={1.75} aria-hidden />
+              {title}
+            </span>
+          }
           trigger={<SiteButton variant="ghost-icon">Learn More</SiteButton>}
         >
           {modalContent}

@@ -8,7 +8,7 @@ import { Dialog, DialogTrigger, DialogPortal } from "@/components/ui/dialog"
 
 interface InfoModalProps {
   trigger?: React.ReactNode
-  title: string
+  title: React.ReactNode
   children: React.ReactNode
   open?: boolean
   onOpenChange?: (open: boolean) => void
