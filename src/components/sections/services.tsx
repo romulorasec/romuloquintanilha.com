@@ -21,7 +21,7 @@ const SERVICES: Service[] = [
   {
     icon: Code2,
     title: "Web Development",
-    description: "There are websites that represent a business. And websites that grow one. You've seen the first kind your whole life. Most people never find out the second kind exists.",
+    description: "There are websites that represent a business. And websites that grow one. You've seen the first kind your whole life. Most people never find out the second kind exists. Which one is yours?",
     charcoal: true,
     rotated: true,
     delay: 0.08,
@@ -71,7 +71,7 @@ const SERVICES: Service[] = [
   {
     icon: Award,
     title: "Brand Identity",
-    description: "Before anyone reads a word, they decide what you're worth. Most businesses spend years on the product and ten minutes on that decision.",
+    description: "Before anyone reads a word, they decide what you're worth. Most businesses spend years on the product and ten minutes on that decision. Find out what yours is saying!",
     charcoal: false,
     rotated: false,
     delay: 0.16,
@@ -121,11 +121,51 @@ const SERVICES: Service[] = [
   {
     icon: TrendingUp,
     title: "Paid traffic",
-    description: "Strategic ad campaigns that attract the right audience and convert attention into revenue.",
+    description: "Right now, you're waiting for customers to find you. There's a way to find them first, exactly when they're ready to buy. Most owners never knew it was this direct. Check out how it works!",
     charcoal: false,
     rotated: false,
     delay: 0.24,
-    modalContent: <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7 }}>Content coming soon.</p>,
+    modalContent: (
+      <div style={{ display: "flex", flexDirection: "column", gap: "clamp(20px, 2.5vw, 28px)" }}>
+        <h2
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontWeight: 600,
+            fontSize: "clamp(22px, 2.5vw, 30px)",
+            color: "var(--color-text)",
+            lineHeight: 1.25,
+            letterSpacing: "-0.02em",
+            margin: 0,
+          }}
+        >
+          You Built a Business and Hoped People Would Find It. There&rsquo;s a Better Way Than Hope.
+        </h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 1.8vw, 20px)" }}>
+          {[
+            "Think about how customers reach you today. Someone hears your name, stumbles across you online, drives past your door. You wait, and some of them show up. That's most businesses. Built on hope and good luck.",
+            "Now imagine the opposite. Instead of waiting for the right person to find you, you reach them first. At the exact moment they're looking for what you sell, your business is the one in front of them. Not by accident. By design.",
+            "That's what paid traffic actually is. Not a cost. Not a gamble for big companies with money to burn. It's the one channel where you decide who sees you, when they see you, and how often. You stop being at the mercy of who happens to walk by.",
+            "Done badly, it burns money. Done right, it's the closest thing to a growth switch a business has. You turn it up, more of the right people show up. You turn it down, it slows. For the first time, the flow of customers is something you control instead of something you wait for.",
+            "I build that system on Meta and Google. The right people, the right moment, a path built to turn attention into customers. Measured every week, so every dollar gets sharper.",
+            "The businesses that grow on purpose stopped waiting to be found. So can yours.",
+          ].map((para, i) => (
+            <p
+              key={i}
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontWeight: i === 0 ? 500 : 400,
+                fontSize: "clamp(14px, 1.3vw, 16px)",
+                color: i === 0 ? "var(--color-text)" : "var(--color-text-muted)",
+                lineHeight: 1.75,
+                margin: 0,
+              }}
+            >
+              {para}
+            </p>
+          ))}
+        </div>
+      </div>
+    ),
   },
   {
     icon: Share2,
