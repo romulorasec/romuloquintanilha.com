@@ -711,7 +711,7 @@
   column-gap: clamp(40px, 6vw, 96px);
 }
 .services-left  { grid-area: left; display: flex; flex-direction: column; }
-.services-cards { grid-area: cards; }
+.services-cards { grid-area: cards; display: grid; grid-template-columns: repeat(2, 1fr); }
 
 @media (max-width: 767px) and (orientation: portrait) {
   .services-grid {
@@ -721,7 +721,7 @@
   }
   .services-left        { display: contents; }
   .services-title-group { order: 1; }
-  .services-cards       { order: 2; }
+  .services-cards       { order: 2; grid-template-columns: 1fr; }
   .services-btn         { order: 3; padding-top: 0; }
 }
 

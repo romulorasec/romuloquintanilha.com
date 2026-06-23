@@ -55,7 +55,7 @@ const SERVICES: Service[] = [
               style={{
                 fontFamily: "var(--font-sans)",
                 fontWeight: i === 0 ? 500 : 400,
-                fontSize: "clamp(14px, 1.3vw, 16px)",
+                fontSize: "clamp(15px, 1.3vw, 16px)",
                 color: i === 0 ? "var(--color-text)" : "var(--color-text-muted)",
                 lineHeight: 1.75,
                 margin: 0,
@@ -105,7 +105,7 @@ const SERVICES: Service[] = [
               style={{
                 fontFamily: "var(--font-sans)",
                 fontWeight: i === 0 ? 500 : 400,
-                fontSize: "clamp(14px, 1.3vw, 16px)",
+                fontSize: "clamp(15px, 1.3vw, 16px)",
                 color: i === 0 ? "var(--color-text)" : "var(--color-text-muted)",
                 lineHeight: 1.75,
                 margin: 0,
@@ -182,7 +182,7 @@ export function Services() {
                 style={{
                   fontFamily: "var(--font-sans)",
                   fontWeight: 400,
-                  fontSize: "clamp(14px, 1.4vw, 16px)",
+                  fontSize: "clamp(15px, 1.4vw, 16px)",
                   color: "var(--color-text-muted)",
                   lineHeight: 1.5,
                 }}
@@ -202,8 +202,6 @@ export function Services() {
         {/* Right: 2×2 card grid */}
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
             gap: "clamp(12px, 1.5vw, 18px)",
           }}
           className="services-cards"
@@ -266,7 +264,7 @@ function ServiceCard({ service }: { service: Service }) {
           style={{
             fontFamily: "var(--font-sans)",
             fontWeight: 400,
-            fontSize: "clamp(14px, 1.3vw, 15px)",
+            fontSize: "clamp(15px, 1.3vw, 16px)",
             color: "var(--color-text-inverse-muted)",
             lineHeight: 1.65,
             margin: 0,
