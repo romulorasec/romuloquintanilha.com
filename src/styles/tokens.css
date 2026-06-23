@@ -56,7 +56,7 @@
   --motion-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 
   /* Button Base */
-  --button-height: clamp(44px, 4vw, 52px);
+  --button-height: clamp(44px, 3.5vw, 48px);
   --button-padding-x: clamp(14px, 2vw, 18px);
   --button-gap: clamp(10px, 2vw, 14px);
   --button-radius: 8px;
@@ -131,4 +131,32 @@
   --button-secondary-hover-icon-bg: transparent;
   --button-secondary-hover-icon-text: var(--color-bg);
   --button-secondary-hover-icon-border: var(--color-bg);
+
+  /* Button Secondary Inverse */
+  --button-secondary-inverse-bg: transparent;
+  --button-secondary-inverse-text: var(--color-text-inverse);
+  --button-secondary-inverse-border: var(--color-text-inverse);
+  --button-secondary-inverse-icon-text: var(--color-text-inverse);
+
+  --button-secondary-inverse-hover-bg: var(--color-text-inverse);
+  --button-secondary-inverse-hover-text: var(--color-text);
+  --button-secondary-inverse-hover-border: var(--color-text-inverse);
+  --button-secondary-inverse-hover-icon-text: var(--color-text);
+
+  /* Button Ghost Icon */
+  --button-ghost-icon-bg: transparent;
+  --button-ghost-icon-text: var(--color-text-inverse);
+  --button-ghost-icon-border: transparent;
+
+  --button-ghost-icon-circle-bg: var(--color-text-inverse);
+  --button-ghost-icon-circle-border: transparent;
+  --button-ghost-icon-circle-text: var(--color-text);
+
+  --button-ghost-icon-hover-bg: transparent;
+  --button-ghost-icon-hover-text: var(--color-text-inverse);
+  --button-ghost-icon-hover-border: transparent;
+
+  --button-ghost-icon-hover-circle-bg: var(--color-text-inverse);
+  --button-ghost-icon-hover-circle-border: var(--color-text-inverse);
+  --button-ghost-icon-hover-circle-text: var(--color-text);
 }

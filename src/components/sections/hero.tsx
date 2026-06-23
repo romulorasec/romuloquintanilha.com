@@ -20,7 +20,7 @@ export function Hero() {
       ref={sectionRef}
       id="hero"
       className="relative overflow-hidden"
-      style={{ minHeight: "100dvh", backgroundColor: "var(--color-bg)" }}
+      style={{ minHeight: "100svh", backgroundColor: "var(--color-bg)" }}
     >
       {/* ===== DESKTOP ===== */}
 
@@ -207,7 +207,7 @@ export function Hero() {
                   fontFamily: "var(--font-sans)",
                   fontWeight: 400,
                   fontStyle: "italic",
-                  fontSize: "clamp(13px, 1vw, 16px)",
+                  fontSize: "clamp(14px, 1.1vw, 16px)",
                   color: "var(--color-text-muted)",
                   lineHeight: 1.65,
                   marginTop: "20px",
@@ -233,7 +233,7 @@ export function Hero() {
       {/* ===== PORTRAIT — unified for phones + portrait tablets ===== */}
       <div
         className="relative hero-portrait"
-        style={{ height: "100dvh", overflow: "hidden" }}
+        style={{ height: "100svh", overflow: "hidden" }}
       >
         {/* Full-bleed cover image — art-directed via <picture> */}
         <picture>
@@ -340,7 +340,7 @@ export function Hero() {
                 fontFamily: "var(--font-sans)",
                 fontWeight: 400,
                 fontStyle: "italic",
-                fontSize: "clamp(11px, 3vw, 13px)",
+                fontSize: "clamp(13px, 3.5vw, 15px)",
                 lineHeight: 1.25,
                 color: "var(--color-text-inverse)",
                 margin: 0,
