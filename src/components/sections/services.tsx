@@ -38,7 +38,7 @@ const SERVICES: Service[] = [
             margin: 0,
           }}
         >
-          Almost No Site Was Built to Do That. Including, Most Likely, Yours.
+          Almost no site was built to do that. Including, most likely, yours.
         </h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 1.8vw, 20px)" }}>
           {[

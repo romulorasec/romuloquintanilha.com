@@ -20,7 +20,7 @@ export function Hero() {
       ref={sectionRef}
       id="hero"
       className="relative overflow-hidden"
-      style={{ minHeight: "100dvh", backgroundColor: "var(--color-bg)" }}
+      style={{ minHeight: "100svh", backgroundColor: "var(--color-bg)" }}
     >
       {/* ===== DESKTOP ===== */}
 
@@ -233,7 +233,7 @@ export function Hero() {
       {/* ===== PORTRAIT — unified for phones + portrait tablets ===== */}
       <div
         className="relative hero-portrait"
-        style={{ height: "100dvh", overflow: "hidden" }}
+        style={{ height: "100svh", overflow: "hidden" }}
       >
         {/* Full-bleed cover image — art-directed via <picture> */}
         <picture>
