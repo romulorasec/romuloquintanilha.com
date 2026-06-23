@@ -138,7 +138,7 @@ const SERVICES: Service[] = [
             margin: 0,
           }}
         >
-          You Built a Business and Hoped People Would Find It. There&rsquo;s a Better Way Than Hope.
+          You built a business and hoped people would find it. There&rsquo;s a better way than hope.
         </h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 1.8vw, 20px)" }}>
           {[
@@ -170,11 +170,52 @@ const SERVICES: Service[] = [
   {
     icon: Share2,
     title: "Social Media",
-    description: "Content and presence strategies that grow your brand and keep your audience engaged.",
+    description: "Likes feel good and pay nothing. The real win is being the name they already trust the day they're finally ready to buy. See what builds that!",
     charcoal: false,
     rotated: false,
     delay: 0.32,
-    modalContent: <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7 }}>Content coming soon.</p>,
+    modalContent: (
+      <div style={{ display: "flex", flexDirection: "column", gap: "clamp(20px, 2.5vw, 28px)" }}>
+        <h2
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontWeight: 600,
+            fontSize: "clamp(22px, 2.5vw, 30px)",
+            color: "var(--color-text)",
+            lineHeight: 1.25,
+            letterSpacing: "-0.02em",
+            margin: 0,
+          }}
+        >
+          You Post. Almost No One Sees It. That&rsquo;s Not a Flaw. That&rsquo;s the Design.
+        </h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 1.8vw, 20px)" }}>
+          {[
+            "Most businesses treat social media like a chore. Post something, get a few likes, move on. What they don't know is that the average post now reaches around 3.5% of the people who follow you. The other 96% never see it. You're talking to an empty room and calling it presence.",
+            "Posting more doesn't fix this. It just fills the empty room faster. The platforms decided years ago that being seen costs money or it costs something rarer: content people actually want.",
+            "The algorithm only pushes what earns it. Posts people save, send to a friend, stop scrolling to watch. That's the whole game now. Not volume, not luck. Content good enough that the platform has a reason to show it and your audience has a reason to remember you.",
+            "And remembering is the point. A business doesn't need to go viral. Viral brings strangers from everywhere who will never walk through your door. A business needs the right people, the ones who can actually buy, to know you and trust you before they ever need you. So when the moment comes, you're not a search result. You're the name they already had in mind.",
+            "This is the opposite of a TV ad, where you pay to interrupt thousands of strangers and never know if a single one cared. Here, every post is aimed, and every result is measured. What works gets more. What doesn't gets cut. What isn't measured can't be managed, and most businesses have never measured a thing.",
+            "I build that system. A clear voice, the right audience, and content people choose to see instead of scroll past.",
+            "Being on social media is not the same as being remembered. Only one of them is worth paying for.",
+          ].map((para, i) => (
+            <p
+              key={i}
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontWeight: i === 0 ? 500 : 400,
+                fontSize: "clamp(14px, 1.3vw, 16px)",
+                color: i === 0 ? "var(--color-text)" : "var(--color-text-muted)",
+                lineHeight: 1.75,
+                margin: 0,
+              }}
+            >
+              {para}
+            </p>
+          ))}
+        </div>
+      </div>
+    ),
   },
 ]
 
