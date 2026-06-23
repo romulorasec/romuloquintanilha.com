@@ -3,7 +3,7 @@
 import { ChevronRight } from "lucide-react"
 
 interface SiteButtonProps {
-  variant: "primary" | "primary-inverse" | "primary-icon" | "secondary"
+  variant: "primary" | "primary-inverse" | "primary-icon" | "secondary" | "secondary-inverse" | "ghost-icon"
   children: React.ReactNode
   href?: string
   onClick?: () => void
@@ -24,7 +24,7 @@ export function SiteButton({
   const inner = (
     <>
       {children}
-      {variant === "secondary" || variant === "primary-icon" ? (
+      {variant === "secondary" || variant === "primary-icon" || variant === "ghost-icon" ? (
         <span className="button-icon">
           <span className="button-arrow">
             <ChevronRight />

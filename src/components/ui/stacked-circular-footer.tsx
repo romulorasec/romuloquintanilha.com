@@ -232,7 +232,7 @@ function StackedCircularFooter({
                 <div>
                   <p
                     style={{
-                      fontSize: "11px",
+                      fontSize: "12px",
                       fontWeight: 500,
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",
@@ -321,7 +321,7 @@ function StackedCircularFooter({
                 style={{
                   fontSize: "12px",
                   fontWeight: 400,
-                  color: "color-mix(in srgb, var(--color-text-inverse) 28%, transparent)",
+                  color: "color-mix(in srgb, var(--color-text-inverse) 45%, transparent)",
                   margin: 0,
                 }}
               >
