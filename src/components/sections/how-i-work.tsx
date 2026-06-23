@@ -9,37 +9,37 @@ const HOW_I_WORK_STEPS: AccordionStep[] = [
   {
     number: "01",
     title: "Discovery",
-    subtitle: "Understanding the foundation of the project",
+    subtitle: "Before a pixel moves, I learn what moves your customer",
     description:
-      "Deep dive into your business, audience, goals and competitors to define the right strategic direction from the start.",
+      "I study your market, your competitors, and the people who actually buy from you. By the end you'll have a clear picture of what your audience needs to see, believe, and feel before they move.",
   },
   {
     number: "02",
     title: "Strategy",
-    subtitle: "Turning insights into a clear direction",
+    subtitle: "Every section earns its place or gets cut",
     description:
-      "Organize the message, structure and visual path so every design decision supports clarity, trust and business value.",
+      "I map out what gets said, in what order, and where trust gets built. Nothing decorative makes it in. Every headline, every layout choice, every scroll depth exists to move people closer to the action you need.",
   },
   {
     number: "03",
     title: "Design",
-    subtitle: "Creating the visual experience",
+    subtitle: "Visual precision that builds trust in seconds",
     description:
-      "Transform the strategy into a clean, intentional and premium interface that reflects the brand and guides the user.",
+      "The interface reflects your positioning. Premium where it matters, clear everywhere else. Type, spacing, color, and motion all point in one direction: making the right visitor feel confident enough to act.",
   },
   {
     number: "04",
     title: "Build",
-    subtitle: "Bringing the experience to life",
+    subtitle: "Fast, responsive, and built to perform under real traffic",
     description:
-      "Develop the approved direction into a functional, responsive and polished digital experience ready for real use.",
+      "Clean code. Sub-second load times. Solid behavior across every device and browser. The finished product doesn't just look right. It works right, from the first click to the last conversion.",
   },
   {
     number: "05",
     title: "Launch",
-    subtitle: "Preparing everything to go live",
+    subtitle: "You go live knowing exactly what to expect",
     description:
-      "Review, refine and optimize the final details so the project is ready to launch with confidence and clarity.",
+      "Final QA, analytics setup, and a documented handoff so nothing falls through. You launch with tracking in place, a clear baseline, and the numbers to know what your investment is producing from day one.",
   },
 ]
 
@@ -96,8 +96,8 @@ export function HowIWork() {
                 fontFamily: "var(--font-sans)",
               }}
             >
-              I don&rsquo;t just design websites. I build assets that work for
-              your business.
+              A clear process that turns your goals into a digital asset
+              built to convert, not just look the part.
             </p>
           </MotionFade>
         </div>
