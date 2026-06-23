@@ -232,7 +232,7 @@ function AccordionItem({
             style={{
               color: "var(--color-text-inverse-muted)",
               fontFamily: "var(--font-sans)",
-              fontSize: "12px",
+              fontSize: "13px",
               fontWeight: 500,
               lineHeight: 1.4,
               margin: "8px 0 0",
@@ -346,7 +346,7 @@ function MobileAccordionItem({ step, isActive, index, onClick }: MobileAccordion
             style={{
               color: "var(--color-text-muted)",
               fontFamily: "var(--font-sans)",
-              fontSize: "11px",
+              fontSize: "12px",
               fontWeight: 500,
               lineHeight: 1.4,
               margin: "0 0 10px",
@@ -359,7 +359,7 @@ function MobileAccordionItem({ step, isActive, index, onClick }: MobileAccordion
             style={{
               color: "var(--color-text)",
               fontFamily: "var(--font-sans)",
-              fontSize: "13px",
+              fontSize: "14px",
               fontWeight: 400,
               lineHeight: 1.65,
               margin: 0,

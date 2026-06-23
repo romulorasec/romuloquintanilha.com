@@ -1,9 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code2, Award, TrendingUp, Share2, ArrowRight } from "lucide-react"
+import { Code2, Award, TrendingUp, Share2 } from "lucide-react"
 import { MotionFade } from "@/components/animations/motion-fade"
 import { SiteButton } from "@/components/shared/site-button"
+import { InfoModal } from "@/components/shared/info-modal"
 import type { LucideIcon } from "lucide-react"
 
 interface Service {
@@ -13,24 +14,109 @@ interface Service {
   charcoal: boolean
   rotated: boolean
   delay: number
+  modalContent: React.ReactNode
 }
 
 const SERVICES: Service[] = [
   {
     icon: Code2,
-    title: "General code",
-    description: "Lean, performant websites and web apps built with clean code and modern frameworks.",
+    title: "Web Development",
+    description: "There are websites that represent a business. And websites that grow one. You've seen the first kind your whole life. Most people never find out the second kind exists.",
     charcoal: true,
     rotated: true,
     delay: 0.08,
+    modalContent: (
+      <div style={{ display: "flex", flexDirection: "column", gap: "clamp(20px, 2.5vw, 28px)" }}>
+        <h2
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontWeight: 600,
+            fontSize: "clamp(22px, 2.5vw, 30px)",
+            color: "var(--color-text)",
+            lineHeight: 1.25,
+            letterSpacing: "-0.02em",
+            margin: 0,
+          }}
+        >
+          Almost No Site Was Built to Do That. Including, Most Likely, Yours.
+        </h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 1.8vw, 20px)" }}>
+          {[
+            "Every business has a website. Few have one that works.",
+            "And “works” doesn’t mean fast load times and a clean layout. It means moving people — from stranger to curious, from curious to convinced, from convinced to paying. Almost no site was built to do that. Including, most likely, yours.",
+            "Most sites answer one question: are you a real business? They confirm you exist, show what you offer, list how to reach you. Done. That's the standard the entire market settled on. Even the expensive ones, even the ones someone spent months on.",
+            "A site built to grow answers something harder: what does this specific visitor need to see, in what order, to decide right now? That question shapes everything. Where the eye lands first, what gets proved in the first ten seconds, where the page earns trust and where it loses it. Not aesthetic choices. Decisions with consequences.",
+            "The gap between those two sites isn't budget or talent. It's intent. Knowing before a single page exists what this thing needs to produce, and building everything around that answer.",
+            "That's what I build. Websites, web apps, and landing pages where the architecture serves one outcome: turning the people who find you into the people who hire you.",
+            "Your most visited asset is probably your most underused one.",
+          ].map((para, i) => (
+            <p
+              key={i}
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontWeight: i === 0 ? 500 : 400,
+                fontSize: "clamp(14px, 1.3vw, 16px)",
+                color: i === 0 ? "var(--color-text)" : "var(--color-text-muted)",
+                lineHeight: 1.75,
+                margin: 0,
+              }}
+            >
+              {para}
+            </p>
+          ))}
+        </div>
+      </div>
+    ),
   },
   {
     icon: Award,
     title: "Brand Identity",
-    description: "Visual systems that communicate trust, personality and positioning at every touchpoint.",
+    description: "Before anyone reads a word, they decide what you're worth. Most businesses spend years on the product and ten minutes on that decision.",
     charcoal: false,
     rotated: false,
     delay: 0.16,
+    modalContent: (
+      <div style={{ display: "flex", flexDirection: "column", gap: "clamp(20px, 2.5vw, 28px)" }}>
+        <h2
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontWeight: 600,
+            fontSize: "clamp(22px, 2.5vw, 30px)",
+            color: "var(--color-text)",
+            lineHeight: 1.25,
+            letterSpacing: "-0.02em",
+            margin: 0,
+          }}
+        >
+          Before anyone reads your price, they&rsquo;ve already decided if you&rsquo;re worth it.
+        </h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 1.8vw, 20px)" }}>
+          {[
+            "Most businesses never think about that moment. They spend months building the product, years refining the service, and about ten minutes on the thing that determines whether any of it gets taken seriously on sight.",
+            "Here's what actually happens. Someone lands on your website, walks past your storefront, or opens your deck. In under three seconds, before a single word registers, their brain has already placed you somewhere. Premium or cheap. Trustworthy or risky. Worth the price or worth a discount. That read happens whether you designed for it or not.",
+            "Most brands don't design for it. They get something that looks decent, feels consistent enough, and call it done. What they don't realize is that “decent” has a price ceiling. It signals a business that's good enough and people pay good enough prices for good enough businesses.",
+            "Pricing power lives in perception. The brands that charge more aren't always better. They're clearer. Their identity communicates authority, specificity, and confidence before the conversation starts, which means the conversation starts from a different place entirely.",
+            "That's what a real identity system does. Not just a logo that looks good, but a visual language that tells the right person, before they read a word, that you're exactly what they're looking for.",
+            "I build that system. Logo, type, color, layout logic, every decision made around what your business needs to prove and to whom.",
+            "The brands that win before they speak don't get lucky. They get deliberate.",
+          ].map((para, i) => (
+            <p
+              key={i}
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontWeight: i === 0 ? 500 : 400,
+                fontSize: "clamp(14px, 1.3vw, 16px)",
+                color: i === 0 ? "var(--color-text)" : "var(--color-text-muted)",
+                lineHeight: 1.75,
+                margin: 0,
+              }}
+            >
+              {para}
+            </p>
+          ))}
+        </div>
+      </div>
+    ),
   },
   {
     icon: TrendingUp,
@@ -39,6 +125,7 @@ const SERVICES: Service[] = [
     charcoal: false,
     rotated: false,
     delay: 0.24,
+    modalContent: <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7 }}>Content coming soon.</p>,
   },
   {
     icon: Share2,
@@ -47,6 +134,7 @@ const SERVICES: Service[] = [
     charcoal: false,
     rotated: false,
     delay: 0.32,
+    modalContent: <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7 }}>Content coming soon.</p>,
   },
 ]
 
@@ -130,7 +218,7 @@ export function Services() {
 }
 
 function ServiceCard({ service }: { service: Service }) {
-  const { icon: Icon, title, description, charcoal, rotated, delay } = service
+  const { icon: Icon, title, description, charcoal, rotated, delay, modalContent } = service
 
   return (
     <motion.div
@@ -178,7 +266,7 @@ function ServiceCard({ service }: { service: Service }) {
           style={{
             fontFamily: "var(--font-sans)",
             fontWeight: 400,
-            fontSize: "clamp(12px, 1.1vw, 14px)",
+            fontSize: "clamp(14px, 1.3vw, 15px)",
             color: "var(--color-text-inverse-muted)",
             lineHeight: 1.65,
             margin: 0,
@@ -189,42 +277,14 @@ function ServiceCard({ service }: { service: Service }) {
       </div>
 
       {/* Learn More */}
-      <motion.div
-        whileHover="arrowHover"
-        style={{
-          marginTop: "clamp(20px, 2.5vw, 32px)",
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-        }}
-      >
-        <span
-          style={{
-            fontFamily: "var(--font-sans)",
-            fontWeight: 500,
-            fontSize: "13px",
-            letterSpacing: "0.01em",
-          }}
+      <div style={{ marginTop: "clamp(20px, 2.5vw, 32px)" }}>
+        <InfoModal
+          title={title}
+          trigger={<SiteButton variant="ghost-icon">Learn More</SiteButton>}
         >
-          Learn More
-        </span>
-        <motion.span
-          variants={{ arrowHover: { x: 3 } }}
-          transition={{ duration: 0.2 }}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "24px",
-            height: "24px",
-            borderRadius: "50%",
-            border: "1px solid color-mix(in srgb, var(--color-text-inverse) 30%, transparent)",
-            flexShrink: 0,
-          }}
-        >
-          <ArrowRight size={10} />
-        </motion.span>
-      </motion.div>
+          {modalContent}
+        </InfoModal>
+      </div>
     </motion.div>
   )
 }

@@ -521,13 +521,13 @@
 
 .button-primary-icon .button-icon {
   background-color: var(--button-primary-icon-circle-bg);
-  border: var(--button-icon-border-width) solid var(--button-primary-icon-circle-border);
+  box-shadow: 0 0 0 1.5px var(--button-primary-icon-circle-border);
   color: var(--button-primary-icon-circle-text);
 }
 
 .button-primary-icon:hover .button-icon {
   background-color: var(--button-primary-icon-hover-circle-bg);
-  border-color: var(--button-primary-icon-hover-circle-border);
+  box-shadow: 0 0 0 1.5px var(--button-primary-icon-hover-circle-border);
   color: var(--button-primary-icon-hover-circle-text);
 }
 
@@ -559,20 +559,20 @@
   flex-shrink: 0;
   transition:
     background-color var(--button-transition-duration) var(--button-transition-ease),
-    border-color var(--button-transition-duration) var(--button-transition-ease),
+    box-shadow var(--button-transition-duration) var(--button-transition-ease),
     color var(--button-transition-duration) var(--button-transition-ease),
     transform var(--button-transition-duration) var(--button-transition-ease);
 }
 
 .button-secondary .button-icon {
   background-color: var(--button-secondary-icon-bg);
-  border: var(--button-icon-border-width) solid var(--button-secondary-icon-border);
+  box-shadow: 0 0 0 1.5px var(--button-secondary-icon-border);
   color: var(--button-secondary-icon-text);
 }
 
 .button-secondary:hover .button-icon {
   background-color: var(--button-secondary-hover-icon-bg);
-  border-color: var(--button-secondary-hover-icon-border);
+  box-shadow: 0 0 0 1.5px var(--button-secondary-hover-icon-border);
   color: var(--button-secondary-hover-icon-text);
 }
 
@@ -606,6 +606,59 @@
 .button .button-arrow svg {
   width: var(--button-icon-arrow-size);
   height: var(--button-icon-arrow-size);
+}
+
+/* Secondary Inverse */
+.button-secondary-inverse {
+  background-color: var(--button-secondary-inverse-bg);
+  color: var(--button-secondary-inverse-text);
+  border-color: var(--button-secondary-inverse-border);
+  border-width: 1px;
+}
+
+.button-secondary-inverse:hover {
+  background-color: var(--button-secondary-inverse-hover-bg);
+  color: var(--button-secondary-inverse-hover-text);
+  border-color: var(--button-secondary-inverse-hover-border);
+}
+
+.button-secondary-inverse .button-arrow {
+  color: var(--button-secondary-inverse-icon-text);
+}
+
+.button-secondary-inverse:hover .button-arrow {
+  color: var(--button-secondary-inverse-hover-icon-text);
+  transform: translateX(4px);
+}
+
+/* Ghost Icon */
+.button-ghost-icon {
+  background-color: var(--button-ghost-icon-bg);
+  color: var(--button-ghost-icon-text);
+  border-color: var(--button-ghost-icon-border);
+}
+
+.button-ghost-icon:hover {
+  background-color: var(--button-ghost-icon-hover-bg);
+  color: var(--button-ghost-icon-hover-text);
+  border-color: var(--button-ghost-icon-hover-border);
+}
+
+.button-ghost-icon .button-icon {
+  width: 24px;
+  height: 24px;
+  background-color: var(--button-ghost-icon-circle-bg);
+  box-shadow: none;
+  color: var(--button-ghost-icon-circle-text);
+}
+
+.button-ghost-icon:hover .button-icon {
+  width: 24px;
+  height: 24px;
+  background-color: var(--button-ghost-icon-hover-circle-bg);
+  box-shadow: none;
+  color: var(--button-ghost-icon-hover-circle-text);
+  transform: translateX(4px);
 }
 
 /* ── About section: button reordering via grid-template-areas ── */
