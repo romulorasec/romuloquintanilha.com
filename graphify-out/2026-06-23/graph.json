@@ -10,38 +10,68 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "sections_services",
-      "community": 30,
+      "community": 39,
       "norm_label": "services.tsx"
     },
     {
       "label": "Service",
       "file_type": "code",
       "source_file": "src/components/sections/services.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "sections_services_service",
-      "community": 30,
+      "community": 39,
       "norm_label": "service"
     },
     {
       "label": "SERVICES",
       "file_type": "code",
       "source_file": "src/components/sections/services.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "sections_services_services",
-      "community": 30,
+      "community": 39,
       "norm_label": "services"
     },
     {
       "label": "ServiceCard()",
       "file_type": "code",
       "source_file": "src/components/sections/services.tsx",
-      "source_location": "L218",
+      "source_location": "L305",
       "_origin": "ast",
       "id": "sections_services_servicecard",
-      "community": 30,
+      "community": 39,
       "norm_label": "servicecard()"
+    },
+    {
+      "label": "info-modal.tsx",
+      "file_type": "code",
+      "source_file": "src/components/shared/info-modal.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "shared_info_modal",
+      "community": 19,
+      "norm_label": "info-modal.tsx"
+    },
+    {
+      "label": "InfoModalProps",
+      "file_type": "code",
+      "source_file": "src/components/shared/info-modal.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "shared_info_modal_infomodalprops",
+      "community": 19,
+      "norm_label": "infomodalprops"
+    },
+    {
+      "label": "InfoModal()",
+      "file_type": "code",
+      "source_file": "src/components/shared/info-modal.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "shared_info_modal_infomodal",
+      "community": 39,
+      "norm_label": "infomodal()"
     },
     {
       "label": "components.json",
@@ -989,7 +1019,7 @@
       "source_file": "src/components/animations/motion-fade.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 30,
+      "community": 64,
       "norm_label": "motion-fade.tsx",
       "id": "animations_motion_fade"
     },
@@ -999,7 +1029,7 @@
       "source_file": "src/components/animations/motion-fade.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 30,
+      "community": 64,
       "norm_label": "motionfadeprops",
       "id": "animations_motion_fade_motionfadeprops"
     },
@@ -1009,7 +1039,7 @@
       "source_file": "src/components/animations/motion-fade.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 30,
+      "community": 64,
       "norm_label": "motionfade()",
       "id": "animations_motion_fade_motionfade"
     },
@@ -1299,7 +1329,7 @@
       "source_file": "src/components/sections/positioning.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 30,
+      "community": 64,
       "norm_label": "positioning.tsx",
       "id": "sections_positioning"
     },
@@ -1309,7 +1339,7 @@
       "source_file": "src/components/sections/positioning.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 30,
+      "community": 64,
       "norm_label": "positioning()",
       "id": "sections_positioning_positioning"
     },
@@ -1372,36 +1402,6 @@
       "community": 66,
       "norm_label": "testimonials()",
       "id": "sections_testimonials_testimonials"
-    },
-    {
-      "label": "info-modal.tsx",
-      "file_type": "code",
-      "source_file": "src/components/shared/info-modal.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "info-modal.tsx",
-      "id": "shared_info_modal"
-    },
-    {
-      "label": "InfoModalProps",
-      "file_type": "code",
-      "source_file": "src/components/shared/info-modal.tsx",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "infomodalprops",
-      "id": "shared_info_modal_infomodalprops"
-    },
-    {
-      "label": "InfoModal()",
-      "file_type": "code",
-      "source_file": "src/components/shared/info-modal.tsx",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 30,
-      "norm_label": "infomodal()",
-      "id": "shared_info_modal_infomodal"
     },
     {
       "label": "site-button.tsx",
@@ -6608,12 +6608,131 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/services.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "sections_services",
+      "target": "shared_start_project_modal_startprojectmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/app/page.tsx",
       "source_location": "L8",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_page",
       "target": "sections_services_services"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/about.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sections_about",
+      "target": "shared_info_modal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/info-modal.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_info_modal",
+      "target": "shared_info_modal_infomodal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/info-modal.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_info_modal",
+      "target": "shared_info_modal_infomodalprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/info-modal.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_info_modal",
+      "target": "ui_dialog"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/info-modal.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_info_modal",
+      "target": "ui_dialog_dialog"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/info-modal.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_info_modal",
+      "target": "ui_dialog_dialogportal"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/info-modal.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_info_modal",
+      "target": "ui_dialog_dialogtrigger"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/start-project-modal.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_start_project_modal",
+      "target": "shared_info_modal"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/about.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sections_about",
+      "target": "shared_info_modal_infomodal"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/shared/start-project-modal.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_start_project_modal",
+      "target": "shared_info_modal_infomodal"
     },
     {
       "relation": "contains",
@@ -8244,28 +8363,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/about.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sections_about",
-      "target": "shared_info_modal"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/sections/about.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sections_about",
-      "target": "shared_info_modal_infomodal"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/sections/about.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -8570,92 +8667,6 @@
       "confidence_score": 1.0,
       "source": "sections_testimonials",
       "target": "ui_testimonial_slider_1_testimonialslider"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/shared/info-modal.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_info_modal",
-      "target": "shared_info_modal_infomodal"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/shared/info-modal.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_info_modal",
-      "target": "shared_info_modal_infomodalprops"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/shared/info-modal.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_info_modal",
-      "target": "ui_dialog"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/shared/info-modal.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_info_modal",
-      "target": "ui_dialog_dialog"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/shared/info-modal.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_info_modal",
-      "target": "ui_dialog_dialogportal"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/shared/info-modal.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_info_modal",
-      "target": "ui_dialog_dialogtrigger"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/shared/start-project-modal.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_start_project_modal",
-      "target": "shared_info_modal"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/shared/start-project-modal.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_start_project_modal",
-      "target": "shared_info_modal_infomodal"
     },
     {
       "relation": "contains",
@@ -15132,5 +15143,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f030ab89cfb9eac81ef578dfc20d9cc76df988d2"
+  "built_at_commit": "920d5cfae637ed444f0eaecb32477fdf9cb1aad9"
 }

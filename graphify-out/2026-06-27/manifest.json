@@ -493,10 +493,5 @@
     "mtime": 1782548066.3400466,
     "ast_hash": "c06813466dca894e3272615de2a6e40d",
     "semantic_hash": ""
-  },
-  "src/app/cookies/page.tsx": {
-    "mtime": 1782548085.7580745,
-    "ast_hash": "7349ef691bc3444d65a67ca2ca7d9ca9",
-    "semantic_hash": ""
   }
 }
