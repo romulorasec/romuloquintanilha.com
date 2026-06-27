@@ -124,7 +124,6 @@ export function Promise() {
               </div>
             </MotionFade>
           ))}
-          <div style={{ borderTop: "1px solid var(--color-border-dark)" }} />
         </div>
       </div>
     </section>
