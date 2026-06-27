@@ -189,7 +189,7 @@ export function About() {
   return (
     <section
       id="about"
-      style={{ paddingBottom: "clamp(56px, 8.33vw, 100px)", backgroundColor: "var(--color-bg)" }}
+      style={{ paddingBottom: "clamp(56px, 8.33vw, 100px)", backgroundColor: "var(--color-bg)", scrollMarginTop: "40px" }}
     >
       <motion.div
         initial={{ opacity: 0, y: 32, scale: 0.99 }}

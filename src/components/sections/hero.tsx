@@ -3,6 +3,7 @@
 import { useRef } from "react"
 import { useTranslations } from "next-intl"
 import { motion, useScroll, useTransform } from "framer-motion"
+import { useLenis } from "lenis/react"
 import { MotionFade } from "@/components/animations/motion-fade"
 import { SiteButton } from "@/components/shared/site-button"
 import { StartProjectModal } from "@/components/shared/start-project-modal"
@@ -10,6 +11,7 @@ import { StartProjectModal } from "@/components/shared/start-project-modal"
 export function Hero() {
   const t = useTranslations("hero")
   const sectionRef = useRef<HTMLElement>(null)
+  const lenis = useLenis()
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -104,6 +106,15 @@ export function Hero() {
       >
         <a
           href="#about"
+          onClick={(e) => {
+            e.preventDefault()
+            const target = document.getElementById("about")
+            if (target && lenis) {
+              lenis.scrollTo(target, { offset: -40, duration: 1.6 })
+            } else if (target) {
+              target.scrollIntoView({ behavior: "smooth", block: "start" })
+            }
+          }}
           style={{
             display: "inline-flex",
             alignItems: "center",
