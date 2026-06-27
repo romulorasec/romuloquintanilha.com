@@ -374,10 +374,41 @@ function StackedCircularFooter({
             />
           </div>
         </MotionFade>
+
+        {/* Legal links bar */}
+        <div className="footer-legal-bar">
+          {[
+            { label: "Privacy Policy", href: "/privacy" },
+            { label: "Terms of Service", href: "/terms" },
+            { label: "Cookie Policy", href: "/cookies" },
+          ].map((link, i, arr) => (
+            <span key={link.href} style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+              <a
+                href={link.href}
+                style={{
+                  fontSize: "11px",
+                  fontWeight: 400,
+                  color: "color-mix(in srgb, var(--color-text-inverse) 35%, transparent)",
+                  textDecoration: "none",
+                  transition: "color 150ms ease",
+                  letterSpacing: "0.01em",
+                  fontFamily: "inherit",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text-inverse-muted)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "color-mix(in srgb, var(--color-text-inverse) 35%, transparent)")}
+              >
+                {link.label}
+              </a>
+              {i < arr.length - 1 && (
+                <span aria-hidden style={{ color: "color-mix(in srgb, var(--color-text-inverse) 18%, transparent)", fontSize: "11px" }}>·</span>
+              )}
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* Bottom safe-area spacer */}
-      <div style={{ height: "clamp(24px, 4vw, 40px)" }} />
+      <div style={{ height: "clamp(12px, 2vw, 20px)" }} />
     </footer>
   )
 }
