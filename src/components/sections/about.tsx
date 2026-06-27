@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { motion, useReducedMotion } from "framer-motion"
 import { MotionFade } from "@/components/animations/motion-fade"
 import { SiteButton } from "@/components/shared/site-button"
@@ -23,9 +24,7 @@ const strongStyle: React.CSSProperties = {
   margin: 0,
 }
 
-// Between conceptual blocks
 const blockGap = "clamp(28px, 3.5vw, 44px)"
-// Between related sentences within a block
 const lineGap = "clamp(6px, 0.8vw, 10px)"
 
 function Block({ children }: { children: React.ReactNode }) {
@@ -37,32 +36,29 @@ function Block({ children }: { children: React.ReactNode }) {
 }
 
 function AboutModalCopy() {
+  const t = useTranslations("about")
+  const eyeList = t.raw("modal.eyeList") as string[]
+  const quotes = t.raw("modal.quotes") as string[]
+  const resultList = t.raw("modal.resultList") as string[]
+  const questionsList = t.raw("modal.questionsList") as string[]
+  const approachList = t.raw("modal.approachList") as string[]
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: blockGap }}>
 
-      {/* 1 — Opening hook: two-sentence diagnosis */}
       <Block>
-        <p style={bodyStyle}>Most websites do not fail because they look bad. They fail because they make people think too hard, trust too slowly, and leave too easily.</p>
+        <p style={bodyStyle}>{t("modal.diagnosisP1")}</p>
+        <p style={bodyStyle}>{t("modal.diagnosisP2")}</p>
       </Block>
 
-      {/* 2 — The display window metaphor */}
-      <p style={bodyStyle}>
-        A lot of websites are built like display windows. They show the business, look polished,
-        and wait for someone to care. But waiting is expensive. Every visitor who lands, hesitates,
-        and disappears is a silent lost opportunity.
-      </p>
+      <p style={bodyStyle}>{t("modal.displayWindow")}</p>
 
-      {/* 3 — The distinction + bridge to the invisible logic */}
       <Block>
-        <p style={bodyStyle}>Good design can make a business look professional. Strategic architecture makes that business feel safe to choose.</p>
-        <p style={bodyStyle}>
-          That is the part most people never see, but it is the part that decides whether a visitor
-          stays, trusts, clicks, books, buys, or leaves for someone else.
-        </p>
-        <p style={bodyStyle}>It is the logic underneath the surface.</p>
+        <p style={bodyStyle}>{t("modal.distinctionP1")}</p>
+        <p style={bodyStyle}>{t("modal.distinctionP2")}</p>
+        <p style={bodyStyle}>{t("modal.distinctionP3")}</p>
       </Block>
 
-      {/* 4 — What lives under the surface */}
       <div
         style={{
           borderLeft: "2px solid var(--color-border)",
@@ -72,23 +68,13 @@ function AboutModalCopy() {
           gap: lineGap,
         }}
       >
-        {[
-          "Where the eye lands first.",
-          "What the first ten seconds prove.",
-          "Where doubt gets removed.",
-          "Where trust is built.",
-          "Where the next step becomes obvious.",
-          "Where the page stops acting like a brochure and starts behaving like a closer.",
-        ].map((line) => (
+        {eyeList.map((line) => (
           <p key={line} style={{ ...strongStyle, fontWeight: 500 }}>{line}</p>
         ))}
       </div>
 
-      {/* 5 — What the market sells + quoted requests */}
       <Block>
-        <p style={bodyStyle}>
-          The market sells the surface because the surface is easy to ask for.
-        </p>
+        <p style={bodyStyle}>{t("modal.marketSells")}</p>
         <div
           style={{
             display: "flex",
@@ -100,35 +86,25 @@ function AboutModalCopy() {
             borderRadius: "8px",
           }}
         >
-          {['"Make it modern."', '"Make it clean."', '"Make it look like that competitor."'].map((line) => (
+          {quotes.map((line) => (
             <p key={line} style={{ ...bodyStyle, fontStyle: "italic", color: "var(--color-text)", margin: 0 }}>{line}</p>
           ))}
         </div>
-        <p style={bodyStyle}>Those requests make sense, but they are not the real job.</p>
+        <p style={bodyStyle}>{t("modal.quotesFooter")}</p>
       </Block>
 
-      {/* 6 — The real job + what a page that works looks like */}
       <Block>
-        <p style={strongStyle}>
-          The real job is to take the most visited piece of your business and turn it into one of
-          your strongest points of sale.
-        </p>
+        <p style={strongStyle}>{t("modal.realJob")}</p>
         <div style={{ display: "flex", flexDirection: "column", gap: lineGap, marginTop: "4px" }}>
-          {[
-            "A page that works when you are busy.",
-            "A page that works when your team is offline.",
-            "A page that works before someone ever talks to you.",
-            "A page that does not just look credible, but helps people feel confident enough to act.",
-          ].map((line) => (
+          {resultList.map((line) => (
             <p key={line} style={{ ...strongStyle, fontWeight: 500 }}>{line}</p>
           ))}
         </div>
       </Block>
 
-      {/* 7 — Where it actually starts + harder questions */}
       <Block>
-        <p style={bodyStyle}>That does not start with colors, fonts, or layout.</p>
-        <p style={strongStyle}>It starts with harder questions.</p>
+        <p style={bodyStyle}>{t("modal.harderP1")}</p>
+        <p style={strongStyle}>{t("modal.harderP2")}</p>
         <div
           style={{
             borderLeft: "2px solid var(--color-border)",
@@ -139,25 +115,18 @@ function AboutModalCopy() {
             marginTop: "4px",
           }}
         >
-          {[
-            "Who is landing here?",
-            "What are they afraid of?",
-            "What are they comparing you against?",
-            "What do they need to believe before they move forward?",
-            "Where does friction help the decision, and where is it quietly costing you the deal?",
-          ].map((line) => (
+          {questionsList.map((line) => (
             <p key={line} style={bodyStyle}>{line}</p>
           ))}
         </div>
       </Block>
 
-      {/* 8 — Pivot: the numbers + the approach */}
       <Block>
-        <p style={bodyStyle}>Those questions do not show up on a moodboard.</p>
-        <p style={bodyStyle}>They show up later, in the numbers.</p>
-        <p style={{ ...strongStyle, marginTop: "4px" }}>I build websites with that order in mind:</p>
+        <p style={bodyStyle}>{t("modal.numbersP1")}</p>
+        <p style={bodyStyle}>{t("modal.numbersP2")}</p>
+        <p style={{ ...strongStyle, marginTop: "4px" }}>{t("modal.approachIntro")}</p>
         <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "4px" }}>
-          {["Strategy first.", "Architecture second.", "Design on top."].map((line) => (
+          {approachList.map((line) => (
             <p
               key={line}
               style={{
@@ -176,26 +145,17 @@ function AboutModalCopy() {
         </div>
       </Block>
 
-      {/* 9 — Resolution: beauty is not the finish line */}
       <Block>
-        <p style={bodyStyle}>Not the other way around.</p>
-        <p style={bodyStyle}>The website still has to look beautiful. That part is non-negotiable.</p>
-        <p style={bodyStyle}>I just do not believe beauty is the finish line.</p>
+        <p style={bodyStyle}>{t("modal.resolutionP1")}</p>
+        <p style={bodyStyle}>{t("modal.resolutionP2")}</p>
+        <p style={bodyStyle}>{t("modal.resolutionP3")}</p>
       </Block>
 
-      {/* 10 — The money on the table */}
-      <p style={bodyStyle}>
-        Because a beautiful website that does not build trust, remove doubt, or move people toward
-        action is still leaving money on the table.
-      </p>
+      <p style={bodyStyle}>{t("modal.moneyTable")}</p>
 
-      {/* 11 — The closer: punchy, isolated */}
       <Block>
-        <p style={bodyStyle}>
-          So if you have ever paid for a website that looked great when it launched, but then just
-          sat there doing nothing, you already know what was missing.
-        </p>
-        <p style={bodyStyle}>It was not more decoration.</p>
+        <p style={bodyStyle}>{t("modal.closerP1")}</p>
+        <p style={bodyStyle}>{t("modal.closerP2")}</p>
         <p
           style={{
             fontFamily: "var(--font-sans)",
@@ -207,11 +167,9 @@ function AboutModalCopy() {
             margin: 0,
           }}
         >
-          It was architecture.
+          {t("modal.architecture")}
         </p>
-        <p style={{ ...bodyStyle, paddingBottom: "8px" }}>
-          The invisible structure that turns attention into trust, and trust into action.
-        </p>
+        <p style={{ ...bodyStyle, paddingBottom: "8px" }}>{t("modal.invisible")}</p>
       </Block>
 
     </div>
@@ -220,14 +178,12 @@ function AboutModalCopy() {
 
 const ease = [0.22, 1, 0.36, 1] as const
 
-const skills = [
-  { label: "UI&UX Design", position: 87, delay: 0.28 },
-  { label: "Website Design", position: 96, delay: 0.38 },
-  { label: "App Design", position: 82, delay: 0.48 },
-  { label: "Graphic Design", position: 78, delay: 0.58 },
-]
+const skillPositions = [87, 96, 82, 78]
+const skillDelays = [0.28, 0.38, 0.48, 0.58]
+const skillKeys = ["uiux", "website", "app", "graphic"] as const
 
 export function About() {
+  const t = useTranslations("about")
   const prefersReduced = useReducedMotion()
 
   return (
@@ -235,7 +191,6 @@ export function About() {
       id="about"
       style={{ paddingBottom: "clamp(56px, 8.33vw, 100px)", backgroundColor: "var(--color-bg)" }}
     >
-      {/* Card entrance — subtle scale + fade + rise */}
       <motion.div
         initial={{ opacity: 0, y: 32, scale: 0.99 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -264,7 +219,7 @@ export function About() {
                   margin: 0,
                 }}
               >
-                About me
+                {t("heading")}
               </h2>
             </MotionFade>
 
@@ -279,10 +234,7 @@ export function About() {
                   marginTop: "clamp(24px, 3vw, 40px)",
                 }}
               >
-                I don&apos;t design websites to impress. I design them to sell.
-                A website isn&apos;t a digital business card, it&apos;s a salesperson
-                who never clocks out, never stops closing, and works every
-                hour your doors are shut. I build the version that earns its keep.
+                {t("intro")}
               </p>
             </MotionFade>
           </div>
@@ -301,8 +253,7 @@ export function About() {
                   margin: 0,
                 }}
               >
-                Driven UI/UX Designer with an innovative approach to creating
-                intuitive and engaging User experiences
+                {t("subheading")}
               </p>
             </MotionFade>
 
@@ -314,8 +265,8 @@ export function About() {
                 gap: "clamp(24px, 3vw, 40px)",
               }}
             >
-              {skills.map((skill) => (
-                <div key={skill.label}>
+              {skillKeys.map((key, i) => (
+                <div key={key}>
                   <motion.span
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -323,7 +274,7 @@ export function About() {
                     transition={
                       prefersReduced
                         ? { duration: 0 }
-                        : { duration: 0.4, delay: skill.delay, ease }
+                        : { duration: 0.4, delay: skillDelays[i], ease }
                     }
                     style={{
                       fontFamily: "var(--font-sans)",
@@ -336,7 +287,7 @@ export function About() {
                       marginBottom: "8px",
                     }}
                   >
-                    {skill.label}
+                    {t(`skills.${key}`)}
                   </motion.span>
 
                   <div
@@ -347,7 +298,6 @@ export function About() {
                       alignItems: "center",
                     }}
                   >
-                    {/* Line draws from left */}
                     <motion.div
                       initial={{ scaleX: 0 }}
                       whileInView={{ scaleX: 1 }}
@@ -355,7 +305,7 @@ export function About() {
                       transition={
                         prefersReduced
                           ? { duration: 0 }
-                          : { duration: 0.6, delay: skill.delay, ease }
+                          : { duration: 0.6, delay: skillDelays[i], ease }
                       }
                       style={{
                         position: "absolute",
@@ -367,15 +317,14 @@ export function About() {
                       }}
                     />
 
-                    {/* Handle sweeps from left to position */}
                     <motion.div
                       initial={{ left: "0%" }}
-                      whileInView={{ left: `${skill.position}%` }}
+                      whileInView={{ left: `${skillPositions[i]}%` }}
                       viewport={{ once: true }}
                       transition={
                         prefersReduced
                           ? { duration: 0 }
-                          : { duration: 0.7, delay: skill.delay + 0.1, ease }
+                          : { duration: 0.7, delay: skillDelays[i] + 0.1, ease }
                       }
                       style={{
                         position: "absolute",
@@ -394,11 +343,11 @@ export function About() {
             </div>
           </div>
 
-          {/* Single button — CSS grid-area places it below paragraph on desktop, after skills on mobile */}
+          {/* Single button */}
           <div className="about-btn">
             <InfoModal
-              trigger={<SiteButton variant="primary">Learn More</SiteButton>}
-              title="Design gets you noticed. Architecture gets you paid."
+              trigger={<SiteButton variant="primary">{t("cta")}</SiteButton>}
+              title={t("modalTitle")}
             >
               <AboutModalCopy />
             </InfoModal>

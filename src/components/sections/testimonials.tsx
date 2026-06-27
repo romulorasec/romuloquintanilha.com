@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { MotionFade } from "@/components/animations/motion-fade"
 import { TestimonialSlider } from "@/components/ui/testimonial-slider-1"
 
@@ -62,6 +63,8 @@ const testimonialData = [
 ]
 
 export function Testimonials() {
+  const t = useTranslations("testimonials")
+
   return (
     <section
       id="testimonials"
@@ -85,10 +88,9 @@ export function Testimonials() {
               color: "var(--color-text)",
               lineHeight: 1.5,
               letterSpacing: "-0.02em",
-
             }}
           >
-            Don&apos;t take my word for it.
+            {t("heading")}
           </div>
         </MotionFade>
 
@@ -103,7 +105,7 @@ export function Testimonials() {
               margin: "0 0 clamp(48px, 6vw, 80px)",
             }}
           >
-            Business owners who were exactly where you are now.
+            {t("description")}
           </p>
         </MotionFade>
 

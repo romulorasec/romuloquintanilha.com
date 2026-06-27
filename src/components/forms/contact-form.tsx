@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
+import { useTranslations } from "next-intl"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile"
@@ -53,6 +54,7 @@ const errorStyle: React.CSSProperties = {
 }
 
 export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
+  const t = useTranslations("contact")
   const [formState, setFormState] = useState<FormState>("idle")
   const [submitLock, setSubmitLock] = useState(false)
   const turnstileRef = useRef<TurnstileInstance>(null)
@@ -153,7 +155,7 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
         {/* Row: Name + Email */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label htmlFor="cf-name" style={labelStyle}>Name *</label>
+            <label htmlFor="cf-name" style={labelStyle}>{t("name")} *</label>
             <input
               id="cf-name"
               type="text"
@@ -165,7 +167,7 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
             {errors.name && <p style={errorStyle}>{errors.name.message}</p>}
           </div>
           <div>
-            <label htmlFor="cf-email" style={labelStyle}>Email *</label>
+            <label htmlFor="cf-email" style={labelStyle}>{t("email")} *</label>
             <input
               id="cf-email"
               type="email"
@@ -181,7 +183,7 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
         {/* Row: Phone + Project type */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label htmlFor="cf-phone" style={labelStyle}>Phone / WhatsApp</label>
+            <label htmlFor="cf-phone" style={labelStyle}>{t("phone")}</label>
             <input
               id="cf-phone"
               type="tel"
@@ -189,11 +191,11 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
               {...register("phone")}
               style={fieldStyle}
               disabled={formState === "submitting"}
-              placeholder="Optional"
+              placeholder={t("phonePlaceholder")}
             />
           </div>
           <div>
-            <label htmlFor="cf-project-type" style={labelStyle}>Project type *</label>
+            <label htmlFor="cf-project-type" style={labelStyle}>{t("projectType")} *</label>
             <select
               id="cf-project-type"
               {...register("projectType")}
@@ -201,12 +203,12 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
               disabled={formState === "submitting"}
               defaultValue=""
             >
-              <option value="" disabled>Select…</option>
-              <option value="Website">Website</option>
-              <option value="Redesign">Redesign</option>
-              <option value="Branding">Branding</option>
-              <option value="UX/UI">UX/UI</option>
-              <option value="Other">Other</option>
+              <option value="" disabled>{t("typePlaceholder")}</option>
+              <option value="Website">{t("projectTypes.website")}</option>
+              <option value="Redesign">{t("projectTypes.redesign")}</option>
+              <option value="Branding">{t("projectTypes.branding")}</option>
+              <option value="UX/UI">{t("projectTypes.uxui")}</option>
+              <option value="Other">{t("projectTypes.other")}</option>
             </select>
             {errors.projectType && <p style={errorStyle}>{errors.projectType.message}</p>}
           </div>
@@ -214,7 +216,7 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
 
         {/* Budget */}
         <div>
-          <label htmlFor="cf-budget" style={labelStyle}>Estimated budget *</label>
+          <label htmlFor="cf-budget" style={labelStyle}>{t("budget")} *</label>
           <select
             id="cf-budget"
             {...register("budget")}
@@ -222,19 +224,19 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
             disabled={formState === "submitting"}
             defaultValue=""
           >
-            <option value="" disabled>Select…</option>
-            <option value="<$1k">Under $1,000</option>
-            <option value="$1k–$3k">$1,000 – $3,000</option>
-            <option value="$3k–$7k">$3,000 – $7,000</option>
-            <option value="$7k+">$7,000+</option>
-            <option value="TBD">To be discussed</option>
+            <option value="" disabled>{t("typePlaceholder")}</option>
+            <option value="<$1k">{t("budgets.under1k")}</option>
+            <option value="$1k–$3k">{t("budgets.1k3k")}</option>
+            <option value="$3k–$7k">{t("budgets.3k7k")}</option>
+            <option value="$7k+">{t("budgets.7kplus")}</option>
+            <option value="TBD">{t("budgets.discuss")}</option>
           </select>
           {errors.budget && <p style={errorStyle}>{errors.budget.message}</p>}
         </div>
 
         {/* Message — flex: 1 makes textarea grow to fill remaining modal height */}
         <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column" }}>
-          <label htmlFor="cf-message" style={labelStyle}>Tell me about your project *</label>
+          <label htmlFor="cf-message" style={labelStyle}>{t("message")} *</label>
           <textarea
             id="cf-message"
             {...register("message")}
@@ -249,7 +251,7 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
               resize: "none",
             }}
             disabled={formState === "submitting"}
-            placeholder="Describe your goals, timeline, and anything else that helps me understand your project…"
+            placeholder={t("messagePlaceholder")}
           />
           {errors.message && <p style={errorStyle}>{errors.message.message}</p>}
         </div>
@@ -291,10 +293,10 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
           {formState === "submitting" ? (
             <>
               <Loader2 size={15} strokeWidth={1.5} className="animate-spin" />
-              Sending…
+              {t("sending")}
             </>
           ) : (
-            "Send request"
+            t("submit")
           )}
         </button>
 
@@ -307,7 +309,7 @@ export function ContactForm({ sourcePage, onSuccess }: ContactFormProps) {
             marginTop: "-8px",
           }}
         >
-          Your information is only used to respond to your request. No spam, ever.
+          {t("disclaimer")}
         </p>
       </motion.form>
     </AnimatePresence>

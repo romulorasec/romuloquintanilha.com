@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
+import { useTranslations } from "next-intl"
 import { InfoModal } from "@/components/shared/info-modal"
 import { ContactForm } from "@/components/forms/contact-form"
 
@@ -17,6 +18,7 @@ export function StartProjectModal({
   open: externalOpen,
   onOpenChange: externalOnOpenChange,
 }: StartProjectModalProps) {
+  const t = useTranslations("contact")
   const [internalOpen, setInternalOpen] = useState(false)
   const isExternallyControlled = externalOpen !== undefined
 
@@ -41,7 +43,7 @@ export function StartProjectModal({
     <>
       {triggerElement}
       <InfoModal
-        title="Start your project"
+        title={t("modalTitle")}
         open={open}
         onOpenChange={handleOpenChange}
       >

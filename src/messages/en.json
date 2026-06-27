@@ -1,0 +1,272 @@
+{
+  "meta": {
+    "title": "Rômulo Quintanilha — Web Designer",
+    "description": "Conversion-focused web designer helping local businesses get more customers"
+  },
+  "nav": {
+    "about": "About me",
+    "services": "What i do",
+    "portfolio": "Portfolio",
+    "howIWork": "How i work",
+    "testimonials": "Client words",
+    "cta": "Start your project",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menuTitle": "Navigation menu"
+  },
+  "hero": {
+    "photoAlt": "Rômulo Quintanilha",
+    "scrollLabel": "See how",
+    "headline": "Growth",
+    "subheading": "not just looks.",
+    "tagline": "I design with one question in mind: does it convert?",
+    "cta": "Start your project"
+  },
+  "about": {
+    "heading": "About me",
+    "intro": "I don't design websites to impress. I design them to sell. A website isn't a digital business card, it's a salesperson who never clocks out, never stops closing, and works every hour your doors are shut. I build the version that earns its keep.",
+    "subheading": "Driven UI/UX Designer with an innovative approach to creating intuitive and engaging User experiences",
+    "cta": "Learn More",
+    "modalTitle": "Design gets you noticed. Architecture gets you paid.",
+    "skills": {
+      "uiux": "UI&UX Design",
+      "website": "Website Design",
+      "app": "App Design",
+      "graphic": "Graphic Design"
+    },
+    "modal": {
+      "diagnosisP1": "Most websites do not fail because they look bad.",
+      "diagnosisP2": "They fail because they make people think too hard, trust too slowly, and leave too easily.",
+      "displayWindow": "A lot of websites are built like display windows. They show the business, look polished, and wait for someone to care. But waiting is expensive. Every visitor who lands, hesitates, and disappears is a silent lost opportunity.",
+      "distinctionP1": "Good design can make a business look professional. Strategic architecture makes that business feel safe to choose.",
+      "distinctionP2": "That is the part most people never see, but it is the part that decides whether a visitor stays, trusts, clicks, books, buys, or leaves for someone else.",
+      "distinctionP3": "It is the logic underneath the surface.",
+      "eyeList": [
+        "Where the eye lands first.",
+        "What the first ten seconds prove.",
+        "Where doubt gets removed.",
+        "Where trust is built.",
+        "Where the next step becomes obvious.",
+        "Where the page stops acting like a brochure and starts behaving like a closer."
+      ],
+      "marketSells": "The market sells the surface because the surface is easy to ask for.",
+      "quotes": [
+        "\"Make it modern.\"",
+        "\"Make it clean.\"",
+        "\"Make it look like that competitor.\""
+      ],
+      "quotesFooter": "Those requests make sense, but they are not the real job.",
+      "realJob": "The real job is to take the most visited piece of your business and turn it into one of your strongest points of sale.",
+      "resultList": [
+        "A page that works when you are busy.",
+        "A page that works when your team is offline.",
+        "A page that works before someone ever talks to you.",
+        "A page that does not just look credible, but helps people feel confident enough to act."
+      ],
+      "harderP1": "That does not start with colors, fonts, or layout.",
+      "harderP2": "It starts with harder questions.",
+      "questionsList": [
+        "Who is landing here?",
+        "What are they afraid of?",
+        "What are they comparing you against?",
+        "What do they need to believe before they move forward?",
+        "Where does friction help the decision, and where is it quietly costing you the deal?"
+      ],
+      "numbersP1": "Those questions do not show up on a moodboard.",
+      "numbersP2": "They show up later, in the numbers.",
+      "approachIntro": "I build websites with that order in mind:",
+      "approachList": ["Strategy first.", "Architecture second.", "Design on top."],
+      "resolutionP1": "Not the other way around.",
+      "resolutionP2": "The website still has to look beautiful. That part is non-negotiable.",
+      "resolutionP3": "I just do not believe beauty is the finish line.",
+      "moneyTable": "Because a beautiful website that does not build trust, remove doubt, or move people toward action is still leaving money on the table.",
+      "closerP1": "So if you have ever paid for a website that looked great when it launched, but then just sat there doing nothing, you already know what was missing.",
+      "closerP2": "It was not more decoration.",
+      "architecture": "It was architecture.",
+      "invisible": "The invisible structure that turns attention into trust, and trust into action."
+    }
+  },
+  "services": {
+    "heading": "What i do",
+    "description": "Four ways a business grows on purpose.",
+    "cta": "Start your project",
+    "cards": {
+      "web": {
+        "title": "Web Development",
+        "description": "There are websites that represent a business. And websites that grow one. You've seen the first kind your whole life. Most people never find out the second kind exists. Most never find out the difference until it costs them.",
+        "cta": "See what changes",
+        "modalTitle": "Almost no site was built to do that. Including yours.",
+        "modalP1": "Every business has a website. Few have one that works.",
+        "modalP2": "And \"works\" doesn't mean fast load times and a clean layout. It means moving people: from stranger to curious, from curious to convinced, from convinced to paying. Almost no site was built to do that. Including, most likely, yours.",
+        "modalP3": "Most sites answer one question: are you a real business? They confirm you exist, show what you offer, list how to reach you. Done. That's the standard the entire market settled on. Even the expensive ones, even the ones someone spent months on.",
+        "modalP4": "A site built to grow answers something harder: what does this specific visitor need to see, in what order, to decide right now? That question shapes everything. Where the eye lands first, what gets proved in the first ten seconds, where the page earns trust and where it loses it. Not aesthetic choices. Decisions with consequences.",
+        "modalP5": "The gap between those two sites isn't budget or talent. It's intent. Knowing before a single page exists what this thing needs to produce, and building everything around that answer.",
+        "modalP6": "That's what I build. Websites, web apps, and landing pages where the architecture serves one outcome: turning the people who find you into the people who hire you.",
+        "modalP7": "Your most visited asset is probably your most underused one."
+      },
+      "brand": {
+        "title": "Brand Identity",
+        "description": "Before anyone reads a word, they decide what you're worth. Most businesses spend years on the product and ten minutes on that decision. Most brands say: we're good enough. The ones that charge more say something else.",
+        "cta": "See what yours says",
+        "modalTitle": "Before anyone reads your price, they've already decided if you're worth it.",
+        "modalP1": "Most businesses never think about that moment. They spend months building the product, years refining the service, and about ten minutes on the thing that determines whether any of it gets taken seriously on sight.",
+        "modalP2": "Here's what actually happens. Someone lands on your website, walks past your storefront, or opens your deck. In under three seconds, before a single word registers, their brain has already placed you somewhere. Premium or cheap. Trustworthy or risky. Worth the price or worth a discount. That read happens whether you designed for it or not.",
+        "modalP3": "Most brands don't design for it. They get something that looks decent, feels consistent enough, and call it done. What they don't realize is that \"decent\" has a price ceiling. It signals a business that's good enough and people pay good enough prices for good enough businesses.",
+        "modalP4": "Pricing power lives in perception. The brands that charge more aren't always better. They're clearer. Their identity communicates authority, specificity, and confidence before the conversation starts, which means the conversation starts from a different place entirely.",
+        "modalP5": "That's what a real identity system does. Not just a logo that looks good, but a visual language that tells the right person, before they read a word, that you're exactly what they're looking for.",
+        "modalP6": "I build that system. Logo, type, color, layout logic, every decision made around what your business needs to prove and to whom.",
+        "modalP7": "The brands that win before they speak don't get lucky. They get deliberate."
+      },
+      "traffic": {
+        "title": "Paid traffic",
+        "description": "Right now, you're waiting for customers to find you. There's a way to find them first, exactly when they're ready to buy. There's a switch. Most businesses never know it exists.",
+        "cta": "See how it works",
+        "modalTitle": "You built a business and hoped people would find it. There's a better way than hope.",
+        "modalP1": "Most businesses are built on hope. Someone hears the name, stumbles across the site, drives past the door. A few show up. You call that marketing. It isn't.",
+        "modalP2": "Paid traffic is the opposite. You decide who sees you, when they see you, and how often. The right person, at the moment they're looking for what you sell. Not by accident. By design.",
+        "modalP3": "That's what paid traffic actually is. Not a cost. Not a gamble for big companies with money to burn. It's the one channel where you stop being at the mercy of who happens to walk by.",
+        "modalP4": "Done badly, it burns money. Done right, it's the closest thing to a growth switch a business has. You turn it up, more of the right people show up. You turn it down, it slows. For the first time, the flow of customers is something you control instead of something you wait for.",
+        "modalP5": "I build that system on Meta and Google. The right people, the right moment, a path built to turn attention into customers. Measured every week, so every dollar gets sharper.",
+        "modalP6": "The businesses that grow on purpose stopped waiting to be found. So can yours."
+      },
+      "social": {
+        "title": "Social Media",
+        "description": "Likes feel good and pay nothing. The real win is being the name they already trust when they're ready to buy. Most businesses chase the first and never get the second.",
+        "cta": "See what that looks like",
+        "modalTitle": "You post. Almost no one sees it. That's not a flaw. That's the design.",
+        "modalP1": "Most businesses treat social media like a chore. Post something, get a few likes, move on. What they don't know is that the average post now reaches around 3.5% of the people who follow you. The other 96% never see it. You're talking to an empty room and calling it presence.",
+        "modalP2": "Posting more doesn't fix this. It just fills the empty room faster. The platforms decided years ago that being seen costs money or it costs something rarer: content people actually want.",
+        "modalP3": "The algorithm only pushes what earns it. Posts people save, send to a friend, stop scrolling to watch. That's the whole game now. Not volume, not luck. Content good enough that the platform has a reason to show it and your audience has a reason to remember you.",
+        "modalP4": "And remembering is the point. A business doesn't need to go viral. Viral brings strangers from everywhere who will never walk through your door. A business needs the right people, the ones who can actually buy, to know you and trust you before they ever need you. So when the moment comes, you're not a search result. You're the name they already had in mind.",
+        "modalP5": "I build that system. A clear voice, the right audience, and content people choose to see instead of scroll past.",
+        "modalP6": "Being on social media is not the same as being remembered. Only one of them is worth paying for."
+      }
+    }
+  },
+  "howIWork": {
+    "heading": "How I Work",
+    "description": "Five steps. No surprises. A site that performs from the day it goes live.",
+    "cta": "Start your project",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery",
+        "subtitle": "Before a pixel moves, I learn what moves your customer",
+        "description": "I map your market, your competitors, and the people who actually buy from you. By the end, we both know exactly what needs to be built and why. No guesswork from this point forward."
+      },
+      {
+        "number": "02",
+        "title": "Strategy",
+        "subtitle": "Every section earns its place or gets cut",
+        "description": "I map out what gets said, in what order, and where trust gets built. Nothing decorative makes it in. Every headline, every layout choice, every scroll depth exists to move people closer to the decision you need. Color, type, layout logic, all decided here, before a single screen gets designed."
+      },
+      {
+        "number": "03",
+        "title": "Design",
+        "subtitle": "Your visitor decides in three seconds. Design shapes what they decide.",
+        "description": "By the time design starts, the direction is already set. Every visual decision follows from what was agreed. No guessing on either side. Premium where it matters, clean everywhere else."
+      },
+      {
+        "number": "04",
+        "title": "Build",
+        "subtitle": "The site that works as well as it looks.",
+        "description": "Tested across every device and browser before you see it. Loads fast. Works on every phone. Behaves the same way whether ten people visit or ten thousand. The finished product doesn't just look right. It works right."
+      },
+      {
+        "number": "05",
+        "title": "Launch",
+        "subtitle": "You go live knowing exactly what to expect",
+        "description": "Hosting, domain, configurations, all handled. You don't go live and wonder what's missing. Tracking is set up, the site is indexed, and you know from week one what the investment is producing."
+      }
+    ]
+  },
+  "projects": {
+    "heading": "Portfolio",
+    "description": "A selected collection of brand and website."
+  },
+  "promise": {
+    "heading": "The Promise",
+    "items": [
+      {
+        "number": "01",
+        "headline": "Live in 3 weeks.",
+        "body": "Most designers need three months. My process runs in parallel — so your site goes live in 21 days, not 90."
+      },
+      {
+        "number": "02",
+        "headline": "You own everything.",
+        "body": "Files, domain, code. When we're done, none of it stays with me."
+      },
+      {
+        "number": "03",
+        "headline": "Every decision has a reason.",
+        "body": "Before anything gets built, you'll understand why. No taste-based arguments. No \"trust me, it looks better.\""
+      },
+      {
+        "number": "04",
+        "headline": "You'll know what your investment is producing.",
+        "body": "Analytics configured before launch. From the first week, you can see what's working."
+      },
+      {
+        "number": "05",
+        "headline": "I don't take every project.",
+        "body": "If I can't help you, I'll say so in the first ten minutes. No pitch, no proposal, no wasted time."
+      }
+    ]
+  },
+  "positioning": {
+    "headline": "A website that doesn't sell is a salesperson you're paying to stay silent.",
+    "badge": "I build websites that pay for themselves."
+  },
+  "testimonials": {
+    "heading": "Don't take my word for it.",
+    "description": "Business owners who were exactly where you are now."
+  },
+  "footer": {
+    "role": "Web Designer",
+    "location": "Menlo Park, California",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "workTogether": "Let's work together",
+    "copyright": "All rights reserved.",
+    "navHome": "Home",
+    "navAbout": "About Me",
+    "navServices": "What I Do",
+    "navPortfolio": "Portfolio",
+    "navHowIWork": "How I Work",
+    "navTestimonials": "Client Words",
+    "navContact": "Contact"
+  },
+  "contact": {
+    "modalTitle": "Start your project",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone / WhatsApp",
+    "phonePlaceholder": "Optional",
+    "projectType": "Project type",
+    "typePlaceholder": "Select…",
+    "budget": "Estimated budget",
+    "message": "Tell me about your project",
+    "messagePlaceholder": "Describe your goals, timeline, and anything else...",
+    "projectTypes": {
+      "website": "Website",
+      "redesign": "Redesign",
+      "branding": "Branding",
+      "uxui": "UX/UI",
+      "other": "Other"
+    },
+    "budgets": {
+      "under1k": "Under $1,000",
+      "1k3k": "$1,000 – $3,000",
+      "3k7k": "$3,000 – $7,000",
+      "7kplus": "$7,000+",
+      "discuss": "To be discussed"
+    },
+    "submit": "Send request",
+    "sending": "Sending…",
+    "disclaimer": "Your information is only used to respond to your request. No spam, ever.",
+    "successTitle": "Request received.",
+    "successBody": "I'll be in touch within 24 hours."
+  }
+}
