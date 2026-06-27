@@ -1,12 +1,14 @@
 "use client"
 
 import { useRef } from "react"
+import { useTranslations } from "next-intl"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { MotionFade } from "@/components/animations/motion-fade"
 import { SiteButton } from "@/components/shared/site-button"
 import { StartProjectModal } from "@/components/shared/start-project-modal"
 
 export function Hero() {
+  const t = useTranslations("hero")
   const sectionRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -100,7 +102,8 @@ export function Hero() {
           pointerEvents: "auto",
         }}
       >
-        <span
+        <a
+          href="#about"
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -117,7 +120,7 @@ export function Hero() {
           onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.55")}
           onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
         >
-          See how{" "}
+          {t("scrollLabel")}{" "}
           <motion.span
             animate={{ y: [0, 4, 0] }}
             transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
@@ -125,7 +128,7 @@ export function Hero() {
           >
             ↓
           </motion.span>
-        </span>
+        </a>
       </motion.div>
 
       {/* Photo — absolute right column, art-directed via <picture> */}
@@ -143,7 +146,7 @@ export function Hero() {
           <img
             className="hero-image-inner"
             src="/images/profile-hero-tablet-1200x1600.png"
-            alt="Rômulo Quintanilha"
+            alt={t("photoAlt")}
             fetchPriority="high"
             style={{
               position: "absolute",
@@ -180,7 +183,7 @@ export function Hero() {
                   margin: 0,
                 }}
               >
-                Growth
+                {t("headline")}
               </h1>
             </MotionFade>
 
@@ -197,7 +200,7 @@ export function Hero() {
                   marginTop: "24px",
                 }}
               >
-                not just looks.
+                {t("subheading")}
               </p>
             </MotionFade>
 
@@ -214,7 +217,7 @@ export function Hero() {
                   maxWidth: "340px",
                 }}
               >
-                I design with one question in mind: does it convert?
+                {t("tagline")}
               </p>
             </MotionFade>
 
@@ -222,7 +225,7 @@ export function Hero() {
               <div style={{ marginTop: "32px" }}>
                 <StartProjectModal
                   sourcePage="hero-desktop"
-                  trigger={<SiteButton variant="primary">Start your project</SiteButton>}
+                  trigger={<SiteButton variant="primary">{t("cta")}</SiteButton>}
                 />
               </div>
             </MotionFade>
@@ -249,7 +252,7 @@ export function Hero() {
           />
           <img
             src="/images/profile-hero-mobile-1080x1600.png"
-            alt="Rômulo Quintanilha"
+            alt={t("photoAlt")}
             fetchPriority="high"
             style={{
               position: "absolute",
@@ -316,7 +319,7 @@ export function Hero() {
                   whiteSpace: "nowrap",
                 }}
               >
-                Growth
+                {t("headline")}
               </div>
               <div
                 style={{
@@ -330,7 +333,7 @@ export function Hero() {
                   whiteSpace: "normal",
                 }}
               >
-                not just looks.
+                {t("subheading")}
               </div>
             </div>
 
@@ -348,13 +351,13 @@ export function Hero() {
                 whiteSpace: "normal",
               }}
             >
-              I design with one question in mind:<br />does it convert?
+              {t("tagline")}
             </p>
 
             <div style={{ marginTop: "clamp(40px, 8vw, 56px)" }}>
               <StartProjectModal
                 sourcePage="hero-mobile"
-                trigger={<SiteButton variant="primary-inverse">Start your project</SiteButton>}
+                trigger={<SiteButton variant="primary-inverse">{t("cta")}</SiteButton>}
               />
             </div>
           </div>

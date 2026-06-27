@@ -1,8 +1,11 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { MotionFade } from "@/components/animations/motion-fade"
 
 export function Positioning() {
+  const t = useTranslations("positioning")
+
   return (
     <section
       id="positioning"
@@ -22,7 +25,7 @@ export function Positioning() {
         }}
       >
         <h2
-          aria-label="A website that doesn't sell is a salesperson you're paying to stay silent."
+          aria-label={t("headline")}
           style={{ margin: 0 }}
         >
           <MotionFade delay={0} y={28}>
@@ -37,7 +40,7 @@ export function Positioning() {
                 letterSpacing: "-0.02em",
               }}
             >
-              A website that doesn&apos;t sell is a salesperson you&apos;re paying to stay silent.
+              {t("headline")}
             </span>
           </MotionFade>
         </h2>
@@ -61,9 +64,11 @@ export function Positioning() {
                 fontSize: "clamp(14px, 2vw, 18px)",
                 lineHeight: 1.5,
                 letterSpacing: "0.01em",
+                maxWidth: "min(640px, 92vw)",
+                textAlign: "center",
               }}
             >
-              I build websites that pay for themselves.
+              {t("badge")}
             </span>
           </div>
         </MotionFade>

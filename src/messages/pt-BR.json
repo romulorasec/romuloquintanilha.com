@@ -1,0 +1,272 @@
+{
+  "meta": {
+    "title": "Rômulo Quintanilha — Web Designer",
+    "description": "Web designer focado em conversão que ajuda negócios locais a conquistar mais clientes"
+  },
+  "nav": {
+    "about": "Sobre mim",
+    "services": "O que faço",
+    "portfolio": "Portfólio",
+    "howIWork": "Como trabalho",
+    "testimonials": "O que dizem",
+    "cta": "Iniciar projeto",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "menuTitle": "Menu de navegação"
+  },
+  "hero": {
+    "photoAlt": "Rômulo Quintanilha",
+    "scrollLabel": "Ver como",
+    "headline": "Resultado",
+    "subheading": "não só aparência.",
+    "tagline": "Projeto com uma pergunta em mente: converte?",
+    "cta": "Iniciar projeto"
+  },
+  "about": {
+    "heading": "Sobre mim",
+    "intro": "Não projeto sites pra impressionar. Projeto pra vender. Site não é cartão de visita digital. É vendedor que não tira férias, não para de fechar negócio, e trabalha enquanto suas portas estão fechadas. Construo a versão que se paga.",
+    "subheading": "Designer UI/UX com abordagem inovadora para criar experiências intuitivas e envolventes",
+    "cta": "Saiba mais",
+    "modalTitle": "Design te coloca no mapa. Arquitetura paga as contas.",
+    "skills": {
+      "uiux": "UI&UX Design",
+      "website": "Website Design",
+      "app": "App Design",
+      "graphic": "Graphic Design"
+    },
+    "modal": {
+      "diagnosisP1": "A maioria dos sites não falha porque parece ruim.",
+      "diagnosisP2": "Falha porque faz as pessoas pensar demais, confiar devagar demais, e ir embora cedo demais.",
+      "displayWindow": "Muitos sites são construídos como vitrines. Mostram o negócio, ficam bem polidos, e esperam alguém se importar. Mas esperar é caro. Cada visitante que chega, hesita e vai embora é uma oportunidade perdida em silêncio.",
+      "distinctionP1": "Bom design faz o negócio parecer profissional. Arquitetura estratégica faz esse negócio parecer seguro de escolher.",
+      "distinctionP2": "Essa é a parte que a maioria nunca vê, mas é ela que decide se o visitante fica, confia, clica, agenda, compra ou vai pra concorrência.",
+      "distinctionP3": "É a lógica por baixo da superfície.",
+      "eyeList": [
+        "Onde o olho cai primeiro.",
+        "O que os primeiros dez segundos provam.",
+        "Onde a dúvida some.",
+        "Onde a confiança se constrói.",
+        "Onde o próximo passo fica óbvio.",
+        "Onde a página para de se comportar como brochura e começa a se comportar como vendedor."
+      ],
+      "marketSells": "O mercado vende a superfície porque a superfície é fácil de pedir.",
+      "quotes": [
+        "\"Deixa moderno.\"",
+        "\"Deixa limpo.\"",
+        "\"Faz parecer com o concorrente.\""
+      ],
+      "quotesFooter": "Fazem sentido, mas não é esse o trabalho real.",
+      "realJob": "O trabalho real é pegar a peça mais visitada do seu negócio e transformá-la em um dos seus pontos de venda mais fortes.",
+      "resultList": [
+        "Uma página que trabalha quando você está ocupado.",
+        "Uma página que trabalha quando sua equipe está offline.",
+        "Uma página que trabalha antes de alguém falar com você.",
+        "Uma página que não só parece confiável, mas faz as pessoas se sentirem seguras pra agir."
+      ],
+      "harderP1": "Isso não começa com cores, fontes ou layout.",
+      "harderP2": "Começa com perguntas mais difíceis.",
+      "questionsList": [
+        "Quem está chegando aqui?",
+        "Do que essa pessoa tem medo?",
+        "Com o que ela está te comparando?",
+        "No que ela precisa acreditar antes de avançar?",
+        "Onde o atrito ajuda a decisão e onde ele está silenciosamente te custando o negócio?"
+      ],
+      "numbersP1": "Essas perguntas não aparecem num moodboard.",
+      "numbersP2": "Aparecem depois, nos números.",
+      "approachIntro": "Construo sites com essa ordem em mente:",
+      "approachList": ["Estratégia primeiro.", "Arquitetura depois.", "Design no topo."],
+      "resolutionP1": "Não o contrário.",
+      "resolutionP2": "O site ainda precisa ser bonito. Essa parte é inegociável.",
+      "resolutionP3": "Só não acredito que beleza seja a linha de chegada.",
+      "moneyTable": "Porque um site bonito que não constrói confiança, não remove dúvida e não move pessoas pra ação ainda está deixando dinheiro na mesa.",
+      "closerP1": "Se você já pagou por um site que ficou ótimo no lançamento, mas depois ficou lá parado sem fazer nada, você já sabe o que estava faltando.",
+      "closerP2": "Não era mais decoração.",
+      "architecture": "Era arquitetura.",
+      "invisible": "A estrutura invisível que transforma atenção em confiança, e confiança em ação."
+    }
+  },
+  "services": {
+    "heading": "O que faço",
+    "description": "Quatro formas de crescer com intenção.",
+    "cta": "Iniciar projeto",
+    "cards": {
+      "web": {
+        "title": "Web Development",
+        "description": "Tem site que representa o negócio. E tem site que faz o negócio crescer. Você viu o primeiro tipo a vida toda. A maioria nunca descobre que o segundo existe. Descobre pela perda.",
+        "cta": "Ver o que muda",
+        "modalTitle": "Quase nenhum site foi feito pra fazer isso. Incluindo o seu.",
+        "modalP1": "Todo negócio tem um site. Poucos têm um que funciona.",
+        "modalP2": "E \"funciona\" não significa carregamento rápido e layout limpo. Significa mover pessoas: de estranho pra curioso, de curioso pra convencido, de convencido pra pagante. Quase nenhum site foi construído pra fazer isso. Incluindo, muito provavelmente, o seu.",
+        "modalP3": "A maioria dos sites responde uma pergunta: você é um negócio real? Confirmam que você existe, mostram o que oferece, listam como te contatar. Pronto. Esse é o padrão que todo o mercado aceitou. Até os caros. Até os que alguém passou meses construindo.",
+        "modalP4": "Um site construído pra crescer responde algo mais difícil: o que esse visitante específico precisa ver, em que ordem, pra decidir agora? Essa pergunta muda tudo. Onde o olho cai primeiro, o que se prova nos primeiros dez segundos, onde a página ganha confiança e onde perde. Não são escolhas estéticas. São decisões com consequências.",
+        "modalP5": "A diferença entre esses dois sites não é orçamento nem talento. É intenção. Saber antes de existir uma única página o que essa coisa precisa produzir, e construir tudo em torno dessa resposta.",
+        "modalP6": "É isso que construo. Sites, web apps e landing pages onde a arquitetura serve a um resultado: transformar quem te encontra em quem te contrata.",
+        "modalP7": "Seu ativo mais visitado provavelmente é seu mais subutilizado."
+      },
+      "brand": {
+        "title": "Brand Identity",
+        "description": "Antes de ler uma palavra, decidem quanto você vale. A maioria das empresas gasta anos no produto e dez minutos nessa decisão. A maioria das marcas diz: somos bons o suficiente. As que cobram mais dizem outra coisa.",
+        "cta": "Ver o que a sua transmite",
+        "modalTitle": "Antes de ler o seu preço, já decidiram se você vale.",
+        "modalP1": "A maioria das empresas nunca pensa nesse momento. Gastam meses construindo o produto, anos refinando o serviço, e uns dez minutos na coisa que determina se qualquer um desses será levado a sério de cara.",
+        "modalP2": "É o que acontece na prática. Alguém chega no seu site, passa na frente da sua loja, ou abre seu deck. Em menos de três segundos, antes de uma única palavra registrar, o cérebro já te colocou em algum lugar. Premium ou barato. Confiável ou arriscado. Vale o preço ou vale um desconto. Essa leitura acontece com ou sem design para ela.",
+        "modalP3": "A maioria das marcas não projeta para isso. Pegam algo que parece razoável, parece consistente o suficiente, e chamam de pronto. O que não percebem é que \"razoável\" tem um teto de preço. Sinaliza um negócio que é bom o suficiente, e as pessoas pagam preços bons o suficiente por negócios bons o suficiente.",
+        "modalP4": "Poder de precificação vive na percepção. As marcas que cobram mais não são sempre melhores. São mais claras. A identidade comunica autoridade, especificidade e confiança antes de a conversa começar, o que significa que a conversa começa de um lugar completamente diferente.",
+        "modalP5": "É isso que um sistema de identidade real faz. Não só um logo que fica bem, mas uma linguagem visual que diz à pessoa certa, antes de ler uma palavra, que você é exatamente o que ela procura.",
+        "modalP6": "Construo esse sistema. Logo, tipografia, cor, lógica de layout, cada decisão tomada em torno do que seu negócio precisa provar e a quem.",
+        "modalP7": "As marcas que vencem antes de falar não têm sorte. Têm intenção."
+      },
+      "traffic": {
+        "title": "Tráfego Pago",
+        "description": "Agora você espera clientes te acharem. Tem como achar eles primeiro, na hora exata em que estão prontos pra comprar. Existe um interruptor. A maioria nunca sabe que ele existe.",
+        "cta": "Ver como funciona",
+        "modalTitle": "Você construiu um negócio e torceu pra alguém achar. Tem uma forma melhor que torcer.",
+        "modalP1": "A maioria dos negócios é construída na esperança. Alguém ouve o nome, tropeça no site, passa na frente da loja. Uns aparecem. Você chama isso de marketing. Não é.",
+        "modalP2": "Tráfego pago é o oposto. Você decide quem te vê, quando te vê e com que frequência. A pessoa certa, no momento em que está procurando o que você vende. Não por acidente. Por design.",
+        "modalP3": "É isso que tráfego pago realmente é. Não um custo. Não um jogo de azar para grandes empresas com dinheiro sobrando. É o único canal onde você para de depender de quem por acaso passa na sua porta.",
+        "modalP4": "Feito mal, queima dinheiro. Feito certo, é a coisa mais próxima de um interruptor de crescimento que um negócio tem. Você sobe, mais pessoas certas aparecem. Você desce, afrouxa. Pela primeira vez, o fluxo de clientes é algo que você controla em vez de algo que você espera.",
+        "modalP5": "Construo esse sistema no Meta e no Google. As pessoas certas, o momento certo, um caminho feito para transformar atenção em clientes. Medido toda semana, para cada real ficar mais preciso.",
+        "modalP6": "Os negócios que crescem com intenção pararam de esperar ser encontrados. O seu também pode."
+      },
+      "social": {
+        "title": "Social Media",
+        "description": "Curtida faz bem e não paga nada. O ganho real é ser o nome que já confiam quando estão prontos pra comprar. A maioria corre atrás da primeira e nunca chega à segunda.",
+        "cta": "Ver como fica",
+        "modalTitle": "Você posta. Quase ninguém vê. Não é falha. É o design.",
+        "modalP1": "A maioria dos negócios trata redes sociais como tarefa. Posta algo, pega umas curtidas, segue em frente. O que não sabe é que o post médio hoje atinge cerca de 3,5% das pessoas que te seguem. Os outros 96% nunca veem. Você está falando pra uma sala vazia e chamando isso de presença.",
+        "modalP2": "Postar mais não resolve. Só enche a sala vazia mais rápido. As plataformas decidiram há anos que ser visto custa dinheiro ou custa algo mais raro: conteúdo que as pessoas realmente querem.",
+        "modalP3": "O algoritmo só impulsiona o que merece. Posts que as pessoas salvam, mandam pra um amigo, param de rolar pra assistir. É esse o jogo agora. Não volume, não sorte. Conteúdo bom o suficiente pra plataforma ter razão de mostrar e sua audiência ter razão de lembrar de você.",
+        "modalP4": "E lembrar é o ponto. Um negócio não precisa viralizar. Viral traz estranhos de todo lugar que nunca vão passar pela sua porta. Um negócio precisa que as pessoas certas, as que podem realmente comprar, te conheçam e confiem em você antes de precisar. Pra quando o momento chegar, você não seja um resultado de busca. Seja o nome que já tinham em mente.",
+        "modalP5": "Construo esse sistema. Uma voz clara, a audiência certa, e conteúdo que as pessoas escolhem ver em vez de passar.",
+        "modalP6": "Estar nas redes não é o mesmo que ser lembrado. Só um deles vale pagar."
+      }
+    }
+  },
+  "howIWork": {
+    "heading": "Como Trabalho",
+    "description": "Cinco etapas. Sem surpresas. Um site que entrega desde o primeiro dia.",
+    "cta": "Iniciar projeto",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Descoberta",
+        "subtitle": "Antes de mover um pixel, aprendo o que move o seu cliente",
+        "description": "Mapeio seu mercado, seus concorrentes e quem de fato compra de você. No fim, os dois sabemos exatamente o que precisa ser construído e por quê. Nenhuma suposição daqui pra frente."
+      },
+      {
+        "number": "02",
+        "title": "Estratégia",
+        "subtitle": "Cada seção se justifica ou sai",
+        "description": "Mapeio o que vai ser dito, em que ordem, e onde a confiança se constrói. Nada decorativo entra. Cada título, cada escolha de layout, cada profundidade de scroll existe pra mover as pessoas em direção à decisão que você precisa. Cor, tipografia, lógica de layout, tudo decidido aqui, antes de uma única tela ser desenhada."
+      },
+      {
+        "number": "03",
+        "title": "Design",
+        "subtitle": "Seu visitante decide em três segundos. O design molda o que ele decide.",
+        "description": "Quando o design começa, a direção já está definida. Cada decisão visual vem do que foi acordado. Sem adivinhações de nenhum lado. Premium onde importa, limpo em todo o resto."
+      },
+      {
+        "number": "04",
+        "title": "Desenvolvimento",
+        "subtitle": "O site que funciona tão bem quanto parece.",
+        "description": "Testado em cada dispositivo e browser antes de você ver. Carrega rápido. Funciona em qualquer celular. Se comporta igual se dez pessoas visitarem ou dez mil. O produto final não só parece certo. Funciona certo."
+      },
+      {
+        "number": "05",
+        "title": "Lançamento",
+        "subtitle": "Você vai ao ar sabendo exatamente o que esperar",
+        "description": "Hospedagem, domínio, configurações, tudo resolvido. Você não vai ao ar se perguntando o que está faltando. O rastreamento está configurado, o site está indexado, e você sabe desde a primeira semana o que o investimento está gerando."
+      }
+    ]
+  },
+  "projects": {
+    "heading": "Portfólio",
+    "description": "Uma seleção de marcas e sites."
+  },
+  "promise": {
+    "heading": "A Promessa",
+    "items": [
+      {
+        "number": "01",
+        "headline": "No ar em 3 semanas.",
+        "body": "A maioria dos designers precisa de três meses. Meu processo roda em paralelo — então seu site vai ao ar em 21 dias, não em 90."
+      },
+      {
+        "number": "02",
+        "headline": "Você fica com tudo.",
+        "body": "Arquivos, domínio, código. Quando terminarmos, nada fica comigo."
+      },
+      {
+        "number": "03",
+        "headline": "Cada decisão tem um porquê.",
+        "body": "Antes de qualquer coisa ser construída, você vai entender o motivo. Sem argumentos de gosto. Sem \"confia em mim, fica melhor assim\"."
+      },
+      {
+        "number": "04",
+        "headline": "Você saberá o que seu investimento está gerando.",
+        "body": "Analytics configurado antes do lançamento. Desde a primeira semana, você vê o que está funcionando."
+      },
+      {
+        "number": "05",
+        "headline": "Não aceito todo projeto.",
+        "body": "Se não posso te ajudar, digo nos primeiros dez minutos. Sem pitch, sem proposta, sem tempo perdido."
+      }
+    ]
+  },
+  "positioning": {
+    "headline": "Site que não vende é vendedor que você paga pra ficar quieto.",
+    "badge": "Construo sites que se pagam."
+  },
+  "testimonials": {
+    "heading": "Não é eu que digo.",
+    "description": "Donos de negócio que estavam exatamente onde você está."
+  },
+  "footer": {
+    "role": "Web Designer",
+    "location": "Menlo Park, Califórnia",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "cookies": "Política de Cookies",
+    "workTogether": "Vamos trabalhar juntos",
+    "copyright": "Todos os direitos reservados.",
+    "navHome": "Início",
+    "navAbout": "Sobre mim",
+    "navServices": "O que faço",
+    "navPortfolio": "Portfólio",
+    "navHowIWork": "Como trabalho",
+    "navTestimonials": "O que dizem",
+    "navContact": "Contato"
+  },
+  "contact": {
+    "modalTitle": "Iniciar projeto",
+    "name": "Nome",
+    "email": "E-mail",
+    "phone": "Telefone / WhatsApp",
+    "phonePlaceholder": "Opcional",
+    "projectType": "Tipo de projeto",
+    "typePlaceholder": "Selecione…",
+    "budget": "Orçamento estimado",
+    "message": "Fale sobre seu projeto",
+    "messagePlaceholder": "Descreva seus objetivos, prazo e qualquer outra informação relevante...",
+    "projectTypes": {
+      "website": "Site",
+      "redesign": "Redesign",
+      "branding": "Branding",
+      "uxui": "UX/UI",
+      "other": "Outro"
+    },
+    "budgets": {
+      "under1k": "Menos de $1.000",
+      "1k3k": "$1.000 – $3.000",
+      "3k7k": "$3.000 – $7.000",
+      "7kplus": "$7.000+",
+      "discuss": "A definir"
+    },
+    "submit": "Enviar solicitação",
+    "sending": "Enviando…",
+    "disclaimer": "Suas informações são usadas apenas para responder à sua solicitação. Sem spam, nunca.",
+    "successTitle": "Solicitação recebida.",
+    "successBody": "Retorno em até 24 horas."
+  }
+}

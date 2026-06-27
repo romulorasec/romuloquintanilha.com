@@ -1,42 +1,12 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { MotionFade } from "@/components/animations/motion-fade"
 
-interface PromiseItem {
-  number: string
-  headline: string
-  body: string
-}
-
-const PROMISES: PromiseItem[] = [
-  {
-    number: "01",
-    headline: "Live in 3 weeks.",
-    body: "Most designers need three months. My process runs in parallel — so your site goes live in 21 days, not 90.",
-  },
-  {
-    number: "02",
-    headline: "You own everything.",
-    body: "Files, domain, code. When we're done, none of it stays with me.",
-  },
-  {
-    number: "03",
-    headline: "Every decision has a reason.",
-    body: "Before anything gets built, you'll understand why. No taste-based arguments. No \"trust me, it looks better.\"",
-  },
-  {
-    number: "04",
-    headline: "You'll know what your investment is producing.",
-    body: "Analytics configured before launch. From the first week, you can see what's working.",
-  },
-  {
-    number: "05",
-    headline: "I don't take every project.",
-    body: "If I can't help you, I'll say so in the first ten minutes. No pitch, no proposal, no wasted time.",
-  },
-]
-
 export function Promise() {
+  const t = useTranslations("promise")
+  const items = t.raw("items") as Array<{ number: string; headline: string; body: string }>
+
   return (
     <section
       style={{
@@ -63,14 +33,14 @@ export function Promise() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                The Promise
+                {t("heading")}
               </h2>
             </MotionFade>
           </div>
         </div>
 
         <div role="list">
-          {PROMISES.map((item, index) => (
+          {items.map((item, index) => (
             <MotionFade key={item.number} delay={0.08 + index * 0.05} y={16}>
               <div
                 role="listitem"

@@ -1,6 +1,6 @@
-import type { Metadata } from "next"
 import { Plus_Jakarta_Sans } from "next/font/google"
 import { Toaster } from "sonner"
+import { getLocale } from "next-intl/server"
 import "./globals.css"
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -9,18 +9,14 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
 })
 
-export const metadata: Metadata = {
-  title: "Rômulo Quintanilha",
-  description: "Conversion-focused web designer helping local businesses get more customers",
-}
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const locale = await getLocale()
   return (
-    <html lang="en" className={`${plusJakarta.variable} antialiased`}>
+    <html lang={locale} className={`${plusJakarta.variable} antialiased`}>
       <body suppressHydrationWarning>
         {children}
         <Toaster position="bottom-right" richColors />

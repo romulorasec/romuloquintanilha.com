@@ -1,24 +1,27 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Drawer } from "vaul"
 import { SiteButton } from "@/components/shared/site-button"
 import { StartProjectModal } from "@/components/shared/start-project-modal"
-
-const navLinks = [
-  { label: "About me", href: "#about" },
-  { label: "What i do", href: "#services" },
-  { label: "Portfolio", href: "#projects" },
-  { label: "How i work", href: "#how-i-work" },
-  { label: "Client words", href: "#testimonials" },
-]
+import { LocaleSwitcher } from "@/components/shared/locale-switcher"
 
 export function Navbar() {
+  const t = useTranslations("nav")
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [projectModalOpen, setProjectModalOpen] = useState(false)
+
+  const navLinks = [
+    { label: t("about"), href: "#about" },
+    { label: t("services"), href: "#services" },
+    { label: t("portfolio"), href: "#projects" },
+    { label: t("howIWork"), href: "#how-i-work" },
+    { label: t("testimonials"), href: "#testimonials" },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80)
@@ -54,7 +57,7 @@ export function Navbar() {
     >
       {/* Left group: logo + nav links — nav aligned with content below at 168px */}
       <div className="flex items-center" style={{ gap: "clamp(55px, calc(8vw - 10px), 114px)" }}>
-        <a href="#hero" aria-label="Home">
+        <a href="/" aria-label="Home">
           <Image
             src="/images/logo.png"
             alt="Logo"
@@ -88,13 +91,14 @@ export function Navbar() {
         </nav>
       </div>
 
-      {/* Right: CTA + mobile hamburger */}
-      <div className="flex items-center" style={{ gap: "1.5rem" }}>
+      {/* Right: locale switcher + mobile hamburger */}
+      <div className="flex items-center" style={{ gap: "1rem" }}>
+        <LocaleSwitcher />
         {/* Mobile hamburger */}
         <button
           className="nav-portrait"
           onClick={() => setOpen(true)}
-          aria-label="Open menu"
+          aria-label={t("openMenu")}
           style={{
             background: "none",
             border: "none",
@@ -135,11 +139,11 @@ export function Navbar() {
               flexDirection: "column",
             }}
           >
-            <Drawer.Title className="sr-only">Navigation menu</Drawer.Title>
+            <Drawer.Title className="sr-only">{t("menuTitle")}</Drawer.Title>
             <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "32px" }}>
               <button
                 onClick={() => setOpen(false)}
-                aria-label="Close menu"
+                aria-label={t("closeMenu")}
                 style={{
                   background: "none",
                   border: "none",
@@ -179,7 +183,7 @@ export function Navbar() {
                   setTimeout(() => setProjectModalOpen(true), 320)
                 }}
               >
-                Start your project
+                {t("cta")}
               </SiteButton>
             </div>
           </Drawer.Content>

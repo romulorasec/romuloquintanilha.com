@@ -42,6 +42,8 @@ interface StackedCircularFooterProps {
   instagram?: string
   facebook?: string
   navLinks?: { label: string; href: string }[]
+  legalLinks?: { label: string; href: string }[]
+  workTogetherLabel?: string
   copyright?: string
 }
 
@@ -63,6 +65,12 @@ function StackedCircularFooter({
     { label: "Client Words", href: "#testimonials" },
     { label: "Contact", href: "#contact" },
   ],
+  legalLinks = [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Cookie Policy", href: "/cookies" },
+  ],
+  workTogetherLabel = "Let's work together",
   copyright = `© 2026 ${name}. All rights reserved.`,
 }: StackedCircularFooterProps) {
   const [contactModalOpen, setContactModalOpen] = useState(false)
@@ -89,20 +97,22 @@ function StackedCircularFooter({
           {/* Left column — identity */}
           <MotionFade delay={0} y={20}>
             <div>
-              <h2
-                style={{
-                  fontWeight: 300,
-                  fontSize: "clamp(48px, 8vw, 100px)",
-                  lineHeight: 0.9,
-                  letterSpacing: "-0.03em",
-                  color: "var(--color-text-inverse)",
-                  margin: 0,
-                }}
-              >
-                {firstName}
-                <br />
-                {lastName}
-              </h2>
+              <a href="/" style={{ textDecoration: "none" }}>
+                <h2
+                  style={{
+                    fontWeight: 300,
+                    fontSize: "clamp(48px, 8vw, 100px)",
+                    lineHeight: 0.9,
+                    letterSpacing: "-0.03em",
+                    color: "var(--color-text-inverse)",
+                    margin: 0,
+                  }}
+                >
+                  {firstName}
+                  <br />
+                  {lastName}
+                </h2>
+              </a>
 
               <div
                 style={{
@@ -240,7 +250,7 @@ function StackedCircularFooter({
                       marginBottom: "12px",
                     }}
                   >
-                    Let&apos;s work together
+                    {workTogetherLabel}
                   </p>
                   <a
                     href={`mailto:${email}`}
@@ -377,11 +387,7 @@ function StackedCircularFooter({
 
         {/* Legal links bar */}
         <div className="footer-legal-bar">
-          {[
-            { label: "Privacy Policy", href: "/privacy" },
-            { label: "Terms of Service", href: "/terms" },
-            { label: "Cookie Policy", href: "/cookies" },
-          ].map((link, i, arr) => (
+          {legalLinks.map((link, i, arr) => (
             <span key={link.href} style={{ display: "flex", alignItems: "center", gap: "16px" }}>
               <a
                 href={link.href}
