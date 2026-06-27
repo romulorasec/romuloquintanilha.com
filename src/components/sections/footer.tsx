@@ -13,7 +13,7 @@ export function Footer() {
     { label: t("navHome"), href: "#hero" },
     { label: tNav("about"), href: "#about" },
     { label: tNav("services"), href: "#services" },
-    { label: tNav("portfolio"), href: "#projects" },
+    // { label: tNav("portfolio"), href: "#projects" },
     { label: tNav("howIWork"), href: "#how-i-work" },
     { label: tNav("testimonials"), href: "#testimonials" },
     { label: t("navContact"), href: "#contact" },
