@@ -18,7 +18,7 @@ export function Navbar() {
   const navLinks = [
     { label: t("about"), href: "#about" },
     { label: t("services"), href: "#services" },
-    { label: t("portfolio"), href: "#projects" },
+    // { label: t("portfolio"), href: "#projects" },
     { label: t("howIWork"), href: "#how-i-work" },
     { label: t("testimonials"), href: "#testimonials" },
   ]
