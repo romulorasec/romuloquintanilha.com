@@ -42,10 +42,7 @@ function AboutModalCopy() {
 
       {/* 1 — Opening hook: two-sentence diagnosis */}
       <Block>
-        <p style={bodyStyle}>Most websites do not fail because they look bad.</p>
-        <p style={bodyStyle}>
-          They fail because they make people think too hard, trust too slowly, and leave too easily.
-        </p>
+        <p style={bodyStyle}>Most websites do not fail because they look bad. They fail because they make people think too hard, trust too slowly, and leave too easily.</p>
       </Block>
 
       {/* 2 — The display window metaphor */}
@@ -57,8 +54,7 @@ function AboutModalCopy() {
 
       {/* 3 — The distinction + bridge to the invisible logic */}
       <Block>
-        <p style={bodyStyle}>Good design can make a business look professional.</p>
-        <p style={strongStyle}>Strategic architecture makes that business feel safe to choose.</p>
+        <p style={bodyStyle}>Good design can make a business look professional. Strategic architecture makes that business feel safe to choose.</p>
         <p style={bodyStyle}>
           That is the part most people never see, but it is the part that decides whether a visitor
           stays, trusts, clicks, books, buys, or leaves for someone else.
@@ -280,7 +276,6 @@ export function About() {
                   fontSize: "clamp(14px, 1.2vw, 16px)",
                   color: "var(--color-text-muted)",
                   lineHeight: 1.7,
-                  maxWidth: "340px",
                   marginTop: "clamp(24px, 3vw, 40px)",
                 }}
               >
@@ -306,8 +301,8 @@ export function About() {
                   margin: 0,
                 }}
               >
-                Driven UI/UX Designer with an Innovative Approach to Creating
-                Intuitive and Engaging User Experiences
+                Driven UI/UX Designer with an innovative approach to creating
+                intuitive and engaging User experiences
               </p>
             </MotionFade>
 

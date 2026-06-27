@@ -18,7 +18,7 @@ const HOW_I_WORK_STEPS: AccordionStep[] = [
     title: "Strategy",
     subtitle: "Every section earns its place or gets cut",
     description:
-      "I map out what gets said, in what order, and where trust gets built. Nothing decorative makes it in. Every headline, every layout choice, every scroll depth exists to move people closer to the decision you need. Color, type, layout logic — all decided here, before a single screen gets designed.",
+      "I map out what gets said, in what order, and where trust gets built. Nothing decorative makes it in. Every headline, every layout choice, every scroll depth exists to move people closer to the decision you need. Color, type, layout logic, all decided here, before a single screen gets designed.",
   },
   {
     number: "03",
@@ -39,7 +39,7 @@ const HOW_I_WORK_STEPS: AccordionStep[] = [
     title: "Launch",
     subtitle: "You go live knowing exactly what to expect",
     description:
-      "Hosting, domain, configurations — all handled. You don't go live and wonder what's missing. Tracking is set up, the site is indexed, and you know from week one what the investment is producing.",
+      "Hosting, domain, configurations, all handled. You don't go live and wonder what's missing. Tracking is set up, the site is indexed, and you know from week one what the investment is producing.",
   },
 ]
 

@@ -1,16 +1,16 @@
-# Graph Report - romuloquint  (2026-06-27)
+# Graph Report - romuloquint  (2026-06-26)
 
 ## Corpus Check
-- 85 files · ~353,452 words
+- 81 files · ~418,001 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 702 nodes · 893 edges · 91 communities (51 shown, 40 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 40 edges (avg confidence: 0.87)
+- 688 nodes · 873 edges · 91 communities (51 shown, 40 thin omitted)
+- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 40 edges (avg confidence: 0.87)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `642234bd`
+- Built from commit: `7227a21a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -33,11 +33,11 @@
 - [[_COMMUNITY_Info Modal & Dialog|Info Modal & Dialog]]
 - [[_COMMUNITY_Project Docs & Workflow|Project Docs & Workflow]]
 - [[_COMMUNITY_Select Components|Select Components]]
-- [[_COMMUNITY_Community 18|Community 18]]
+- [[_COMMUNITY_Site Config & Footer|Site Config & Footer]]
 - [[_COMMUNITY_Copywriting Frameworks|Copywriting Frameworks]]
 - [[_COMMUNITY_Hero Section Elements|Hero Section Elements]]
-- [[_COMMUNITY_Community 21|Community 21]]
-- [[_COMMUNITY_Community 22|Community 22]]
+- [[_COMMUNITY_About Section|About Section]]
+- [[_COMMUNITY_Breadcrumb Components|Breadcrumb Components]]
 - [[_COMMUNITY_Card Components|Card Components]]
 - [[_COMMUNITY_Popover Components|Popover Components]]
 - [[_COMMUNITY_Alert Components|Alert Components]]
@@ -153,8 +153,8 @@ Cohesion: 0.11
 Nodes (25): cn(), Accordion(), AccordionContent(), AccordionItem(), AccordionTrigger(), RadioGroup(), RadioGroupItem(), ScrollArea() (+17 more)
 
 ### Community 3 - "Project Dependencies"
-Cohesion: 0.05
-Nodes (43): dependencies, class-variance-authority, clsx, framer-motion, gsap, @gsap/react, @hookform/resolvers, lenis (+35 more)
+Cohesion: 0.08
+Nodes (24): dependencies, class-variance-authority, clsx, framer-motion, gsap, @gsap/react, @hookform/resolvers, lenis (+16 more)
 
 ### Community 4 - "Page Sections & Contact Flow"
 Cohesion: 0.14
@@ -165,16 +165,16 @@ Cohesion: 0.09
 Nodes (21): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+13 more)
 
 ### Community 6 - "Dev Tooling Config"
-Cohesion: 0.20
-Nodes (9): Button(), buttonVariants, Pagination(), PaginationContent(), PaginationEllipsis(), PaginationLink(), PaginationLinkProps, PaginationNext() (+1 more)
+Cohesion: 0.10
+Nodes (19): devDependencies, eslint, eslint-config-next, @inspira-ui/plugins, tailwindcss, tailwindcss-animate, @tailwindcss/postcss, @types/node (+11 more)
 
 ### Community 7 - "TypeScript Config"
 Cohesion: 0.10
 Nodes (19): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+11 more)
 
 ### Community 8 - "Animation & Page Layout"
-Cohesion: 0.20
-Nodes (8): MotionFade(), MotionFadeProps, Positioning(), projects, Promise(), PromiseItem, PROMISES, SmoothScrollProvider()
+Cohesion: 0.18
+Nodes (9): MotionFade(), MotionFadeProps, HowIWork(), Positioning(), projects, Promise(), PromiseItem, PROMISES (+1 more)
 
 ### Community 9 - "Design Verification Screenshots"
 Cohesion: 0.15
@@ -185,16 +185,16 @@ Cohesion: 0.12
 Nodes (8): Checkbox(), Input(), Label(), Progress(), Separator(), Skeleton(), Switch(), Textarea()
 
 ### Community 11 - "Process Section & Accordion"
-Cohesion: 0.13
-Nodes (12): HOW_I_WORK_STEPS, HowIWork(), AccordionItemProps, AccordionStep, ease, expandedChildVariants, expandedContainerVariants, InteractiveImageAccordion() (+4 more)
+Cohesion: 0.14
+Nodes (11): HOW_I_WORK_STEPS, AccordionItemProps, AccordionStep, ease, expandedChildVariants, expandedContainerVariants, InteractiveImageAccordion(), InteractiveImageAccordionProps (+3 more)
 
 ### Community 12 - "Project Documentation & Design System"
 Cohesion: 0.06
 Nodes (34): Border and Shadow, CLAUDE.md — romuloquintanilha.com, Code Conventions, Color Palette, Deployment & Infrastructure, Design Tokens, Git hygiene rules, Hero Layout (editorial bold style) (+26 more)
 
 ### Community 13 - "Navigation & Hero"
-Cohesion: 0.29
-Nodes (6): Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage()
+Cohesion: 0.20
+Nodes (10): Navbar(), navLinks, Hero(), Service, SERVICES, InfoModal(), SiteButton(), SiteButtonProps (+2 more)
 
 ### Community 14 - "Dropdown Menu Components"
 Cohesion: 0.12
@@ -202,7 +202,7 @@ Nodes (9): DropdownMenuCheckboxItem(), DropdownMenuContent(), DropdownMenuItem()
 
 ### Community 15 - "Info Modal & Dialog"
 Cohesion: 0.19
-Nodes (10): navLinks, Hero(), bodyBase, bodyFirst, Service, SERVICES, SiteButton(), SiteButtonProps (+2 more)
+Nodes (10): InfoModalProps, Dialog(), DialogContent(), DialogDescription(), DialogFooter(), DialogHeader(), DialogOverlay(), DialogPortal() (+2 more)
 
 ### Community 16 - "Project Docs & Workflow"
 Cohesion: 0.12
@@ -212,9 +212,9 @@ Nodes (14): dev→main Branch Model, Branch Workflow Manual, Next.js App Router 
 Cohesion: 0.05
 Nodes (41): 1. Editing the copy of an existing section, 2. Changing the color of a button, 3. Adding a new section to a page, 4. Adjusting spacing, 5. Fixing a button that doesn't work, 6. Reviewing changes that were already made before committing, 7. Sending committed changes to the remote repository, 80/20 workflow for this project (+33 more)
 
-### Community 18 - "Community 18"
-Cohesion: 0.18
-Nodes (6): SheetContent(), SheetDescription(), SheetFooter(), SheetHeader(), SheetOverlay(), SheetTitle()
+### Community 18 - "Site Config & Footer"
+Cohesion: 0.24
+Nodes (4): siteConfig, Footer(), StackedCircularFooter(), StackedCircularFooterProps
 
 ### Community 19 - "Copywriting Frameworks"
 Cohesion: 0.25
@@ -224,13 +224,13 @@ Nodes (6): Conversion Copywriting Principles, CTA Copy Guidelines, AI Writing Te
 Cohesion: 0.29
 Nodes (10): CTA Button: Start your project, Decorative Left Strip - Web Designer vertical text, Hero Headline: Growth not just looks., Profile Photo - Grayscale Right Side, See how scroll CTA, Hero Subline: I design with one question in mind: does it convert?, Navbar - Desktop Layout, Hero Section - Desktop Screenshot v2 (+2 more)
 
-### Community 21 - "Community 21"
-Cohesion: 0.24
-Nodes (4): siteConfig, Footer(), StackedCircularFooter(), StackedCircularFooterProps
+### Community 21 - "About Section"
+Cohesion: 0.25
+Nodes (5): About(), bodyStyle, ease, skills, strongStyle
 
-### Community 22 - "Community 22"
-Cohesion: 0.19
-Nodes (6): metadata, Navbar(), metadata, LegalLayout(), LegalLayoutProps, metadata
+### Community 22 - "Breadcrumb Components"
+Cohesion: 0.25
+Nodes (7): Breadcrumb(), BreadcrumbEllipsis(), BreadcrumbItem(), BreadcrumbLink(), BreadcrumbList(), BreadcrumbPage(), BreadcrumbSeparator()
 
 ### Community 23 - "Card Components"
 Cohesion: 0.25
@@ -269,24 +269,24 @@ Cohesion: 0.09
 Nodes (23): Best Practice Guidelines, Concluding Content, Contents, Emphasising Key Points, Expert quotes, Giving Examples, Hedging Language, Indicating Addition (+15 more)
 
 ### Community 74 - "Community 74"
-Cohesion: 0.18
-Nodes (11): InfoModal(), InfoModalProps, Dialog(), DialogContent(), DialogDescription(), DialogFooter(), DialogHeader(), DialogOverlay() (+3 more)
+Cohesion: 0.20
+Nodes (9): Button(), buttonVariants, Pagination(), PaginationContent(), PaginationEllipsis(), PaginationLink(), PaginationLinkProps, PaginationNext() (+1 more)
 
 ### Community 75 - "Community 75"
-Cohesion: 0.25
-Nodes (7): Breadcrumb(), BreadcrumbEllipsis(), BreadcrumbItem(), BreadcrumbLink(), BreadcrumbList(), BreadcrumbPage(), BreadcrumbSeparator()
+Cohesion: 0.18
+Nodes (6): SheetContent(), SheetDescription(), SheetFooter(), SheetHeader(), SheetOverlay(), SheetTitle()
 
 ### Community 76 - "Community 76"
 Cohesion: 0.29
 Nodes (7): Additional Formulas, Audience-Focused, Differentiation-Focused, Headline Formulas, Outcome-Focused, Problem-Focused, Proof-Focused
 
 ### Community 77 - "Community 77"
-Cohesion: 0.25
-Nodes (5): About(), bodyStyle, ease, skills, strongStyle
-
-### Community 78 - "Community 78"
 Cohesion: 0.33
 Nodes (5): testimonialData, Testimonials(), Review, TestimonialSlider(), TestimonialSliderProps
+
+### Community 78 - "Community 78"
+Cohesion: 0.29
+Nodes (6): Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage()
 
 ### Community 79 - "Community 79"
 Cohesion: 0.33
@@ -333,24 +333,24 @@ Cohesion: 0.40
 Nodes (4): Meta Commands, RTK - Rust Token Killer (Codex CLI), Rule, Verification
 
 ## Knowledge Gaps
-- **323 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+318 more)
+- **317 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+312 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **40 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Core UI Component Library` to `shadcn Alert & Dialog Primitives`, `Badge Components`, `Dev Tooling Config`, `Form Input Components`, `Community 75`, `Community 74`, `Navigation & Hero`, `Dropdown Menu Components`, `Community 78`, `Community 18`, `Card Components`, `Popover Components`, `Alert Components`, `Tabs Components`, `Tooltip Components`?**
-  _High betweenness centrality (0.106) - this node is a cross-community bridge._
-- **Why does `TestimonialSlider()` connect `Community 78` to `Core UI Component Library`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Core UI Component Library` to `shadcn Alert & Dialog Primitives`, `Badge Components`, `Form Input Components`, `Community 74`, `Community 75`, `Community 77`, `Community 78`, `Info Modal & Dialog`, `Dropdown Menu Components`, `Breadcrumb Components`, `Card Components`, `Popover Components`, `Alert Components`, `Tabs Components`, `Tooltip Components`?**
+  _High betweenness centrality (0.103) - this node is a cross-community bridge._
+- **Why does `TestimonialSlider()` connect `Community 77` to `Core UI Component Library`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **Why does `Copywriting` connect `Community 82` to `Community 79`, `Community 80`, `Community 81`, `Copywriting Frameworks`, `Community 85`, `Community 86`, `Community 87`?**
   _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
-  _326 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _320 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Contact API & Rate Limiting` be split into smaller, more focused modules?**
   _Cohesion score 0.10333333333333333 - nodes in this community are weakly interconnected._
 - **Should `Core UI Component Library` be split into smaller, more focused modules?**
   _Cohesion score 0.11088709677419355 - nodes in this community are weakly interconnected._
 - **Should `Project Dependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.045454545454545456 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._

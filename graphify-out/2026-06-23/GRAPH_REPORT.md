@@ -1,16 +1,16 @@
-# Graph Report - romuloquint  (2026-06-22)
+# Graph Report - romuloquint  (2026-06-23)
 
 ## Corpus Check
-- 79 files · ~416,693 words
+- 79 files · ~417,464 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 628 nodes · 835 edges · 69 communities (49 shown, 20 thin omitted)
+- 628 nodes · 836 edges · 68 communities (49 shown, 19 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f030ab89`
+- Built from commit: `920d5cfa`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -45,7 +45,6 @@
 - [[_COMMUNITY_Site Config Types|Site Config Types]]
 - [[_COMMUNITY_Icon Components|Icon Components]]
 - [[_COMMUNITY_Community 29|Community 29]]
-- [[_COMMUNITY_Community 30|Community 30]]
 - [[_COMMUNITY_Sitemap|Sitemap]]
 - [[_COMMUNITY_Vercel Platform|Vercel Platform]]
 - [[_COMMUNITY_ESLint Config|ESLint Config]]
@@ -109,7 +108,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (69 total, 20 thin omitted)
+## Communities (68 total, 19 thin omitted)
 
 ### Community 0 - "Animation & Layout Components"
 Cohesion: 0.05
@@ -227,10 +226,6 @@ Nodes (3): graphify, Knowledge Graph Query Protocol, Workflow: graphify
 Cohesion: 0.33
 Nodes (6): Copywriting, Core Principles, Quick Quality Check, Related Skills, Voice and Tone, Writing Style Rules
 
-### Community 30 - "Community 30"
-Cohesion: 0.24
-Nodes (6): MotionFade(), MotionFadeProps, Positioning(), Service, SERVICES, InfoModal()
-
 ### Community 33 - "ESLint Config"
 Cohesion: 0.67
 Nodes (4): Logo 2 Brand Image, Brand Color Red Vermillion, RQ Monogram Mark, Geometric Minimal Logo Style
@@ -248,8 +243,8 @@ Cohesion: 1.00
 Nodes (3): Profile Hero Mobile Large Portrait Photo, Rômulo Quintanilha (portrait subject), Mobile Large Variant (1290x1920 tall phone)
 
 ### Community 39 - "Community 39"
-Cohesion: 0.31
-Nodes (6): Navbar(), navLinks, Hero(), SiteButton(), SiteButtonProps, StartProjectModal()
+Cohesion: 0.20
+Nodes (9): Navbar(), navLinks, Hero(), Service, SERVICES, InfoModal(), SiteButton(), SiteButtonProps (+1 more)
 
 ### Community 56 - "Community 56"
 Cohesion: 0.24
@@ -283,6 +278,10 @@ Nodes (5): About(), bodyStyle, ease, skills, strongStyle
 Cohesion: 0.25
 Nodes (7): Breadcrumb(), BreadcrumbEllipsis(), BreadcrumbItem(), BreadcrumbLink(), BreadcrumbList(), BreadcrumbPage(), BreadcrumbSeparator()
 
+### Community 64 - "Community 64"
+Cohesion: 0.26
+Nodes (5): MotionFade(), MotionFadeProps, Positioning(), projects, SmoothScrollProvider()
+
 ### Community 66 - "Community 66"
 Cohesion: 0.33
 Nodes (5): testimonialData, Testimonials(), Review, TestimonialSlider(), TestimonialSliderProps
@@ -296,20 +295,20 @@ Cohesion: 0.29
 Nodes (6): Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage()
 
 ## Knowledge Gaps
-- **287 isolated node(s):** `Service`, `$schema`, `style`, `rsc`, `tsx` (+282 more)
+- **287 isolated node(s):** `Service`, `InfoModalProps`, `$schema`, `style`, `rsc` (+282 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **20 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **19 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `UI Utility & Breadcrumb` to `Community 65`, `Dependencies & Package Config`, `Community 66`, `Community 68`, `Dialog System`, `Site Config & Footer`, `Avatar System`, `Community 17`, `Community 18`, `Community 19`, `Brand Logo (Red Variant)`, `Community 24`, `Graphify Agent Workflows`, `Site Config Types`, `Community 63`?**
   _High betweenness centrality (0.180) - this node is a cross-community bridge._
-- **Why does `Framer Motion Animation` connect `shadcn/ui Configuration` to `Community 66`, `Community 67`, `Community 39`, `Dropdown Menu System`, `Root Layout & Fonts`, `Community 30`, `Community 62`?**
+- **Why does `Framer Motion Animation` connect `shadcn/ui Configuration` to `Community 64`, `Community 66`, `Community 67`, `Community 39`, `Dropdown Menu System`, `Root Layout & Fonts`, `Community 62`?**
   _High betweenness centrality (0.169) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `Dropdown Menu System` to `Tabs System`?**
   _High betweenness centrality (0.068) - this node is a cross-community bridge._
-- **What connects `Service`, `$schema`, `style` to the rest of the system?**
+- **What connects `Service`, `InfoModalProps`, `$schema` to the rest of the system?**
   _289 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Animation & Layout Components` be split into smaller, more focused modules?**
   _Cohesion score 0.047619047619047616 - nodes in this community are weakly interconnected._

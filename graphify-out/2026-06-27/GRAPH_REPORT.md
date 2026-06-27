@@ -1,11 +1,11 @@
 # Graph Report - romuloquint  (2026-06-27)
 
 ## Corpus Check
-- 85 files · ~353,452 words
+- 84 files · ~352,968 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 702 nodes · 893 edges · 91 communities (51 shown, 40 thin omitted)
+- 699 nodes · 889 edges · 89 communities (48 shown, 41 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 40 edges (avg confidence: 0.87)
 - Token cost: 0 input · 0 output
 
@@ -87,10 +87,8 @@
 - [[_COMMUNITY_Window Icon|Window Icon]]
 - [[_COMMUNITY_Community 73|Community 73]]
 - [[_COMMUNITY_Community 74|Community 74]]
-- [[_COMMUNITY_Community 75|Community 75]]
 - [[_COMMUNITY_Community 76|Community 76]]
 - [[_COMMUNITY_Community 77|Community 77]]
-- [[_COMMUNITY_Community 78|Community 78]]
 - [[_COMMUNITY_Community 79|Community 79]]
 - [[_COMMUNITY_Community 80|Community 80]]
 - [[_COMMUNITY_Community 81|Community 81]]
@@ -138,7 +136,7 @@
 - **Scroll Animation System: MotionFade + GsapReveal + Motion Rules** — motion_fade, gsap_reveal, motion_rules [INFERRED 0.85]
 - **Design System Constraints: Tokens + No Hardcoded Hex + Font Rules** — design_tokens, no_hardcoded_hex, portfolio_site [EXTRACTED 0.95]
 
-## Communities (91 total, 40 thin omitted)
+## Communities (89 total, 41 thin omitted)
 
 ### Community 0 - "shadcn Alert & Dialog Primitives"
 Cohesion: 0.15
@@ -149,8 +147,8 @@ Cohesion: 0.10
 Nodes (17): checkFallbackRateLimit(), escapeHtml(), ipWindows, maskIp(), POST(), ContactForm(), ContactFormProps, errorStyle (+9 more)
 
 ### Community 2 - "Core UI Component Library"
-Cohesion: 0.11
-Nodes (25): cn(), Accordion(), AccordionContent(), AccordionItem(), AccordionTrigger(), RadioGroup(), RadioGroupItem(), ScrollArea() (+17 more)
+Cohesion: 0.14
+Nodes (22): cn(), Accordion(), AccordionContent(), AccordionItem(), AccordionTrigger(), Breadcrumb(), BreadcrumbEllipsis(), BreadcrumbItem() (+14 more)
 
 ### Community 3 - "Project Dependencies"
 Cohesion: 0.05
@@ -165,16 +163,16 @@ Cohesion: 0.09
 Nodes (21): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+13 more)
 
 ### Community 6 - "Dev Tooling Config"
-Cohesion: 0.20
-Nodes (9): Button(), buttonVariants, Pagination(), PaginationContent(), PaginationEllipsis(), PaginationLink(), PaginationLinkProps, PaginationNext() (+1 more)
+Cohesion: 0.18
+Nodes (8): SelectContent(), SelectGroup(), SelectItem(), SelectLabel(), SelectScrollDownButton(), SelectScrollUpButton(), SelectSeparator(), SelectTrigger()
 
 ### Community 7 - "TypeScript Config"
 Cohesion: 0.10
 Nodes (19): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+11 more)
 
 ### Community 8 - "Animation & Page Layout"
-Cohesion: 0.20
-Nodes (8): MotionFade(), MotionFadeProps, Positioning(), projects, Promise(), PromiseItem, PROMISES, SmoothScrollProvider()
+Cohesion: 0.14
+Nodes (13): MotionFade(), MotionFadeProps, Positioning(), projects, Promise(), PromiseItem, PROMISES, testimonialData (+5 more)
 
 ### Community 9 - "Design Verification Screenshots"
 Cohesion: 0.15
@@ -202,7 +200,7 @@ Nodes (9): DropdownMenuCheckboxItem(), DropdownMenuContent(), DropdownMenuItem()
 
 ### Community 15 - "Info Modal & Dialog"
 Cohesion: 0.19
-Nodes (10): navLinks, Hero(), bodyBase, bodyFirst, Service, SERVICES, SiteButton(), SiteButtonProps (+2 more)
+Nodes (10): Hero(), bodyBase, bodyFirst, Service, SERVICES, InfoModal(), SiteButton(), SiteButtonProps (+2 more)
 
 ### Community 16 - "Project Docs & Workflow"
 Cohesion: 0.12
@@ -211,10 +209,6 @@ Nodes (14): dev→main Branch Model, Branch Workflow Manual, Next.js App Router 
 ### Community 17 - "Select Components"
 Cohesion: 0.05
 Nodes (41): 1. Editing the copy of an existing section, 2. Changing the color of a button, 3. Adding a new section to a page, 4. Adjusting spacing, 5. Fixing a button that doesn't work, 6. Reviewing changes that were already made before committing, 7. Sending committed changes to the remote repository, 80/20 workflow for this project (+33 more)
-
-### Community 18 - "Community 18"
-Cohesion: 0.18
-Nodes (6): SheetContent(), SheetDescription(), SheetFooter(), SheetHeader(), SheetOverlay(), SheetTitle()
 
 ### Community 19 - "Copywriting Frameworks"
 Cohesion: 0.25
@@ -229,8 +223,8 @@ Cohesion: 0.24
 Nodes (4): siteConfig, Footer(), StackedCircularFooter(), StackedCircularFooterProps
 
 ### Community 22 - "Community 22"
-Cohesion: 0.19
-Nodes (6): metadata, Navbar(), metadata, LegalLayout(), LegalLayoutProps, metadata
+Cohesion: 0.21
+Nodes (6): Navbar(), navLinks, metadata, LegalLayout(), LegalLayoutProps, metadata
 
 ### Community 23 - "Card Components"
 Cohesion: 0.25
@@ -269,12 +263,8 @@ Cohesion: 0.09
 Nodes (23): Best Practice Guidelines, Concluding Content, Contents, Emphasising Key Points, Expert quotes, Giving Examples, Hedging Language, Indicating Addition (+15 more)
 
 ### Community 74 - "Community 74"
-Cohesion: 0.18
-Nodes (11): InfoModal(), InfoModalProps, Dialog(), DialogContent(), DialogDescription(), DialogFooter(), DialogHeader(), DialogOverlay() (+3 more)
-
-### Community 75 - "Community 75"
-Cohesion: 0.25
-Nodes (7): Breadcrumb(), BreadcrumbEllipsis(), BreadcrumbItem(), BreadcrumbLink(), BreadcrumbList(), BreadcrumbPage(), BreadcrumbSeparator()
+Cohesion: 0.07
+Nodes (25): InfoModalProps, Button(), buttonVariants, Dialog(), DialogContent(), DialogDescription(), DialogFooter(), DialogHeader() (+17 more)
 
 ### Community 76 - "Community 76"
 Cohesion: 0.29
@@ -283,10 +273,6 @@ Nodes (7): Additional Formulas, Audience-Focused, Differentiation-Focused, Headl
 ### Community 77 - "Community 77"
 Cohesion: 0.25
 Nodes (5): About(), bodyStyle, ease, skills, strongStyle
-
-### Community 78 - "Community 78"
-Cohesion: 0.33
-Nodes (5): testimonialData, Testimonials(), Review, TestimonialSlider(), TestimonialSliderProps
 
 ### Community 79 - "Community 79"
 Cohesion: 0.33
@@ -333,24 +319,24 @@ Cohesion: 0.40
 Nodes (4): Meta Commands, RTK - Rust Token Killer (Codex CLI), Rule, Verification
 
 ## Knowledge Gaps
-- **323 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+318 more)
+- **322 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+317 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **40 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **41 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Core UI Component Library` to `shadcn Alert & Dialog Primitives`, `Badge Components`, `Dev Tooling Config`, `Form Input Components`, `Community 75`, `Community 74`, `Navigation & Hero`, `Dropdown Menu Components`, `Community 78`, `Community 18`, `Card Components`, `Popover Components`, `Alert Components`, `Tabs Components`, `Tooltip Components`?**
+- **Why does `cn()` connect `Core UI Component Library` to `shadcn Alert & Dialog Primitives`, `Badge Components`, `Dev Tooling Config`, `Animation & Page Layout`, `Form Input Components`, `Community 74`, `Navigation & Hero`, `Dropdown Menu Components`, `Community 18`, `Card Components`, `Popover Components`, `Alert Components`, `Tabs Components`, `Tooltip Components`?**
   _High betweenness centrality (0.106) - this node is a cross-community bridge._
-- **Why does `TestimonialSlider()` connect `Community 78` to `Core UI Component Library`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `TestimonialSlider()` connect `Animation & Page Layout` to `Core UI Component Library`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Why does `Copywriting` connect `Community 82` to `Community 79`, `Community 80`, `Community 81`, `Copywriting Frameworks`, `Community 85`, `Community 86`, `Community 87`?**
   _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
-  _326 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _325 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Contact API & Rate Limiting` be split into smaller, more focused modules?**
   _Cohesion score 0.10333333333333333 - nodes in this community are weakly interconnected._
 - **Should `Core UI Component Library` be split into smaller, more focused modules?**
-  _Cohesion score 0.11088709677419355 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.14153846153846153 - nodes in this community are weakly interconnected._
 - **Should `Project Dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.045454545454545456 - nodes in this community are weakly interconnected._
