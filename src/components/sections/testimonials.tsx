@@ -88,7 +88,7 @@ export function Testimonials() {
 
             }}
           >
-            Client Words
+            Don&apos;t take my word for it.
           </div>
         </MotionFade>
 
@@ -103,8 +103,7 @@ export function Testimonials() {
               margin: "0 0 clamp(48px, 6vw, 80px)",
             }}
           >
-            Local business owners across California share what changed after
-            working together.
+            Business owners who were exactly where you are now.
           </p>
         </MotionFade>
 
