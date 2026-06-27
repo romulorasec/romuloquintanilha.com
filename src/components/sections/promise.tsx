@@ -48,8 +48,8 @@ export function Promise() {
         fontFamily: "var(--font-sans)",
       }}
     >
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <MotionFade delay={0} y={20}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto" }} className="promise-layout">
+        <MotionFade delay={0} y={20} className="promise-layout-title">
           <h2
             style={{
               display: "inline-block",
@@ -59,7 +59,6 @@ export function Promise() {
               color: "var(--color-text-inverse)",
               lineHeight: 1.1,
               letterSpacing: "-0.02em",
-              marginBottom: "clamp(32px, 5vw, 64px)",
             }}
           >
             The Promise
@@ -72,22 +71,23 @@ export function Promise() {
               <div
                 role="listitem"
                 style={{
-                  borderTop: "1px solid var(--color-border-dark)",
-                  paddingTop: "clamp(24px, 3vw, 40px)",
-                  paddingBottom: "clamp(24px, 3vw, 40px)",
+                  borderTop: "1.5px solid var(--color-border-dark)",
+                  paddingTop: "clamp(28px, 3.5vw, 44px)",
+                  paddingBottom: "clamp(28px, 3.5vw, 44px)",
                   display: "grid",
-                  gridTemplateColumns: "2.5rem 1fr",
-                  gap: "clamp(16px, 2vw, 24px)",
+                  gridTemplateColumns: "clamp(56px, 6vw, 72px) 1fr",
+                  gap: "clamp(20px, 2.5vw, 32px)",
                   alignItems: "start",
                 }}
               >
                 <span
                   style={{
-                    fontWeight: 400,
-                    fontSize: "clamp(13px, 1vw, 14px)",
+                    fontWeight: 300,
+                    fontSize: "clamp(36px, 4vw, 48px)",
                     color: "var(--color-text-inverse-muted)",
                     lineHeight: 1,
-                    paddingTop: "5px",
+                    letterSpacing: "-0.02em",
+                    opacity: 0.5,
                   }}
                 >
                   {item.number}
@@ -98,10 +98,10 @@ export function Promise() {
                     style={{
                       fontFamily: "var(--font-sans)",
                       fontWeight: 600,
-                      fontSize: "clamp(20px, 2vw, 28px)",
+                      fontSize: "clamp(22px, 2.8vw, 32px)",
                       color: "var(--color-text-inverse)",
-                      lineHeight: 1.2,
-                      letterSpacing: "-0.01em",
+                      lineHeight: 1.25,
+                      letterSpacing: "-0.02em",
                       margin: "0 0 clamp(8px, 1vw, 12px)",
                     }}
                   >
