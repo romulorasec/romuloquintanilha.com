@@ -11,35 +11,35 @@ const HOW_I_WORK_STEPS: AccordionStep[] = [
     title: "Discovery",
     subtitle: "Before a pixel moves, I learn what moves your customer",
     description:
-      "I study your market, your competitors, and the people who actually buy from you. By the end you'll have a clear picture of what your audience needs to see, believe, and feel before they move.",
+      "I map your market, your competitors, and the people who actually buy from you. By the end, we both know exactly what needs to be built and why. No guesswork from this point forward.",
   },
   {
     number: "02",
     title: "Strategy",
     subtitle: "Every section earns its place or gets cut",
     description:
-      "I map out what gets said, in what order, and where trust gets built. Nothing decorative makes it in. Every headline, every layout choice, every scroll depth exists to move people closer to the action you need.",
+      "I map out what gets said, in what order, and where trust gets built. Nothing decorative makes it in. Every headline, every layout choice, every scroll depth exists to move people closer to the decision you need. Color, type, layout logic — all decided here, before a single screen gets designed.",
   },
   {
     number: "03",
     title: "Design",
-    subtitle: "Visual precision that builds trust in seconds",
+    subtitle: "Your visitor decides in three seconds. Design shapes what they decide.",
     description:
-      "The interface reflects your positioning. Premium where it matters, clear everywhere else. Type, spacing, color, and motion all point in one direction: making the right visitor feel confident enough to act.",
+      "By the time design starts, the direction is already set. Every visual decision follows from what was agreed. No guessing on either side. Premium where it matters, clean everywhere else.",
   },
   {
     number: "04",
     title: "Build",
-    subtitle: "Fast, responsive, and built to perform under real traffic",
+    subtitle: "The site that works as well as it looks.",
     description:
-      "Clean code. Sub-second load times. Solid behavior across every device and browser. The finished product doesn't just look right. It works right, from the first click to the last conversion.",
+      "Tested across every device and browser before you see it. Loads fast. Works on every phone. Behaves the same way whether ten people visit or ten thousand. The finished product doesn't just look right. It works right.",
   },
   {
     number: "05",
     title: "Launch",
     subtitle: "You go live knowing exactly what to expect",
     description:
-      "Final QA, analytics setup, and a documented handoff so nothing falls through. You launch with tracking in place, a clear baseline, and the numbers to know what your investment is producing from day one.",
+      "Hosting, domain, configurations — all handled. You don't go live and wonder what's missing. Tracking is set up, the site is indexed, and you know from week one what the investment is producing.",
   },
 ]
 
@@ -96,8 +96,7 @@ export function HowIWork() {
                 fontFamily: "var(--font-sans)",
               }}
             >
-              A clear process that turns your goals into a digital asset
-              built to convert, not just look the part.
+              Five steps. No surprises. A site that performs from the day it goes live.
             </p>
           </MotionFade>
         </div>

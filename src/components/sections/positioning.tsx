@@ -22,7 +22,7 @@ export function Positioning() {
         }}
       >
         <h2
-          aria-label="I help brands transform visual presence into trust, clarity and business value."
+          aria-label="A website that doesn't sell is a salesperson you're paying to stay silent."
           style={{ margin: 0 }}
         >
           <MotionFade delay={0} y={28}>
@@ -37,7 +37,7 @@ export function Positioning() {
                 letterSpacing: "-0.02em",
               }}
             >
-              I help businesses turn their websites into real client acquisition tools.
+              A website that doesn&apos;t sell is a salesperson you&apos;re paying to stay silent.
             </span>
           </MotionFade>
         </h2>
@@ -63,7 +63,7 @@ export function Positioning() {
                 letterSpacing: "0.01em",
               }}
             >
-              Website design, branding and growth strategy.
+              I build websites that pay for themselves.
             </span>
           </div>
         </MotionFade>
