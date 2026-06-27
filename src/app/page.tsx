@@ -8,6 +8,7 @@ import { Positioning } from "@/components/sections/positioning"
 import { Services } from "@/components/sections/services"
 import { Footer } from "@/components/sections/footer"
 import { Testimonials } from "@/components/sections/testimonials"
+import { Promise } from "@/components/sections/promise"
 
 export default function Home() {
   return (
@@ -18,7 +19,8 @@ export default function Home() {
         <About />
         <Positioning />
         <div id="services"><Services /></div>
-        <div id="work"><Projects /></div>
+        <div id="work">{/* <Projects /> */}</div>
+        <Promise />
         <HowIWork />
         <Testimonials />
       </main>
