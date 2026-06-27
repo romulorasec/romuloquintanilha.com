@@ -49,21 +49,25 @@ export function Promise() {
       }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }} className="promise-layout">
-        <MotionFade delay={0} y={20} className="promise-layout-title">
-          <h2
-            style={{
-              display: "inline-block",
-              margin: 0,
-              fontWeight: 700,
-              fontSize: "clamp(50px, 5.5vw, 64px)",
-              color: "var(--color-text-inverse)",
-              lineHeight: 1.1,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            The Promise
-          </h2>
-        </MotionFade>
+        <div className="promise-title-col">
+          <div className="promise-layout-title">
+            <MotionFade delay={0} y={20}>
+              <h2
+                style={{
+                  display: "inline-block",
+                  margin: 0,
+                  fontWeight: 700,
+                  fontSize: "clamp(50px, 5.5vw, 64px)",
+                  color: "var(--color-text-inverse)",
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                The Promise
+              </h2>
+            </MotionFade>
+          </div>
+        </div>
 
         <div role="list">
           {PROMISES.map((item, index) => (

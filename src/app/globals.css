@@ -764,10 +764,15 @@
 }
 
 @media (min-width: 900px) {
+  /* Stretch the left column to the full grid-row height so sticky has room to travel */
+  .promise-title-col {
+    align-self: stretch;
+  }
+
+  /* Sticky title inside the stretched column */
   .promise-layout-title {
     position: sticky;
     top: clamp(80px, 8vw, 100px);
-    align-self: start;
   }
 }
 
