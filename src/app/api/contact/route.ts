@@ -121,6 +121,7 @@ export async function POST(req: NextRequest) {
   }
 
   // [7] Turnstile siteverify
+  console.log("[contact] step=turnstile token_present:", !!turnstileToken, "secret_present:", !!process.env.TURNSTILE_SECRET_KEY)
   const turnstileRes = await fetch(
     "https://challenges.cloudflare.com/turnstile/v0/siteverify",
     {
@@ -139,6 +140,7 @@ export async function POST(req: NextRequest) {
   }
 
   const turnstileData = (await turnstileRes.json()) as { success: boolean }
+  console.log("[contact] step=turnstile result:", turnstileData.success)
   if (!turnstileData.success) {
     return NextResponse.json({ error: "Verification failed" }, { status: 400 })
   }
@@ -151,6 +153,7 @@ export async function POST(req: NextRequest) {
   }
 
   // [9] Send email via Resend
+  console.log("[contact] step=resend key_present:", !!process.env.RESEND_API_KEY, "from_present:", !!process.env.QUOTE_FROM_EMAIL, "to_present:", !!process.env.QUOTE_TO_EMAIL)
   const resend = new Resend(process.env.RESEND_API_KEY)
 
   const now = new Date().toUTCString()
@@ -185,6 +188,7 @@ export async function POST(req: NextRequest) {
       html: htmlBody,
     })
 
+    console.log("[contact] step=resend_result error:", resendError?.name ?? "none")
     if (resendError) {
       console.error("[contact] Resend error:", resendError.name, resendError.message)
       return NextResponse.json({ error: "Failed to send message" }, { status: 500 })
