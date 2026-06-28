@@ -6,6 +6,8 @@ import { contactSchema } from "@/lib/validations/contact"
 // These counters reset per serverless instance, not globally.
 const ipWindows = new Map<string, { count: number; resetAt: number }>()
 
+const resend = new Resend(process.env.RESEND_API_KEY)
+
 function checkFallbackRateLimit(ip: string): boolean {
   const now = Date.now()
   const windowMs = 10 * 60 * 1000 // 10 minutes
@@ -40,19 +42,19 @@ function maskIp(ip: string): string {
 }
 
 export async function POST(req: NextRequest) {
-  // [1] Content-Type check
+  // Content-Type check
   const contentType = req.headers.get("content-type") ?? ""
   if (!contentType.includes("application/json")) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 })
   }
 
-  // [2] Payload size limit — 10 KB
+  // Payload size limit — 10 KB
   const contentLength = req.headers.get("content-length")
   if (contentLength && parseInt(contentLength, 10) > 10_240) {
     return NextResponse.json({ error: "Payload too large" }, { status: 413 })
   }
 
-  // [3] Origin / Referer validation — exact hostname comparison (not startsWith)
+  // Origin / Referer validation — exact hostname comparison (not startsWith)
   const allowedOriginEnv = process.env.ALLOWED_ORIGIN ?? ""
   if (process.env.NODE_ENV === "production") {
     const originHeader = req.headers.get("origin") ?? ""
@@ -85,7 +87,7 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // [4] Parse body (re-enforce size with text read)
+  // Parse body (re-enforce size with text read)
   let body: unknown
   try {
     const text = await req.text()
@@ -97,7 +99,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 })
   }
 
-  // [5] Zod server-side validation
+  // Zod server-side validation
   const parsed = contactSchema.safeParse(body)
   if (!parsed.success) {
     return NextResponse.json({ error: "Validation failed" }, { status: 422 })
@@ -115,15 +117,12 @@ export async function POST(req: NextRequest) {
     turnstileToken,
   } = parsed.data
 
-  // [6] Honeypot — return fake success without sending
-  console.log("[contact] step=honeypot value_length:", (companyWebsite ?? "").length)
+  // Honeypot — return fake success without sending
   if (companyWebsite && companyWebsite.trim().length > 0) {
-    console.log("[contact] honeypot triggered — aborting")
     return NextResponse.json({ success: true })
   }
 
-  // [7] Turnstile siteverify
-  console.log("[contact] step=turnstile token_present:", !!turnstileToken, "secret_present:", !!process.env.TURNSTILE_SECRET_KEY)
+  // Turnstile siteverify
   const turnstileRes = await fetch(
     "https://challenges.cloudflare.com/turnstile/v0/siteverify",
     {
@@ -142,22 +141,18 @@ export async function POST(req: NextRequest) {
   }
 
   const turnstileData = (await turnstileRes.json()) as { success: boolean }
-  console.log("[contact] step=turnstile result:", turnstileData.success)
   if (!turnstileData.success) {
     return NextResponse.json({ error: "Verification failed" }, { status: 400 })
   }
 
-  // [8] Fallback in-memory rate limit (per serverless instance)
+  // Fallback in-memory rate limit (per serverless instance)
   const clientIp =
     req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown"
   if (!checkFallbackRateLimit(clientIp)) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 })
   }
 
-  // [9] Send email via Resend
-  console.log("[contact] step=resend key_present:", !!process.env.RESEND_API_KEY, "from_present:", !!process.env.QUOTE_FROM_EMAIL, "to_present:", !!process.env.QUOTE_TO_EMAIL)
-  const resend = new Resend(process.env.RESEND_API_KEY)
-
+  // Send email via Resend
   const now = new Date().toUTCString()
   const userAgent = (req.headers.get("user-agent") ?? "").slice(0, 200)
   const maskedIp = maskIp(clientIp)
@@ -190,7 +185,6 @@ export async function POST(req: NextRequest) {
       html: htmlBody,
     })
 
-    console.log("[contact] step=resend_result error:", resendError?.name ?? "none")
     if (resendError) {
       console.error("[contact] Resend error:", resendError.name, resendError.message)
       return NextResponse.json({ error: "Failed to send message" }, { status: 500 })
