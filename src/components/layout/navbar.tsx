@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
+import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Drawer } from "vaul"
 import { SiteButton } from "@/components/shared/site-button"
@@ -57,7 +58,7 @@ export function Navbar() {
     >
       {/* Left group: logo + nav links — nav aligned with content below at 168px */}
       <div className="flex items-center" style={{ gap: "clamp(55px, calc(8vw - 10px), 114px)" }}>
-        <a href="/" aria-label="Home">
+        <Link href="/" aria-label="Home">
           <Image
             src="/images/logo.png"
             alt="Logo"
@@ -65,7 +66,7 @@ export function Navbar() {
             height={32}
             style={{ objectFit: "contain", display: "block" }}
           />
-        </a>
+        </Link>
 
         {/* Desktop nav links — full opacity by default, dim on hover */}
         <nav className="nav-landscape-flex" style={{ gap: "2rem", alignItems: "center" }}>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { LegalLayout } from "@/components/shared/legal-layout"
 
 export const metadata: Metadata = {
@@ -56,7 +57,7 @@ export default function PrivacyPage() {
 
       <h2>Cookies</h2>
       <p>
-        This site uses minimal cookies for functionality and anonymized analytics. See my <a href="/cookies">Cookie Policy</a> for details.
+        This site uses minimal cookies for functionality and anonymized analytics. See my <Link href="/cookies">Cookie Policy</Link> for details.
       </p>
 
       <h2>Children&apos;s Privacy</h2>

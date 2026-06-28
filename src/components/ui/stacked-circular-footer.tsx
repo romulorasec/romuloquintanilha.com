@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { MotionFade } from "@/components/animations/motion-fade"
 import { StartProjectModal } from "@/components/shared/start-project-modal"
@@ -97,7 +98,7 @@ function StackedCircularFooter({
           {/* Left column — identity */}
           <MotionFade delay={0} y={20}>
             <div>
-              <a href="/" style={{ textDecoration: "none" }}>
+              <Link href="/" style={{ textDecoration: "none" }}>
                 <h2
                   style={{
                     fontWeight: 300,
@@ -112,7 +113,7 @@ function StackedCircularFooter({
                   <br />
                   {lastName}
                 </h2>
-              </a>
+              </Link>
 
               <div
                 style={{
