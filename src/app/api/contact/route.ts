@@ -116,7 +116,9 @@ export async function POST(req: NextRequest) {
   } = parsed.data
 
   // [6] Honeypot — return fake success without sending
+  console.log("[contact] step=honeypot value_length:", (companyWebsite ?? "").length)
   if (companyWebsite && companyWebsite.trim().length > 0) {
+    console.log("[contact] honeypot triggered — aborting")
     return NextResponse.json({ success: true })
   }
 
