@@ -164,7 +164,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Service unavailable" }, { status: 503 })
   }
 
-  const now = new Date().toUTCString()
+  const d = new Date()
+  const now = d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }) +
+    " · " + d.toISOString().slice(11, 16) + " UTC"
   const userAgent = (req.headers.get("user-agent") ?? "").slice(0, 200)
   const maskedIp = maskIp(clientIp)
 
@@ -196,11 +198,11 @@ export async function POST(req: NextRequest) {
         <td style="background:#0D0F12;padding:32px 40px">
           <table cellpadding="0" cellspacing="0" width="100%">
             <tr>
-              <td style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#62665F;font-weight:500;font-family:'Plus Jakarta Sans',Georgia,sans-serif">
+              <td style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#6F7668;font-weight:500;font-family:'Plus Jakarta Sans',Georgia,sans-serif">
                 R&ocirc;mulo Quintanilha &middot; Projects
               </td>
-              <td align="right" style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#2A2D31;font-weight:500;font-family:'Plus Jakarta Sans',Georgia,sans-serif">
-                New Brief
+              <td align="right">
+                <span style="display:inline-block;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:#F5F4F0;font-weight:600;font-family:'Plus Jakarta Sans',Georgia,sans-serif;border:1px solid #3A3D41;padding:3px 8px">New Brief</span>
               </td>
             </tr>
           </table>
@@ -297,7 +299,7 @@ export async function POST(req: NextRequest) {
   try {
     const { error: resendError } = await getResendClient().emails.send(
       {
-        from: fromEmail,
+        from: `Rômulo Quintanilha <${fromEmail}>`,
         to: toEmail,
         replyTo: email,
         subject: `New quote request — ${projectType}`,
