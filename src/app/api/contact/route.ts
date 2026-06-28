@@ -168,24 +168,131 @@ export async function POST(req: NextRequest) {
   const userAgent = (req.headers.get("user-agent") ?? "").slice(0, 200)
   const maskedIp = maskIp(clientIp)
 
-  const htmlBody = `
-<table cellpadding="0" cellspacing="0" style="font-family:Arial,sans-serif;font-size:14px;color:#0D0F12;max-width:600px;width:100%">
-  <tr><td style="padding:24px 0 8px"><strong>New quote request</strong></td></tr>
-  <tr><td style="padding:4px 0"><strong>Name:</strong> ${escapeHtml(name)}</td></tr>
-  <tr><td style="padding:4px 0"><strong>Email:</strong> ${escapeHtml(email)}</td></tr>
-  <tr><td style="padding:4px 0"><strong>Phone:</strong> ${phone ? escapeHtml(phone) : "—"}</td></tr>
-  <tr><td style="padding:4px 0"><strong>Project type:</strong> ${escapeHtml(projectType)}</td></tr>
-  <tr><td style="padding:4px 0"><strong>Budget:</strong> ${escapeHtml(budget)}</td></tr>
-  <tr><td style="padding:16px 0 4px;border-top:1px solid #D7D4CB"><strong>Message:</strong></td></tr>
-  <tr><td style="padding:4px 0;white-space:pre-wrap">${escapeHtml(message)}</td></tr>
-  <tr><td style="padding:16px 0 4px;border-top:1px solid #D7D4CB;font-size:12px;color:#62665F">
-    <strong>Source:</strong> ${sourcePage ? escapeHtml(sourcePage) : "—"}<br>
-    <strong>Date:</strong> ${now}<br>
-    <strong>IP:</strong> ${maskedIp}<br>
-    <strong>User-Agent:</strong> ${escapeHtml(userAgent)}
+  const phoneRow = phone
+    ? `<table cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:14px">
+        <tr>
+          <td width="96" style="font-size:10px;color:#A6AB9D;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;vertical-align:top;padding-top:2px;font-family:'Plus Jakarta Sans',Georgia,sans-serif">Phone</td>
+          <td style="font-size:15px;color:#0D0F12;font-weight:400;font-family:'Plus Jakarta Sans',Georgia,sans-serif">${escapeHtml(phone)}</td>
+        </tr>
+      </table>`
+    : ""
+
+  const htmlBody = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;padding:0;background:#EFEEE8">
+<table cellpadding="0" cellspacing="0" width="100%" style="background:#EFEEE8;padding:40px 16px">
+  <tr><td align="center">
+
+    <!-- Card -->
+    <table cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;border:1px solid #D7D4CB">
+
+      <!-- Dark header -->
+      <tr>
+        <td style="background:#0D0F12;padding:32px 40px">
+          <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#62665F;font-weight:500;font-family:'Plus Jakarta Sans',Georgia,sans-serif">
+                R&ocirc;mulo Quintanilha &middot; Projects
+              </td>
+              <td align="right" style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#2A2D31;font-weight:500;font-family:'Plus Jakarta Sans',Georgia,sans-serif">
+                New Brief
+              </td>
+            </tr>
+          </table>
+          <div style="height:22px"></div>
+          <div style="font-size:30px;font-weight:300;letter-spacing:-0.025em;line-height:1.1;color:#F5F4F0;font-family:'Plus Jakarta Sans',Georgia,sans-serif">
+            New quote request
+          </div>
+          <div style="margin-top:8px;font-size:13px;color:#6F7668;font-weight:400;letter-spacing:0.01em;font-family:'Plus Jakarta Sans',Georgia,sans-serif">
+            ${escapeHtml(projectType)} &middot; ${escapeHtml(budget)}
+          </div>
+        </td>
+      </tr>
+
+      <!-- Body -->
+      <tr>
+        <td style="background:#F5F4F0;padding:36px 40px 0">
+
+          <!-- Section: Client -->
+          <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#62665F;font-weight:500;margin-bottom:18px;font-family:'Plus Jakarta Sans',Georgia,sans-serif">Client</div>
+
+          <table cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:14px">
+            <tr>
+              <td width="96" style="font-size:10px;color:#A6AB9D;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;vertical-align:top;padding-top:2px;font-family:'Plus Jakarta Sans',Georgia,sans-serif">Name</td>
+              <td style="font-size:15px;color:#0D0F12;font-weight:500;font-family:'Plus Jakarta Sans',Georgia,sans-serif">${escapeHtml(name)}</td>
+            </tr>
+          </table>
+
+          <table cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:14px">
+            <tr>
+              <td width="96" style="font-size:10px;color:#A6AB9D;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;vertical-align:top;padding-top:2px;font-family:'Plus Jakarta Sans',Georgia,sans-serif">Email</td>
+              <td style="font-size:15px;color:#0D0F12;font-weight:400;font-family:'Plus Jakarta Sans',Georgia,sans-serif">${escapeHtml(email)}</td>
+            </tr>
+          </table>
+
+          ${phoneRow}
+
+          <!-- Divider -->
+          <div style="border-top:1px solid #D7D4CB;margin:28px 0"></div>
+
+          <!-- Section: Project -->
+          <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#62665F;font-weight:500;margin-bottom:18px;font-family:'Plus Jakarta Sans',Georgia,sans-serif">Project</div>
+
+          <table cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:14px">
+            <tr>
+              <td width="96" style="font-size:10px;color:#A6AB9D;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;vertical-align:top;padding-top:2px;font-family:'Plus Jakarta Sans',Georgia,sans-serif">Type</td>
+              <td style="font-size:15px;color:#0D0F12;font-weight:400;font-family:'Plus Jakarta Sans',Georgia,sans-serif">${escapeHtml(projectType)}</td>
+            </tr>
+          </table>
+
+          <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td width="96" style="font-size:10px;color:#A6AB9D;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;vertical-align:top;padding-top:2px;font-family:'Plus Jakarta Sans',Georgia,sans-serif">Budget</td>
+              <td style="font-size:15px;color:#0D0F12;font-weight:400;font-family:'Plus Jakarta Sans',Georgia,sans-serif">${escapeHtml(budget)}</td>
+            </tr>
+          </table>
+
+          <!-- Divider -->
+          <div style="border-top:1px solid #D7D4CB;margin:28px 0"></div>
+
+          <!-- Section: Message -->
+          <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#62665F;font-weight:500;margin-bottom:18px;font-family:'Plus Jakarta Sans',Georgia,sans-serif">Message</div>
+
+          <div style="border-left:3px solid #6F7668;padding-left:20px;margin-bottom:36px">
+            <div style="font-size:14px;color:#1B1D21;font-weight:400;line-height:1.75;white-space:pre-wrap;font-family:'Plus Jakarta Sans',Georgia,sans-serif">${escapeHtml(message)}</div>
+          </div>
+
+        </td>
+      </tr>
+
+      <!-- Metadata footer -->
+      <tr>
+        <td style="background:#E8E7DF;border-top:1px solid #D7D4CB;padding:14px 40px">
+          <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td style="font-size:10px;color:#A6AB9D;letter-spacing:0.06em;font-family:'Plus Jakarta Sans',Georgia,sans-serif">
+                ${sourcePage ? escapeHtml(sourcePage) + " &middot; " : ""}${now} &middot; ${maskedIp}
+              </td>
+              <td align="right" style="font-size:10px;color:#D7D4CB;letter-spacing:0.04em;font-family:'Plus Jakarta Sans',Georgia,sans-serif">
+                ${escapeHtml(userAgent.slice(0, 80))}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+    </table>
+    <!-- /Card -->
+
   </td></tr>
 </table>
-  `.trim()
+</body>
+</html>`.trim()
 
   try {
     const { error: resendError } = await getResendClient().emails.send(
