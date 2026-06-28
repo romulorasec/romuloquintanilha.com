@@ -6,7 +6,11 @@ import { contactSchema } from "@/lib/validations/contact"
 // These counters reset per serverless instance, not globally.
 const ipWindows = new Map<string, { count: number; resetAt: number }>()
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+let _resend: Resend | null = null
+function getResendClient(): Resend {
+  if (!_resend) _resend = new Resend(process.env.RESEND_API_KEY)
+  return _resend
+}
 
 function checkFallbackRateLimit(ip: string): boolean {
   const now = Date.now()
@@ -153,6 +157,13 @@ export async function POST(req: NextRequest) {
   }
 
   // Send email via Resend
+  const fromEmail = process.env.QUOTE_FROM_EMAIL
+  const toEmail = process.env.QUOTE_TO_EMAIL
+  if (!fromEmail || !toEmail) {
+    console.error("[contact] Missing env vars: QUOTE_FROM_EMAIL or QUOTE_TO_EMAIL")
+    return NextResponse.json({ error: "Service unavailable" }, { status: 503 })
+  }
+
   const now = new Date().toUTCString()
   const userAgent = (req.headers.get("user-agent") ?? "").slice(0, 200)
   const maskedIp = maskIp(clientIp)
@@ -177,13 +188,16 @@ export async function POST(req: NextRequest) {
   `.trim()
 
   try {
-    const { error: resendError } = await resend.emails.send({
-      from: process.env.QUOTE_FROM_EMAIL ?? "",
-      to: process.env.QUOTE_TO_EMAIL ?? "",
-      replyTo: email,
-      subject: `New quote request — ${projectType}`,
-      html: htmlBody,
-    })
+    const { error: resendError } = await getResendClient().emails.send(
+      {
+        from: fromEmail,
+        to: toEmail,
+        replyTo: email,
+        subject: `New quote request — ${projectType}`,
+        html: htmlBody,
+      },
+      { idempotencyKey: `contact/${turnstileToken.slice(0, 200)}` }
+    )
 
     if (resendError) {
       console.error("[contact] Resend error:", resendError.name, resendError.message)
