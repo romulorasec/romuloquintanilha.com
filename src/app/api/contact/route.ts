@@ -177,7 +177,7 @@ export async function POST(req: NextRequest) {
   `.trim()
 
   try {
-    await resend.emails.send({
+    const { error: resendError } = await resend.emails.send({
       from: process.env.QUOTE_FROM_EMAIL ?? "",
       to: process.env.QUOTE_TO_EMAIL ?? "",
       replyTo: email,
@@ -185,10 +185,14 @@ export async function POST(req: NextRequest) {
       html: htmlBody,
     })
 
+    if (resendError) {
+      console.error("[contact] Resend error:", resendError.name, resendError.message)
+      return NextResponse.json({ error: "Failed to send message" }, { status: 500 })
+    }
+
     return NextResponse.json({ success: true })
   } catch (err) {
-    // Log only technical context, never personal data
-    console.error("[contact] Resend error:", err instanceof Error ? err.message : "unknown")
+    console.error("[contact] Resend unexpected error:", err instanceof Error ? err.message : "unknown")
     return NextResponse.json({ error: "Failed to send message" }, { status: 500 })
   }
 }
